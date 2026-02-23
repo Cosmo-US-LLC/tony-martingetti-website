@@ -2,8 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import PageNotFound from "./pages/PageNotFound";
+import SuccessStories from "./pages/SuccessStories";
 import Waitlist from "./pages/Waitlist";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/waitlist" element={<Waitlist />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />

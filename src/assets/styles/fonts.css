@@ -1,0 +1,114 @@
+/**
+ * Local font faces from src/assets/fonts
+ *
+ * Inter – variable font (opsz, wght). Use for body / UI.
+ * Oswald – variable font (wght). Use for headings / display.
+ */
+
+/* Inter – upright */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter – italic */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Oswald – variable weight only */
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Nav link – matches Figma nav text (Oswald Medium 16px, uppercase) */
+.nav_link {
+  font-family: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #0f172a;
+  transition: color 0.2s ease;
+}
+.nav_link:hover {
+  color: #059669;
+}
+
+/* Footer link – Figma footer list items */
+.footer_link {
+  transition: color 0.2s ease;
+}
+.footer_link:hover {
+  color: #10b981;
+}
+
+/* Button classes: primary_btn, secondary_btn */
+.primary_btn {
+  display: inline-flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #059669;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+  font-family: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.primary_btn:hover {
+  background: #047857;
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.15), 0 6px 8px -4px rgba(0, 0, 0, 0.1);
+}
+.primary_btn:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+.secondary_btn {
+  display: flex;
+  padding: 18px 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #0f172a;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+  font-family: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.secondary_btn:hover {
+  background: #1e293b;
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.15), 0 6px 8px -4px rgba(0, 0, 0, 0.1);
+}
+.secondary_btn:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 2px;
+}

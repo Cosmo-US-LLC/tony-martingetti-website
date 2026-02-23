@@ -1,21 +1,129 @@
 import { Link } from "react-router-dom";
-import { Mail } from "lucide-react";
+
+// Footer logo (larger variant); replace with local asset for production.
+const FOOTER_LOGO_URL =
+  "https://www.figma.com/api/mcp/asset/2639504a-b0a7-4532-9ca5-f147ed798065";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t bg-gray-50">
-      <div className="mx-auto max-w-6xl px-4 py-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-gray-600">
-            © {currentYear} Tony Martingetti. All rights reserved.
-          </p>
-          <div className="flex items-center gap-2">
-            <Mail className="h-4 w-4 text-gray-500" />
-            <Link to="/contact" className="text-sm text-gray-600 hover:underline">
-              Contact
-            </Link>
+    <footer
+      className="w-full border-t border-[#1f2937] bg-[#0f172a] px-6 pb-16 pt-16 md:px-[72px] md:pb-16 md:pt-[65px]"
+      data-name="Footer"
+    >
+      <div className="mx-auto max-w-[1280px] w-full" data-name="Container">
+        <div className="flex w-full max-w-[inherit] flex-col gap-8 px-6 md:gap-[32px]">
+          <Link
+            to="/"
+            className="flex shrink-0 overflow-hidden"
+            aria-label="Planned Giving Accelerated – Home"
+          >
+            <img
+              src={FOOTER_LOGO_URL}
+              alt="Planned Giving Accelerated"
+              className="h-[80px] w-auto max-w-[137px] object-contain object-left"
+            />
+          </Link>
+
+          <div className="flex w-full flex-col gap-10 md:flex-row md:justify-between md:gap-12">
+            {/* About Tony Martignetti */}
+            <div className="flex max-w-[592px] flex-col gap-6">
+              <h3 className="font-heading text-2xl font-bold uppercase leading-8 tracking-[0.48px] text-[#10b981]">
+                About Tony Martignetti
+              </h3>
+              <p className="max-w-[448px] font-sans text-base font-normal leading-[26px] text-[#9ca3af]">
+                Tony Martignetti is a nationally recognized Planned Giving expert
+                who has helped hundreds of nonprofits launch and scale their
+                legacy giving programs. His practical, no-nonsense approach cuts
+                through the complexity and gets results, fast.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="flex w-full max-w-[272px] flex-col gap-6">
+              <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
+                Quick Links
+              </h4>
+              <ul className="flex flex-col gap-3">
+                <li>
+                  <Link
+                    to="/waitlist"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    Join Waitlist
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    About the Program
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/success-stories"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    Success Stories
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="flex w-full max-w-[272px] flex-col gap-6">
+              <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
+                Contact
+              </h4>
+              <ul className="flex flex-col gap-3">
+                <li>
+                  <a
+                    href="mailto:support@tonymartignetti.com"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    support@tonymartignetti.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#schedule"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    Schedule a Call
+                  </a>
+                </li>
+                <li>
+                  <Link
+                    to="/#faq"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div
+            className="border-t border-[#1f2937] pt-8"
+            data-name="HorizontalBorder"
+          >
+            <p className="text-center font-sans text-sm font-normal leading-5 text-[#6b7280]">
+              © {currentYear} Tony Martignetti Nonprofit Group. All rights
+              reserved.
+            </p>
           </div>
         </div>
       </div>
