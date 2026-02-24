@@ -1,28 +1,81 @@
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
+import { useState } from "react";
+
+// Replace with local asset (e.g. src/assets/images/logo.svg) for production; Figma asset URLs expire after 7 days.
+const LOGO_URL =
+  "https://www.figma.com/api/mcp/asset/96115e3f-b132-4fbf-a94f-204bed4a2a58";
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="border-b bg-white/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link to="/" className="text-xl font-semibold text-gray-900">
-          Tony Martingetti
-        </Link>
-        <div className="hidden items-center gap-6 md:flex">
-          <Link to="/" className="text-gray-600 hover:text-gray-900">
-            Home
+    <header
+      className="sticky top-0 z-50 w-full border-b border-[#f3f4f6] bg-[rgba(255,255,255,0.95)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] backdrop-blur-[2px]"
+      data-name="Nav"
+    >
+      <div className="mx-auto max-w-[1280px] w-full" data-name="Container">
+        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-6 py-3 md:px-[72px] md:py-3">
+          <Link
+            to="/"
+            className="flex shrink-0 items-center overflow-hidden"
+            aria-label="Planned Giving Accelerated – Home"
+          >
+            <img
+              src={LOGO_URL}
+              alt="Planned Giving Accelerated"
+              className="h-12 w-auto max-w-[82px] object-contain"
+            />
           </Link>
-          <Link to="/about" className="text-gray-600 hover:text-gray-900">
-            About
-          </Link>
-          <Link to="/contact" className="text-gray-600 hover:text-gray-900">
-            Contact
-          </Link>
+
+          <div className="hidden items-center gap-8 md:flex" data-name="Nav links">
+            <Link to="/about" className="nav_link whitespace-nowrap">
+              About
+            </Link>
+            <Link to="/success-stories" className="nav_link whitespace-nowrap">
+              Success Stories
+            </Link>
+            <Link to="/waitlist" className="primary_btn shrink-0">
+              Join Waitlist
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            className="p-2 text-[#0f172a] md:hidden"
+            aria-label="Open menu"
+            onClick={() => setMobileOpen((o) => !o)}
+          >
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
-        <button type="button" className="p-2 md:hidden" aria-label="Menu">
-          <Menu className="h-6 w-6" />
-        </button>
-      </nav>
+
+        {mobileOpen && (
+          <div className="flex flex-col gap-4 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-4 backdrop-blur-sm md:hidden">
+            <Link
+              to="/about"
+              className="nav_link"
+              onClick={() => setMobileOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              to="/success-stories"
+              className="nav_link"
+              onClick={() => setMobileOpen(false)}
+            >
+              Success Stories
+            </Link>
+            <Link
+              to="/waitlist"
+              className="primary_btn w-fit"
+              onClick={() => setMobileOpen(false)}
+            >
+              Join Waitlist
+            </Link>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
