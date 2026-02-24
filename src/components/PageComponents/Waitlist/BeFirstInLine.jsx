@@ -1,23 +1,26 @@
 import { Link } from "react-router-dom";
+import icon_1 from "@/assets/images/waitlist/be_first/icon_1.svg";
+import icon_2 from "@/assets/images/waitlist/be_first/icon_2.svg";
+import icon_3 from "@/assets/images/waitlist/be_first/icon_3.svg";
 
 const BENEFITS = [
   {
     id: 1,
-    icon: "🎯",
+    icon: icon_1,
     title: "Priority Access",
     description:
       "Get first access when enrollment opens, before the general public",
   },
   {
     id: 2,
-    icon: "💰",
+    icon: icon_2,
     title: "Early-Bird Pricing",
     description:
       "Exclusive pricing for waitlist members, save $500 off regular price",
   },
   {
     id: 3,
-    icon: "🎁",
+    icon: icon_3,
     title: "FREE Toolkit",
     description:
       "Instant access to the Planned Giving Success Toolkit (valued at $297)",
@@ -26,12 +29,9 @@ const BENEFITS = [
 
 export default function BeFirstInLine() {
   return (
-    <section
-      className="w-full bg-[#f8fafc] px-6 py-16 md:px-12 md:py-20 lg:px-[72px] lg:py-[80px]"
-      data-name="Section"
-    >
+    <section className="w-full bg-[#f8fafc] py-16 md:py-20" data-name="Section">
       <div
-        className="mx-auto flex max-w-[1280px] w-full flex-col items-center gap-10 px-6 md:gap-12"
+        className="mx-auto flex max-w-[1280px] px-4 md:px-8 w-full flex-col items-center gap-10 md:gap-12"
         data-name="Container"
       >
         <div
@@ -39,14 +39,13 @@ export default function BeFirstInLine() {
           data-name="Header"
         >
           <h2
-            className="font-heading text-center text-3xl font-bold uppercase leading-10 tracking-[0.72px] text-[#0f172a] md:text-[36px] md:leading-[40px]"
+            className="heading_two text-center text-[#0f172a]"
             data-name="Heading 2"
           >
-            <span className="block">Be First in Line for Planned Giving</span>
-            <span className="block">Accelerated</span>
+            Be First in Line for Planned Giving Accelerated
           </h2>
           <p
-            className="text-center font-sans text-lg font-normal leading-7 text-[#4b5563] md:text-xl md:leading-7"
+            className="text-center paragraph_one text-[#4b5563]"
             data-name="Subtitle"
           >
             Tony Martignetti's proven program opens soon, and spots are limited
@@ -60,23 +59,31 @@ export default function BeFirstInLine() {
           {BENEFITS.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col rounded-xl border-t-4 border-[#10b981] bg-white p-8 shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
+              className="flex flex-col rounded-xl md:items-start items-center  border-t-4 border-[#10b981] bg-white md:p-8 p-4 shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]"
               data-name="Background+HorizontalBorder+Shadow"
             >
-              <div className="mb-4 text-4xl leading-10 text-[#1e293b]" aria-hidden>
-                {item.icon}
-              </div>
-              <h3 className="font-heading mb-3 text-xl font-bold uppercase leading-7 tracking-[0.4px] text-[#0f172a]">
+              <img
+                src={item.icon}
+                alt={item.title}
+                className="mb-4 w-10 h-10 text-[#1e293b]"
+                aria-hidden
+              />
+
+              <h3 className="heading_three mb-3 text-[#0f172a]">
                 {item.title}
               </h3>
-              <p className="font-sans text-base font-normal leading-[26px] text-[#4b5563]">
+              <p className="card_body text-[#4b5563] text-center md:text-left">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
 
-        <Link to="/waitlist#join" className="primary_btn shrink-0" data-name="Button">
+        <Link
+          to="/waitlist#join"
+          className="primary_btn shrink-0"
+          data-name="Button"
+        >
           Join the Waitlist Now
         </Link>
       </div>

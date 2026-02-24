@@ -1,22 +1,19 @@
 export default function TonysMission() {
   return (
     <section
-      className="w-full bg-white px-6 py-16 md:px-12 md:py-20 lg:py-[80px]"
+      className="w-full bg-white px-4 py-10 md:px-8 md:py-18"
       data-name="Section"
     >
       <div
-        className="mx-auto flex max-w-[768px] w-full flex-col items-center gap-6 text-center"
+        className="mx-auto flex max-w-[768px] w-full flex-col items-center md:gap-6 gap-4 text-center"
         data-name="Container"
       >
-        <h3
-          className="font-heading text-3xl font-bold uppercase leading-9 tracking-[0.6px] text-[#0f172a]"
-          data-name="Heading 3"
-        >
+        <h2 className="heading_two text-[#0f172a]" data-name="Heading 3">
           Tony's Mission
-        </h3>
+        </h2>
 
         <p
-          className="max-w-[720px] font-sans text-2xl font-normal leading-8 text-[#4b5563]"
+          className="max-w-[720px] font-sans md:text-[24px] text-[18px] font-normal md:leading-8 leading-7 text-[#4b5563]"
           data-name="Mission statement"
         >
           Launch{" "}
@@ -27,7 +24,7 @@ export default function TonysMission() {
         </p>
 
         <p
-          className="font-sans text-lg font-normal leading-7 text-[#6b7280]"
+          className="font-sans md:text-[18px] text-[14px]  font-normal leading-7 text-[#6b7280]"
           data-name="Tagline"
         >
           Your organization could be next.

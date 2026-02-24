@@ -33,15 +33,15 @@ function CheckIcon() {
 export default function WhatYouGet() {
   return (
     <section
-      className="w-full bg-[#f8fafc] px-6 py-16 md:px-12 md:py-20 lg:py-[80px]"
+      className="w-full bg-[#f8fafc] px-6 py-16 md:px-12 md:py-20"
       data-name="Section"
     >
       <div
-        className="mx-auto flex max-w-[1024px] w-full flex-col items-center gap-10 px-6 md:gap-12"
+        className="mx-auto flex max-w-[1024px] w-full flex-col items-center gap-8 md:gap-10"
         data-name="Container"
       >
         <h2
-          className="font-heading text-center text-3xl font-bold uppercase leading-10 tracking-[0.72px] text-[#0f172a] md:text-[36px] md:leading-[40px]"
+          className="heading_two text-center text-[#0f172a]"
           data-name="Heading 2"
         >
           What You'll Get Inside Planned Giving Accelerated
@@ -54,15 +54,16 @@ export default function WhatYouGet() {
           {BENEFITS.map((item) => (
             <div
               key={item.id}
-              className="flex gap-4 rounded-lg bg-white p-6 shadow-sm"
+              className="flex gap-4 rounded-lg bg-white p-4 md:p-8 shadow-sm"
               data-name="Background"
             >
-              <div className="flex h-7 w-6 shrink-0 items-start pt-1" data-name="Margin">
+              <div
+                className="flex h-7 w-6 shrink-0 items-start pt-1"
+                data-name="Margin"
+              >
                 <CheckIcon />
               </div>
-              <p className="font-sans text-base font-normal leading-[26px] text-[#374151]">
-                {item.text}
-              </p>
+              <p className="card_body text-[#374151]">{item.text}</p>
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import Join500Hero from "@/components/PageComponents/Waitlist/Join500Hero";
+import JoinWaitlistHero from "@/components/PageComponents/Waitlist/JoinWaitlistHero";
 import StatsCard from "@/components/PageComponents/Waitlist/StatsCard";
 import WhereDoYouStart from "@/components/PageComponents/Waitlist/WhereDoYouStart";
 import TonysMission from "@/components/PageComponents/Waitlist/TonysMission";
@@ -11,16 +11,14 @@ import ReadyToTransform from "@/components/PageComponents/Waitlist/ReadyToTransf
 function Waitlist() {
   return (
     <div>
-      <Join500Hero />
-      <div className="mx-auto max-w-6xl px-6 py-8 md:py-12">
-        <StatsCard />
-      </div>
+      <JoinWaitlistHero />
+      <StatsCard />
       <WhereDoYouStart />
-      <TonysMission />
       <BeFirstInLine />
       <FreeToolkit />
-      <WhatYouGet />
       <TestimonialCard />
+      <WhatYouGet />
+      <TonysMission />
       <ReadyToTransform />
     </div>
   );
