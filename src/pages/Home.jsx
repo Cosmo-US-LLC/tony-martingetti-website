@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Home() {
+  usePageMeta(
+    "Tony Martingetti | Home",
+    "Discover Tony Martingetti’s work, resources, and ways to connect so you can lead with greater purpose and impact."
+  );
+
   return (
     <div className="min-h-[60vh]">
       <section className="mx-auto max-w-6xl px-4 py-16 text-center">

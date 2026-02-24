@@ -1,3 +1,4 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
 import JoinWaitlistHero from "@/components/PageComponents/Waitlist/JoinWaitlistHero";
 import StatsCard from "@/components/PageComponents/Waitlist/StatsCard";
 import WhereDoYouStart from "@/components/PageComponents/Waitlist/WhereDoYouStart";
@@ -9,6 +10,11 @@ import TestimonialCard from "@/components/PageComponents/Waitlist/TestimonialCar
 import ReadyToTransform from "@/components/PageComponents/Waitlist/ReadyToTransform";
 
 function Waitlist() {
+  usePageMeta(
+    "Scale Your Legacy Fundraising | Planned Giving Accelerated by Tony",
+    "Stop missing out on 90% of potential legacy gifts. Get the blueprints, templates, and strategy to build a $2M+ planned giving program.",
+  );
+
   return (
     <div>
       <JoinWaitlistHero />
