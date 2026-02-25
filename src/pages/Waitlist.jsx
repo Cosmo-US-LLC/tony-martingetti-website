@@ -1,4 +1,5 @@
-import Join500Hero from "@/components/PageComponents/Waitlist/Join500Hero";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import JoinWaitlistHero from "@/components/PageComponents/Waitlist/JoinWaitlistHero";
 import StatsCard from "@/components/PageComponents/Waitlist/StatsCard";
 import WhereDoYouStart from "@/components/PageComponents/Waitlist/WhereDoYouStart";
 import TonysMission from "@/components/PageComponents/Waitlist/TonysMission";
@@ -9,18 +10,21 @@ import TestimonialCard from "@/components/PageComponents/Waitlist/TestimonialCar
 import ReadyToTransform from "@/components/PageComponents/Waitlist/ReadyToTransform";
 
 function Waitlist() {
+  usePageMeta(
+    "Scale Your Legacy Fundraising | Planned Giving Accelerated by Tony",
+    "Stop missing out on 90% of potential legacy gifts. Get the blueprints, templates, and strategy to build a $2M+ planned giving program.",
+  );
+
   return (
     <div>
-      <Join500Hero />
-      <div className="mx-auto max-w-6xl px-6 py-8 md:py-12">
-        <StatsCard />
-      </div>
+      <JoinWaitlistHero />
+      <StatsCard />
       <WhereDoYouStart />
-      <TonysMission />
       <BeFirstInLine />
       <FreeToolkit />
-      <WhatYouGet />
       <TestimonialCard />
+      <WhatYouGet />
+      <TonysMission />
       <ReadyToTransform />
     </div>
   );

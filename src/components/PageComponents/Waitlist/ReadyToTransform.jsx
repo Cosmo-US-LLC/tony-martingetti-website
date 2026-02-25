@@ -18,7 +18,7 @@ function ReadyToTransform() {
   return (
     <section
       id="join"
-      className="w-full bg-[#059669] px-6 py-16 md:px-12 md:py-24 lg:py-[96px]"
+      className="w-full bg-[#059669] px-4 py-10 md:px-8 md:py-16"
       data-name="Section"
     >
       <div
@@ -26,7 +26,7 @@ function ReadyToTransform() {
         data-name="Container"
       >
         <h2
-          className="font-heading text-center text-4xl font-bold uppercase leading-[48px] tracking-[0.96px] text-white md:text-5xl"
+          className="heading_two text-center text-white"
           data-name="Heading 2"
         >
           <span className="block">Ready to Transform You</span>
@@ -34,7 +34,7 @@ function ReadyToTransform() {
         </h2>
 
         <p
-          className="max-w-[540px] text-center font-sans text-lg font-normal leading-7 text-white opacity-95 md:text-xl md:leading-[28px]"
+          className="max-w-[580px] text-center paragraph_one text-white opacity-95"
           data-name="Subheading"
         >
           Join the waitlist now and get instant access to your FREE toolkit
@@ -56,13 +56,13 @@ function ReadyToTransform() {
             placeholder="Enter your email address"
             required
             disabled={status === "loading"}
-            className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-[19px] font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#059669] disabled:opacity-60"
+            className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-[16px] font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#059669] disabled:opacity-60"
             data-name="Input"
           />
           <button
             type="submit"
             disabled={status === "loading"}
-            className="secondary_btn shrink-0 inline-flex! flex-row! py-[18px]! sm:w-auto"
+            className="secondary_btn shrink-0 inline-flex! flex-row! py-[16px]! sm:w-auto"
             data-name="Button"
           >
             {status === "loading" ? "Joining…" : "Join Waitlist"}
@@ -76,7 +76,7 @@ function ReadyToTransform() {
         )}
 
         <p
-          className="text-center font-sans text-base font-normal leading-5 text-white opacity-80"
+          className="text-center font-sans text-[12px] md:text-[16px] font-normal leading-5 text-white opacity-80"
           data-name="Privacy"
         >
           🔒 Your information is safe. We respect your privacy.

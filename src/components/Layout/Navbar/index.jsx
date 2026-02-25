@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-
-// Replace with local asset (e.g. src/assets/images/logo.svg) for production; Figma asset URLs expire after 7 days.
-const LOGO_URL =
-  "https://www.figma.com/api/mcp/asset/96115e3f-b132-4fbf-a94f-204bed4a2a58";
+import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,7 +12,7 @@ export default function Navbar() {
       data-name="Nav"
     >
       <div className="mx-auto max-w-[1280px] w-full" data-name="Container">
-        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-6 py-3 md:px-[72px] md:py-3">
+        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-4 py-3 md:px-8 md:py-3">
           <Link
             to="/"
             className="flex shrink-0 items-center overflow-hidden"
@@ -28,7 +25,10 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden items-center gap-8 md:flex" data-name="Nav links">
+          <div
+            className="hidden items-center gap-8 md:flex"
+            data-name="Nav links"
+          >
             <Link to="/about" className="nav_link whitespace-nowrap">
               About
             </Link>

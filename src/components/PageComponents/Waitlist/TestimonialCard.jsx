@@ -1,11 +1,11 @@
 export default function TestimonialCard() {
   return (
     <section
-      className="w-full bg-white px-6 py-16 md:px-12 md:py-20 lg:py-[80px]"
+      className="w-full bg-white px-4 md:px-8 py-16 md:py-20"
       data-name="Section"
     >
       <div
-        className="relative mx-auto max-w-[896px] w-full shrink-0 rounded-2xl p-8 md:p-14"
+        className="relative mx-auto max-w-[784px] w-full shrink-0 rounded-2xl md:px-12 px-4 md:pt-16 pt-14 md:pb-8 pb-6"
         style={{
           backgroundImage:
             "linear-gradient(159.22deg, rgb(236, 253, 245) 0%, rgb(209, 250, 229) 100%)",
@@ -13,7 +13,7 @@ export default function TestimonialCard() {
         data-name="Background"
       >
         <div
-          className="absolute left-6 top-16 -translate-y-1/2 font-serif text-[96px] leading-[96px] text-[#059669] opacity-20"
+          className="absolute top-[10px] left-[10px] md:top-[14px] md:left-[20px] font-serif md:text-[96px] text-[72px] leading-[96px] text-[#059669] opacity-20"
           aria-hidden
         >
           "
@@ -38,10 +38,10 @@ export default function TestimonialCard() {
             className="flex w-full flex-col items-start gap-0"
             data-name="Attribution"
           >
-            <p className="font-heading text-lg font-bold uppercase leading-7 tracking-[0.36px] text-[#0f172a]">
+            <p className="font-heading md:text-[18px] text-[14px] font-bold uppercase leading-7 tracking-[0.36px] text-[#0f172a]">
               Cheryl McCormick
             </p>
-            <p className="font-sans text-base font-normal leading-6 text-[#4b5563]">
+            <p className="font-sans text-[14px] md:text-[16px] font-normal leading-6 text-[#4b5563]">
               Development Director
             </p>
           </div>

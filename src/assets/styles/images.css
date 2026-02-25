@@ -1,0 +1,12 @@
+.waitlist_hero_bg {
+  background-image: url("@/assets/images/waitlist/waitlist_hero/waitlist_hero_desktop.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .waitlist_hero_bg {
+    background-image: url("@/assets/images/waitlist/waitlist_hero/waitlist_hero_mobile.webp");
+  }
+}

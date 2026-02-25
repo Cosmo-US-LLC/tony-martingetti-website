@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
-
-// Footer logo (larger variant); replace with local asset for production.
-const FOOTER_LOGO_URL =
-  "https://www.figma.com/api/mcp/asset/2639504a-b0a7-4532-9ca5-f147ed798065";
+import FOOTER_LOGO_URL from "@/assets/images/footer/tm_footer_logo.svg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      className="w-full border-t border-[#1f2937] bg-[#0f172a] px-6 pb-16 pt-16 md:px-[72px] md:pb-16 md:pt-[65px]"
+      className="w-full border-t border-[#1f2937] bg-[#0f172a] pb-8 pt-12 md:pb-8 md:pt-[65px]"
       data-name="Footer"
     >
-      <div className="mx-auto max-w-[1280px] w-full" data-name="Container">
-        <div className="flex w-full max-w-[inherit] flex-col gap-8 px-6 md:gap-[32px]">
+      <div
+        className="mx-auto max-w-[1280px] px-5 md:px-8 w-full"
+        data-name="Container"
+      >
+        <div className="flex w-full max-w-[inherit] flex-col gap-8 md:gap-[32px]">
           <Link
             to="/"
             className="flex shrink-0 overflow-hidden"
@@ -28,20 +28,20 @@ export default function Footer() {
 
           <div className="flex w-full flex-col gap-10 md:flex-row md:justify-between md:gap-12">
             {/* About Tony Martignetti */}
-            <div className="flex max-w-[592px] flex-col gap-6">
+            <div className="flex max-w-[612px] flex-col gap-6 w-full">
               <h3 className="font-heading text-2xl font-bold uppercase leading-8 tracking-[0.48px] text-[#10b981]">
                 About Tony Martignetti
               </h3>
-              <p className="max-w-[448px] font-sans text-base font-normal leading-[26px] text-[#9ca3af]">
-                Tony Martignetti is a nationally recognized Planned Giving expert
-                who has helped hundreds of nonprofits launch and scale their
-                legacy giving programs. His practical, no-nonsense approach cuts
-                through the complexity and gets results, fast.
+              <p className="max-w-[508px] font-sans md:text-[16px] text-[14px] font-normal md:leading-[26px] leading-6 text-[#9ca3af]">
+                Tony Martignetti is a nationally recognized Planned Giving
+                expert who has helped hundreds of nonprofits launch and scale
+                their legacy giving programs. His practical, no-nonsense
+                approach cuts through the complexity and gets results, fast.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div className="flex w-full max-w-[272px] flex-col gap-6">
+            <div className="flex w-full max-w-[252px] flex-col gap-6">
               <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
                 Quick Links
               </h4>
@@ -120,7 +120,7 @@ export default function Footer() {
             className="border-t border-[#1f2937] pt-8"
             data-name="HorizontalBorder"
           >
-            <p className="text-center font-sans text-sm font-normal leading-5 text-[#6b7280]">
+            <p className="text-center font-sans text-[14px] font-normal leading-5 text-[#6b7280]">
               © {currentYear} Tony Martignetti Nonprofit Group. All rights
               reserved.
             </p>
