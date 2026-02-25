@@ -110,7 +110,7 @@
 
 /* Button classes: primary_btn, secondary_btn */
 .primary_btn {
-  display: inline-flex;
+  /* display: flex; */
   padding: 12px 24px;
   justify-content: center;
   align-items: center;
