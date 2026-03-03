@@ -26,7 +26,7 @@ export default function Navbar() {
           </Link>
 
           <div
-            className="hidden items-center gap-8 md:flex"
+            className="max-md:hidden items-center gap-8 md:flex"
             data-name="Nav links"
           >
             <Link to="/about" className="nav_link whitespace-nowrap">
@@ -40,14 +40,16 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button
+          {/* <button
             type="button"
             className="p-2 text-[#0f172a] md:hidden"
             aria-label="Open menu"
-            onClick={() => setMobileOpen((o) => !o)}
           >
-            <Menu className="h-6 w-6" />
-          </button>
+            Join Waitlist
+          </button> */}
+          <Link to="/waitlist" className="primary_btn shrink-0 md:hidden">
+            Join Waitlist
+          </Link>
         </div>
 
         {mobileOpen && (
