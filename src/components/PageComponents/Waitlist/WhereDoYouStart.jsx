@@ -25,10 +25,10 @@ export default function WhereDoYouStart() {
           className="flex flex-1 flex-col gap-6 text-left"
           data-name="Content"
         >
-          <h2 className="heading_two text-[#0f172a]" data-name="Heading 2">
-            <span className="block">You Know Your Donors Want to</span>
-            <span className="block">Leave a Legacy. But Where Do You</span>
-            <span className="block">Start?</span>
+          <h2 className="heading_two md:max-w-[600px] max-w-[270px] text-[#0f172a]" data-name="Heading 2">
+            You Know Your Donors Want to
+            Leave a Legacy. But Where Do You
+            Start?
           </h2>
 
           <p className="paragraph_one text-[#4b5563]">

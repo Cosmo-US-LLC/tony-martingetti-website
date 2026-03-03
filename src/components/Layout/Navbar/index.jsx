@@ -35,7 +35,7 @@ export default function Navbar() {
             <Link to="/success-stories" className="nav_link whitespace-nowrap">
               Success Stories
             </Link>
-            <Link to="/waitlist" className="primary_btn shrink-0">
+            <Link to="/waitlist#join" className="primary_btn shrink-0">
               Join Waitlist
             </Link>
           </div>

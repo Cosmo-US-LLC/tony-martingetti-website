@@ -5,11 +5,13 @@ import Home from "./pages/Home";
 import SuccessStories from "./pages/SuccessStories";
 import Waitlist from "./pages/Waitlist";
 import PageNotFound from "./pages/PageNotFound";
+import ScrollToHash from "./utils/ScrollToHash";
 
 function App() {
   return (
     <>
       <ScrollToTop />
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
