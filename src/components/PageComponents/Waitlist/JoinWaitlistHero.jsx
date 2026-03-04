@@ -39,7 +39,7 @@ export default function JoinWaitlistHero() {
         </h1>
 
         <p
-          className="mt-6 max-w-[672px] text-center paragraph_one text-[#DBEAFE]"
+          className="mt-6 max-w-[632px] text-center paragraph_one text-[#DBEAFE]"
           data-name="Subtext"
         >
           Get priority access to Tony Martignetti's proven program + your FREE
