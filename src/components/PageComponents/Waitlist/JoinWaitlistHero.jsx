@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 
 export default function JoinWaitlistHero() {
   return (
-    <section className="relative w-full overflow-hidden px-6 py-14 md:px-12 md:py-20 waitlist_hero_bg">
+    <section className="relative w-full overflow-hidden px-6 py-28 min-h-[85vh] 
+         md:min-h-[720px] 
+         md:px-12 md:py-20 
+         waitlist_hero_bg">
       <div
         className="relative mx-auto flex max-w-[896px] flex-col items-center"
         data-name="Container"
@@ -36,7 +39,7 @@ export default function JoinWaitlistHero() {
 
         <Link
           to="/waitlist#join"
-          className="primary_btn mt-8 shrink-0"
+          className="primary_btn_two mt-8 shrink-0"
           data-name="Button"
         >
           Join the Waitlist Now

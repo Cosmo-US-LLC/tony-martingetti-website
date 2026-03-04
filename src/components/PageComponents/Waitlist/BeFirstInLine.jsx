@@ -39,7 +39,7 @@ export default function BeFirstInLine() {
           data-name="Header"
         >
           <h2
-            className="heading_two text-center text-[#0f172a]"
+            className="heading_two text-center md:max-w-[600px] max-w-[300px] text-[#0f172a]"
             data-name="Heading 2"
           >
             Be First in Line for Planned Giving Accelerated

@@ -42,7 +42,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="flex w-full max-w-[252px] flex-col gap-6">
-              <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
+              <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
                 Quick Links
               </h4>
               <ul className="flex flex-col gap-3">
@@ -83,7 +83,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="flex w-full max-w-[272px] flex-col gap-6">
-              <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
+              <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
                 Contact
               </h4>
               <ul className="flex flex-col gap-3">

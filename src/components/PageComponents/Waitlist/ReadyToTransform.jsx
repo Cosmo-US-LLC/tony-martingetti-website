@@ -62,7 +62,7 @@ function ReadyToTransform() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="secondary_btn shrink-0 inline-flex! flex-row! py-[16px]! sm:w-auto"
+            className="secondary_btn cursor-pointer shrink-0 inline-flex! flex-row! py-[16px]! sm:w-auto"
             data-name="Button"
           >
             {status === "loading" ? "Joining…" : "Join Waitlist"}
