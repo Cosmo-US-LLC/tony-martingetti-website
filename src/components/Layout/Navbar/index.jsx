@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleJoinClick = (closeMobile = false) => {
+    const el = document.getElementById("join");
+
+    // If already on waitlist page → scroll directly
+    if (location.pathname === "/waitlist" && el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate to waitlist with hash
+      navigate("/waitlist#join");
+    }
+
+    if (closeMobile) setMobileOpen(false);
+  };
 
   return (
     <header
@@ -12,7 +28,8 @@ export default function Navbar() {
       data-name="Nav"
     >
       <div className="mx-auto max-w-[1280px] w-full" data-name="Container">
-        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-4 py-3 md:px-8 md:py-3">
+        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-4 py-2 md:px-8 md:py-2">
+          
           <Link
             to="/"
             className="flex shrink-0 items-center overflow-hidden"
@@ -32,12 +49,20 @@ export default function Navbar() {
             <Link to="/about" className="nav_link whitespace-nowrap">
               About
             </Link>
-            <Link to="/success-stories" className="nav_link whitespace-nowrap">
+
+            <Link 
+            // to="/success-stories" 
+            className="nav_link whitespace-nowrap">
               Success Stories
             </Link>
-            <Link to="/waitlist#join" className="primary_btn shrink-0">
+
+            {/* Join Waitlist CTA */}
+            <button
+              onClick={() => handleJoinClick()}
+              className="primary_btn shrink-0"
+            >
               Join Waitlist
-            </Link>
+            </button>
           </div>
 
           {/* <button
@@ -53,28 +78,32 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="flex flex-col gap-4 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-4 backdrop-blur-sm md:hidden">
+          <div className="flex flex-col items-center justify-center gap-5 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-12 backdrop-blur-sm md:hidden">
+            
             <Link
-              to="/about"
+              // to="/about"
               className="nav_link"
               onClick={() => setMobileOpen(false)}
             >
               About
             </Link>
+
             <Link
-              to="/success-stories"
+              // to="/success-stories"
               className="nav_link"
               onClick={() => setMobileOpen(false)}
             >
               Success Stories
             </Link>
-            <Link
-              to="/waitlist"
+
+            {/* Mobile CTA */}
+            <button
+              onClick={() => handleJoinClick(true)}
               className="primary_btn w-fit"
-              onClick={() => setMobileOpen(false)}
             >
               Join Waitlist
-            </Link>
+            </button>
+
           </div>
         )}
       </div>

@@ -28,6 +28,17 @@ const BENEFITS = [
 ];
 
 export default function BeFirstInLine() {
+
+const handleJoinClick = () => {
+    const el = document.getElementById("join");
+
+    if (location.pathname === "/waitlist" && el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/waitlist#join");
+    }
+  };
+
   return (
     <section className="w-full bg-[#f8fafc] py-16 md:py-20" data-name="Section">
       <div
@@ -78,14 +89,13 @@ export default function BeFirstInLine() {
             </div>
           ))}
         </div>
-
-        <Link
-          to="/waitlist#join"
+        <button
+          onClick={handleJoinClick}
           className="primary_btn shrink-0"
           data-name="Button"
         >
           Join the Waitlist Now
-        </Link>
+        </button>
       </div>
     </section>
   );

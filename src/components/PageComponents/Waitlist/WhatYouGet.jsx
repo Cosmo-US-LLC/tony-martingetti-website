@@ -31,6 +31,17 @@ function CheckIcon() {
 }
 
 export default function WhatYouGet() {
+
+  const handleJoinClick = () => {
+    const el = document.getElementById("join");
+
+    if (location.pathname === "/waitlist" && el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/waitlist#join");
+    }
+  };
+
   return (
     <section
       className="w-full bg-[#f8fafc] px-6 py-16 md:px-12 md:py-20"
@@ -54,11 +65,11 @@ export default function WhatYouGet() {
           {BENEFITS.map((item) => (
             <div
               key={item.id}
-              className="flex gap-4 rounded-lg bg-white p-4 md:p-8 shadow-sm"
+              className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 rounded-lg bg-white p-6 md:p-8 shadow-sm"
               data-name="Background"
             >
               <div
-                className="flex h-7 w-6 shrink-0 items-start pt-1"
+                className="flex shrink-0 md:pt-1"
                 data-name="Margin"
               >
                 <CheckIcon />
@@ -68,13 +79,13 @@ export default function WhatYouGet() {
           ))}
         </div>
 
-        <Link
-          to="/waitlist#join"
+        <button
+          onClick={handleJoinClick}
           className="primary_btn shrink-0"
           data-name="Button"
         >
           Join the Waitlist Now
-        </Link>
+        </button>
       </div>
     </section>
   );
