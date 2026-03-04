@@ -14,7 +14,7 @@ function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Waitlist />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/waitlist" element={<Waitlist />} />
         </Route>

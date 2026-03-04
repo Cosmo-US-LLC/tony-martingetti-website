@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="flex w-full max-w-[inherit] flex-col gap-8 md:gap-[32px]">
           <Link
             to="/"
-            className="flex shrink-0 overflow-hidden"
+            className="inline-block shrink-0"
             aria-label="Planned Giving Accelerated – Home"
           >
             <img
@@ -56,7 +56,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/about"
+                    // to="/about"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     About the Program
@@ -64,7 +64,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/success-stories"
+                    // to="/success-stories"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     Success Stories
@@ -72,7 +72,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/contact"
+                    // to="/contact"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     Contact Us
