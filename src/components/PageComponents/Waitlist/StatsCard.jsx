@@ -8,7 +8,7 @@ export default function StatsCard() {
   return (
     <div className="w-full bg-[#F8FAFC] py-8 md:py-8">
       <div
-        className="items-center justify-between gap-.5 md:max-w-[1210px] max-w-[390px] mx-auto md:-mt-28 -mt-55 z-10 relative flex md:flex-row flex-col px-10 py-10 md:py-10 md:gap-8 md:px-20 overflow-hidden rounded-xl border-b-4 border-[#10b981] bg-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] "
+        className="items-center justify-between gap-.5 md:max-w-[1210px] max-w-[350px] mx-auto md:-mt-28 -mt-28 z-10 relative flex md:flex-row flex-col px-10 py-10 md:py-10 md:gap-8 md:px-20 overflow-hidden rounded-xl border-b-4 border-[#10b981] bg-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] "
         data-name="Background+HorizontalBorder+Shadow"
       >
         {STATS.map((stat, index) => (

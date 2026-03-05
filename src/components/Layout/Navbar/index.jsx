@@ -42,11 +42,10 @@ export default function Navbar() {
             />
           </Link>
 
-          <div
-            className="max-md:hidden items-center gap-8 md:flex"
-            data-name="Nav links"
-          >
-            <Link to="/about" className="nav_link whitespace-nowrap">
+          <div className="hidden items-center gap-8 md:flex" data-name="Nav links">
+            <Link 
+            // to="/about" 
+            className="nav_link whitespace-nowrap">
               About
             </Link>
 
@@ -65,16 +64,14 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* <button
+          <button
             type="button"
             className="p-2 text-[#0f172a] md:hidden"
             aria-label="Open menu"
+            onClick={() => setMobileOpen((o) => !o)}
           >
-            Join Waitlist
-          </button> */}
-          <Link to="/waitlist" className="primary_btn shrink-0 md:hidden">
-            Join Waitlist
-          </Link>
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
 
         {mobileOpen && (
