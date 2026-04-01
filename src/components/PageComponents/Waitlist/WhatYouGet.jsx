@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const BENEFITS = [
   {
     id: 1,
-    text: "Weekly expert-led training on prospect identification, board engagement, marketing, and donor cultivation",
+    text: "Expert-led training on prospect identification, board engagement, marketing, and donor cultivation",
   },
   {
     id: 2,
@@ -31,7 +31,6 @@ function CheckIcon() {
 }
 
 export default function WhatYouGet() {
-
   const handleJoinClick = () => {
     const el = document.getElementById("join");
 
@@ -68,10 +67,7 @@ export default function WhatYouGet() {
               className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-4 rounded-lg bg-white p-6 md:p-8 shadow-sm"
               data-name="Background"
             >
-              <div
-                className="flex shrink-0 md:pt-1"
-                data-name="Margin"
-              >
+              <div className="flex shrink-0 md:pt-1" data-name="Margin">
                 <CheckIcon />
               </div>
               <p className="card_body text-[#374151]">{item.text}</p>

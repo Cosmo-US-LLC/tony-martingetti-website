@@ -15,8 +15,7 @@ const BENEFITS = [
     id: 2,
     icon: icon_2,
     title: "Early-Bird Pricing",
-    description:
-      "Exclusive pricing for waitlist members, save $500 off regular price",
+    description: "Exclusive pricing for waitlist members",
   },
   {
     id: 3,
@@ -28,8 +27,7 @@ const BENEFITS = [
 ];
 
 export default function BeFirstInLine() {
-
-const handleJoinClick = () => {
+  const handleJoinClick = () => {
     const el = document.getElementById("join");
 
     if (location.pathname === "/waitlist" && el) {
