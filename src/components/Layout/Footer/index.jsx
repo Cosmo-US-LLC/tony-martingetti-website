@@ -121,7 +121,8 @@ export default function Footer() {
             data-name="HorizontalBorder"
           >
             <p className="text-center font-sans text-[14px] font-normal leading-5 text-[#6b7280]">
-              © {currentYear} Martignetti Planned Giving Advisors, LLC.
+              © {currentYear} Martignetti Planned Giving Advisors, LLC. All
+              Rights Reserved.
             </p>
           </div>
         </div>
