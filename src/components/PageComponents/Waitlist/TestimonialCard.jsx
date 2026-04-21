@@ -25,7 +25,7 @@ export default function TestimonialCard() {
 >
   <blockquote className="w-full" data-name="Quote">
     <p className="font-sans text-[20px] md:text-[30px] font-light italic leading-7 md:leading-[36px] text-[#1f2937]">
-      Within 6 months of joining Tony's program, we secure{" "}
+      Within 6 months of joining Tony's program, we secured{" "}
       <span className="font-bold not-italic text-[#059669]">
         $2.2 million in confirmed gift commitments
       </span>
@@ -42,7 +42,7 @@ export default function TestimonialCard() {
       Cheryl McCormick
     </p>
     <p className="font-sans text-[14px] md:text-[16px] font-normal leading-6 text-[#4b5563]">
-      Development Director
+      CEO
     </p>
   </div>
 </div>

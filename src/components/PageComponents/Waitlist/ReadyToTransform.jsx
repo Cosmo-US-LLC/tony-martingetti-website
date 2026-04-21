@@ -29,7 +29,7 @@ function ReadyToTransform() {
           className="heading_two text-center text-white"
           data-name="Heading 2"
         >
-          <span className="block">Ready to Transform You</span>
+          <span className="block">Ready to Transform Your</span>
           <span className="block">Fundraising?</span>
         </h2>
 
