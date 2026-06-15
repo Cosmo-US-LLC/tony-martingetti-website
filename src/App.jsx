@@ -2,7 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import SuccessStories from "./pages/SuccessStories";
+import Principles from "./pages/Principles";
 import Waitlist from "./pages/Waitlist";
 import PageNotFound from "./pages/PageNotFound";
 import ScrollToHash from "./utils/ScrollToHash";
@@ -15,7 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Waitlist />} />
+          <Route path="/about" element={<About />} />
           <Route path="/success-stories" element={<SuccessStories />} />
+          <Route path="/principles" element={<Principles />} />
           <Route path="/waitlist" element={<Waitlist />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />

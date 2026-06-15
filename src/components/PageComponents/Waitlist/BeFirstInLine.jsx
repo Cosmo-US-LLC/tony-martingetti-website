@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import icon_1 from "@/assets/images/waitlist/be_first/icon_1.svg";
 import icon_2 from "@/assets/images/waitlist/be_first/icon_2.svg";
 import icon_3 from "@/assets/images/waitlist/be_first/icon_3.svg";
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const BENEFITS = [
   {
@@ -28,13 +28,7 @@ const BENEFITS = [
 
 export default function BeFirstInLine() {
   const handleJoinClick = () => {
-    const el = document.getElementById("join");
-
-    if (location.pathname === "/waitlist" && el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/waitlist#join");
-    }
+    scrollToWaitlistJoin();
   };
 
   return (
@@ -88,8 +82,9 @@ export default function BeFirstInLine() {
           ))}
         </div>
         <button
+          type="button"
           onClick={handleJoinClick}
-          className="primary_btn shrink-0"
+          className="primary_btn shrink-0 cursor-pointer"
           data-name="Button"
         >
           Join the Waitlist Now

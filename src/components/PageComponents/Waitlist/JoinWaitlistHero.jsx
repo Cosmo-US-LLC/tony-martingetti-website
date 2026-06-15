@@ -1,13 +1,8 @@
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+
 export default function JoinWaitlistHero() {
-
   const handleJoinClick = () => {
-    const el = document.getElementById("join");
-
-    if (location.pathname === "/waitlist" && el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/waitlist#join");
-    }
+    scrollToWaitlistJoin();
   };
 
   return (
@@ -47,8 +42,9 @@ export default function JoinWaitlistHero() {
         </p>
 
         <button
+          type="button"
           onClick={handleJoinClick}
-          className="primary_btn_two mt-8 shrink-0"
+          className="primary_btn_two mt-8 shrink-0 cursor-pointer"
           data-name="Button"
         >
           Join the Waitlist Now

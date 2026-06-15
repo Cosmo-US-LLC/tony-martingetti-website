@@ -1,8 +1,25 @@
+import { usePageMeta } from "@/hooks/usePageMeta";
+import AboutHero from "@/components/PageComponents/About/AboutHero";
+import TonysStory from "@/components/PageComponents/About/TonysStory";
+import ExpertStats from "@/components/PageComponents/About/ExpertStats";
+import CredentialsMilestones from "@/components/PageComponents/About/CredentialsMilestones";
+import FeaturedIn from "@/components/PageComponents/About/FeaturedIn";
+import AboutFooter from "@/components/PageComponents/About/AboutFooter";
+
 function About() {
+  usePageMeta(
+    "About Tony Martignetti | Planned Giving Expert",
+    "Meet Tony Martignetti, Esq. — America's Planned Giving Guide. Learn about his journey from law to legacy giving and his mission to launch 1,000+ programs.",
+  );
+
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="font-heading text-3xl font-bold text-[#0f172a]">About</h1>
-      <p className="mt-4 font-sans text-gray-600">Content coming soon.</p>
+    <div>
+      <AboutHero />
+      <TonysStory />
+      <ExpertStats />
+      <CredentialsMilestones />
+      <FeaturedIn />
+      <AboutFooter />
     </div>
   );
 }

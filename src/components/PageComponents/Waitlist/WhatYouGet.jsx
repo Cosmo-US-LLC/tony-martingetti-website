@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const BENEFITS = [
   {
@@ -32,13 +32,7 @@ function CheckIcon() {
 
 export default function WhatYouGet() {
   const handleJoinClick = () => {
-    const el = document.getElementById("join");
-
-    if (location.pathname === "/waitlist" && el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/waitlist#join");
-    }
+    scrollToWaitlistJoin();
   };
 
   return (
@@ -76,8 +70,9 @@ export default function WhatYouGet() {
         </div>
 
         <button
+          type="button"
           onClick={handleJoinClick}
-          className="primary_btn shrink-0"
+          className="primary_btn shrink-0 cursor-pointer"
           data-name="Button"
         >
           Join the Waitlist Now
