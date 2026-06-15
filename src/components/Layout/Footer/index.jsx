@@ -56,7 +56,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    // to="/about"
+                    to="/about"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     About the Program
@@ -64,10 +64,18 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    // to="/success-stories"
+                    to="/success-stories"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     Success Stories
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/principles"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    Principles
                   </Link>
                 </li>
                 <li>
@@ -121,7 +129,7 @@ export default function Footer() {
             data-name="HorizontalBorder"
           >
             <p className="text-center font-sans text-[14px] font-normal leading-5 text-[#6b7280]">
-              © {currentYear} Martignetti Planned Giving Advisors, LLC.
+              © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned Giving made practical
             </p>
           </div>
         </div>
