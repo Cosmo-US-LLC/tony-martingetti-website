@@ -13,7 +13,7 @@ export default function TonysMission() {
         </h2>
 
         <p
-          className="max-w-[720px] font-sans md:text-[24px] text-[18px] font-normal md:leading-8 leading-7 text-[#4b5563]"
+          className="max-w-[720px] font-sans text-[20px] md:text-[30px] font-normal md:leading-8 leading-7 text-[#4b5563]"
           data-name="Mission statement"
         >
           Launch{" "}

@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="flex w-full max-w-[inherit] flex-col gap-8 md:gap-[32px]">
           <Link
             to="/"
-            className="flex shrink-0 overflow-hidden"
+            className="inline-block shrink-0"
             aria-label="Planned Giving Accelerated – Home"
           >
             <img
@@ -42,7 +42,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="flex w-full max-w-[252px] flex-col gap-6">
-              <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
+              <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
                 Quick Links
               </h4>
               <ul className="flex flex-col gap-3">
@@ -72,7 +72,15 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/contact"
+                    to="/principles"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    Principles
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    // to="/contact"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     Contact Us
@@ -83,7 +91,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="flex w-full max-w-[272px] flex-col gap-6">
-              <h4 className="font-heading text-sm font-bold uppercase leading-5 tracking-[0.7px] text-white">
+              <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
                 Contact
               </h4>
               <ul className="flex flex-col gap-3">
@@ -121,8 +129,7 @@ export default function Footer() {
             data-name="HorizontalBorder"
           >
             <p className="text-center font-sans text-[14px] font-normal leading-5 text-[#6b7280]">
-              © {currentYear} Tony Martignetti Nonprofit Group. All rights
-              reserved.
+              © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned Giving made practical
             </p>
           </div>
         </div>

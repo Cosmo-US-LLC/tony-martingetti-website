@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 export default function JoinWaitlistHero() {
+  const handleJoinClick = () => {
+    scrollToWaitlistJoin();
+  };
+
   return (
-    <section className="relative w-full overflow-hidden px-6 py-14 md:px-12 md:py-20 waitlist_hero_bg">
+    <section className="relative w-full overflow-hidden px-6 py-28 min-h-[85vh] 
+         md:min-h-[720px] 
+         md:px-12 md:py-20 
+         waitlist_hero_bg">
       <div
         className="relative mx-auto flex max-w-[896px] flex-col items-center"
         data-name="Container"
@@ -34,13 +41,14 @@ export default function JoinWaitlistHero() {
           Success Toolkit (valued at $297)
         </p>
 
-        <Link
-          to="/waitlist#join"
-          className="primary_btn mt-8 shrink-0"
+        <button
+          type="button"
+          onClick={handleJoinClick}
+          className="primary_btn_two mt-8 shrink-0 cursor-pointer"
           data-name="Button"
         >
           Join the Waitlist Now
-        </Link>
+        </button>
       </div>
     </section>
   );

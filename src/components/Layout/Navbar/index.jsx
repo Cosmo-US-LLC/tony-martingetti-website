@@ -1,10 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
+import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
+import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
+import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleJoinClick = (closeMobile = false) => {
+    if (location.pathname === "/about") {
+      scrollToAboutJoin();
+    } else if (location.pathname === "/success-stories") {
+      scrollToSuccessStoriesJoin();
+    } else if (location.pathname === "/principles") {
+      scrollToPrinciplesJoin();
+    } else if (
+      location.pathname === "/waitlist" ||
+      location.pathname === "/"
+    ) {
+      scrollToWaitlistJoin();
+    } else {
+      navigate("/waitlist#join");
+    }
+
+    if (closeMobile) setMobileOpen(false);
+  };
 
   return (
     <header
@@ -12,7 +37,8 @@ export default function Navbar() {
       data-name="Nav"
     >
       <div className="mx-auto max-w-[1280px] w-full" data-name="Container">
-        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-4 py-3 md:px-8 md:py-3">
+        <div className="flex w-full max-w-[inherit] items-center justify-between border-0 border-solid border-transparent bg-clip-padding px-4 py-2 md:px-8 md:py-2">
+          
           <Link
             to="/"
             className="flex shrink-0 items-center overflow-hidden"
@@ -25,35 +51,37 @@ export default function Navbar() {
             />
           </Link>
 
-          <div
-            className="max-md:hidden items-center gap-8 md:flex"
-            data-name="Nav links"
-          >
+          <div className="hidden items-center gap-8 md:flex" data-name="Nav links">
             <Link to="/about" className="nav_link whitespace-nowrap">
               About
             </Link>
+
             <Link to="/success-stories" className="nav_link whitespace-nowrap">
               Success Stories
             </Link>
-            <Link to="/waitlist" className="primary_btn shrink-0">
+
+            {/* Join Waitlist CTA */}
+            <button
+              onClick={() => handleJoinClick()}
+              className="primary_btn shrink-0 cursor-pointer"
+            >
               Join Waitlist
-            </Link>
+            </button>
           </div>
 
-          {/* <button
+          <button
             type="button"
             className="p-2 text-[#0f172a] md:hidden"
             aria-label="Open menu"
+            onClick={() => setMobileOpen((o) => !o)}
           >
-            Join Waitlist
-          </button> */}
-          <Link to="/waitlist" className="primary_btn shrink-0 md:hidden">
-            Join Waitlist
-          </Link>
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
 
         {mobileOpen && (
-          <div className="flex flex-col gap-4 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-4 backdrop-blur-sm md:hidden">
+          <div className="flex flex-col items-center justify-center gap-5 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-12 backdrop-blur-sm md:hidden">
+            
             <Link
               to="/about"
               className="nav_link"
@@ -61,6 +89,7 @@ export default function Navbar() {
             >
               About
             </Link>
+
             <Link
               to="/success-stories"
               className="nav_link"
@@ -68,13 +97,15 @@ export default function Navbar() {
             >
               Success Stories
             </Link>
-            <Link
-              to="/waitlist"
-              className="primary_btn w-fit"
-              onClick={() => setMobileOpen(false)}
+
+            {/* Mobile CTA */}
+            <button
+              onClick={() => handleJoinClick(true)}
+              className="primary_btn w-fit cursor-pointer"
             >
               Join Waitlist
-            </Link>
+            </button>
+
           </div>
         )}
       </div>

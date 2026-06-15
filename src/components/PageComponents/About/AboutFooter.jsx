@@ -1,0 +1,86 @@
+import { useState } from "react";
+
+export default function AboutFooter() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle");
+  const currentYear = new Date().getFullYear();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus("loading");
+    setTimeout(() => {
+      setStatus("success");
+      setEmail("");
+    }, 800);
+  }
+
+  return (
+    <footer
+      id="about-join"
+      className="w-full scroll-mt-20 bg-white py-4 md:py-6"
+      data-name="About Footer"
+    >
+      <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center gap-5 px-4 md:px-8">
+        <div className="w-full rounded-[20px] bg-[#0f172a] px-6 py-12 md:px-16 md:py-[70px]">
+          <div className="mx-auto flex max-w-[576px] flex-col items-center gap-3 text-center">
+            <div className="flex flex-col items-center gap-2.5">
+              <p className="font-sans text-base font-semibold leading-[22px] text-[#059669]">
+                Begin Today
+              </p>
+              <h2 className="heading_two text-white">
+                <span className="block">Ready to build your planned</span>
+                <span className="block">giving program?</span>
+              </h2>
+              <p className="card_body text-[#f7f7f7]">
+                <span className="block">
+                  Join the waitlist now and start creating lasting impact.
+                </span>
+                <span className="block">
+                  Tony&apos;s proven framework awaits.
+                </span>
+              </p>
+            </div>
+
+            <form
+              onSubmit={handleSubmit}
+              className="flex w-full max-w-[576px] flex-col gap-4 pt-2.5 sm:flex-row sm:items-stretch"
+            >
+              <label className="sr-only" htmlFor="about-waitlist-email">
+                Email address
+              </label>
+              <input
+                id="about-waitlist-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                required
+                disabled={status === "loading"}
+                className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-4 font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#059669] disabled:opacity-60"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="primary_btn_two shrink-0 cursor-pointer px-8 py-[18px] text-base disabled:cursor-not-allowed sm:w-auto"
+              >
+                {status === "loading" ? "Joining…" : "Join Waitlist Now"}
+              </button>
+            </form>
+
+            {status === "success" && (
+              <p className="font-sans text-base font-medium text-[#6ee7b7]">
+                Thanks! You&apos;re on the list.
+              </p>
+            )}
+          </div>
+        </div>
+
+        <p className="w-full text-center font-sans text-xs font-normal leading-5 text-[#4b5563]">
+          © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned
+          Giving made practical
+        </p>
+      </div>
+    </footer>
+  );
+}

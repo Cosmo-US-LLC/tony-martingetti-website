@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import icon_1 from "@/assets/images/waitlist/be_first/icon_1.svg";
 import icon_2 from "@/assets/images/waitlist/be_first/icon_2.svg";
 import icon_3 from "@/assets/images/waitlist/be_first/icon_3.svg";
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const BENEFITS = [
   {
@@ -15,8 +15,7 @@ const BENEFITS = [
     id: 2,
     icon: icon_2,
     title: "Early-Bird Pricing",
-    description:
-      "Exclusive pricing for waitlist members, save $500 off regular price",
+    description: "Exclusive pricing for waitlist members",
   },
   {
     id: 3,
@@ -28,6 +27,10 @@ const BENEFITS = [
 ];
 
 export default function BeFirstInLine() {
+  const handleJoinClick = () => {
+    scrollToWaitlistJoin();
+  };
+
   return (
     <section className="w-full bg-[#f8fafc] py-16 md:py-20" data-name="Section">
       <div
@@ -39,7 +42,7 @@ export default function BeFirstInLine() {
           data-name="Header"
         >
           <h2
-            className="heading_two text-center text-[#0f172a]"
+            className="heading_two text-center md:max-w-[600px] max-w-[300px] text-[#0f172a]"
             data-name="Heading 2"
           >
             Be First in Line for Planned Giving Accelerated
@@ -78,14 +81,14 @@ export default function BeFirstInLine() {
             </div>
           ))}
         </div>
-
-        <Link
-          to="/waitlist#join"
-          className="primary_btn shrink-0"
+        <button
+          type="button"
+          onClick={handleJoinClick}
+          className="primary_btn shrink-0 cursor-pointer"
           data-name="Button"
         >
           Join the Waitlist Now
-        </Link>
+        </button>
       </div>
     </section>
   );

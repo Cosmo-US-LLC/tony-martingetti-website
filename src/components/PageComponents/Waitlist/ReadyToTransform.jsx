@@ -18,7 +18,7 @@ function ReadyToTransform() {
   return (
     <section
       id="join"
-      className="w-full bg-[#059669] px-4 py-10 md:px-8 md:py-16"
+      className="w-full scroll-mt-20 bg-[#059669] px-4 py-10 md:px-8 md:py-16"
       data-name="Section"
     >
       <div
@@ -29,7 +29,7 @@ function ReadyToTransform() {
           className="heading_two text-center text-white"
           data-name="Heading 2"
         >
-          <span className="block">Ready to Transform You</span>
+          <span className="block">Ready to Transform Your</span>
           <span className="block">Fundraising?</span>
         </h2>
 
@@ -62,7 +62,7 @@ function ReadyToTransform() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="secondary_btn shrink-0 inline-flex! flex-row! py-[16px]! sm:w-auto"
+            className="secondary_btn inline-flex! shrink-0 cursor-pointer flex-row! py-[16px]! disabled:cursor-not-allowed sm:w-auto"
             data-name="Button"
           >
             {status === "loading" ? "Joining…" : "Join Waitlist"}
