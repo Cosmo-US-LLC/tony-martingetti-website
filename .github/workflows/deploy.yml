@@ -29,13 +29,11 @@ jobs:
       - name: Link Vercel project
         run: |
           mkdir -p .vercel
-          echo '{"projectId":"${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}","orgId":"${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_ORG_ID }}"}' > .vercel/project.json
-
-      - name: Pull Vercel environment variables
-        run: vercel pull --yes --environment=production --token=${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_TOKEN }}
+          printf '{"projectId":"%s","orgId":"%s"}' \
+            "$VERCEL_PROJECT_ID" "$VERCEL_ORG_ID" > .vercel/project.json
         env:
-          VERCEL_ORG_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_ORG_ID }}
 
       - name: Build project
         run: vercel build --prod --token=${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_TOKEN }}
