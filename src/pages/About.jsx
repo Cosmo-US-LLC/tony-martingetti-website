@@ -12,6 +12,8 @@ function About() {
     "Meet Tony Martignetti, Esq. — America's Planned Giving Guide. Learn about his journey from law to legacy giving and his mission to launch 1,000+ programs.",
   );
 
+  // some changings
+
   return (
     <div>
       <AboutHero />
