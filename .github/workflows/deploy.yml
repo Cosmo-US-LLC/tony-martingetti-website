@@ -22,9 +22,13 @@ jobs:
       - name: Verify token access
         run: |
           echo "=== Vercel user ==="
-          curl -s -H "Authorization: Bearer $TOKEN" https://api.vercel.com/v2/user | python3 -c "import sys,json; d=json.load(sys.stdin); print('User:', d.get('user',{}).get('email','unknown'))" || echo "Token invalid or no user access"
-          echo "=== Project access ==="
-          curl -s -H "Authorization: Bearer $TOKEN" "https://api.vercel.com/v9/projects/$PROJECT_ID?teamId=$ORG_ID" | python3 -c "import sys,json; d=json.load(sys.stdin); print('Project:', d.get('name', d.get('error',{}).get('message','unknown')))" || echo "No project access"
+          curl -s -H "Authorization: Bearer $TOKEN" https://api.vercel.com/v2/user | python3 -c "import sys,json; d=json.load(sys.stdin); print('User:', d.get('user',{}).get('email','unknown'))"
+          echo "=== Project access (with teamId) ==="
+          curl -s -H "Authorization: Bearer $TOKEN" "https://api.vercel.com/v9/projects/$PROJECT_ID?teamId=$ORG_ID" | python3 -c "import sys,json; d=json.load(sys.stdin); print('Result:', d.get('name', d.get('error',{}).get('message','unknown')))"
+          echo "=== Project access (without teamId - personal) ==="
+          curl -s -H "Authorization: Bearer $TOKEN" "https://api.vercel.com/v9/projects/$PROJECT_ID" | python3 -c "import sys,json; d=json.load(sys.stdin); print('Result:', d.get('name', d.get('error',{}).get('message','unknown')))"
+          echo "=== List team projects ==="
+          curl -s -H "Authorization: Bearer $TOKEN" "https://api.vercel.com/v9/projects?teamId=$ORG_ID" | python3 -c "import sys,json; d=json.load(sys.stdin); [print('-', p['name'], p['id']) for p in d.get('projects',[])]"
         env:
           TOKEN: ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }}
           PROJECT_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}
