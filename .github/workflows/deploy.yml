@@ -23,8 +23,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: Build project
+        run: npm run build
+
+      - name: Prepare Vercel output structure
+        run: |
+          mkdir -p .vercel/output/static
+          cp -r dist/. .vercel/output/static/
+          echo '{"version":3}' > .vercel/output/config.json
 
       - name: Link Vercel project
         run: |
@@ -35,11 +41,8 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}
           VERCEL_ORG_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_ORG_ID }}
 
-      - name: Build project
-        run: vercel build --prod --token=${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
 
       - name: Deploy to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_TOKEN }}
