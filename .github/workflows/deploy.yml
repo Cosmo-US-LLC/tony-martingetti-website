@@ -22,6 +22,12 @@ jobs:
       - name: Remove stale Vercel config
         run: rm -rf .vercel
 
+      - name: Get personal account ID
+        run: |
+          USER_ID=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }}" \
+            https://api.vercel.com/v2/user | python3 -c "import sys,json; print(json.load(sys.stdin)['user']['id'])")
+          echo "VERCEL_ORG_ID=$USER_ID" >> $GITHUB_ENV
+
       - name: Deploy to Vercel
         run: npx vercel deploy --prod --token ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }} --yes
         env:
