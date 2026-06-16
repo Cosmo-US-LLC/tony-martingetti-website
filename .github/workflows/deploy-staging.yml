@@ -1,0 +1,36 @@
+name: Deploy Staging to Vercel
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Remove stale Vercel config
+        run: rm -rf .vercel
+
+      - name: Get personal account ID
+        run: |
+          USER_ID=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }}" \
+            https://api.vercel.com/v2/user | python3 -c "import sys,json; print(json.load(sys.stdin)['user']['id'])")
+          echo "VERCEL_ORG_ID=$USER_ID" >> $GITHUB_ENV
+
+      - name: Deploy to Vercel (Staging)
+        run: |
+          URL=$(npx vercel deploy --token ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }} --yes)
+          echo "Staging URL: $URL"
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}
