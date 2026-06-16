@@ -32,7 +32,7 @@ jobs:
         run: |
           URL=$(npx vercel deploy --token ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }} --yes)
           echo "Deployment URL: $URL"
-          npx vercel alias set $URL plannedgivingaccerlated-staging.vercel.app --token ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }} --yes
+          npx vercel alias set $URL plannedgivingaccerlated-staging.vercel.app --token ${{ secrets.VERCEL_TOKEN_PLANNEDGIVINGACCERLATED_2 }}
           echo "Stable Staging URL: https://plannedgivingaccerlated-staging.vercel.app"
         env:
           VERCEL_PROJECT_ID: ${{ secrets.PLANNEDGIVINGACCERLATED_VERCEL_PROJECT_ID }}
