@@ -48,7 +48,7 @@ export default function PrinciplesFAQ() {
                       {faq.question}
                     </p>
                     {isOpen && (
-                      <p className="font-sans text-base leading-6 text-[#1f2937]">
+                      <p className="whitespace-pre-line font-sans text-base leading-6 text-[#1f2937]">
                         {faq.answer}
                       </p>
                     )}

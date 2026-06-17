@@ -16,8 +16,8 @@ export const SUCCESS_STATS = [
 
 export const FEATURED_SUCCESS_STORY = {
   quote: [
-    "Within 6 months of joining Tony's program, we secured $2.2 million in confirmed gift commitments.",
-    "The step-by-step guidance and community support made all the difference. Don't waste another year wishing you had an effective planned gift program in place for your nonprofit.",
+    "\"Within 6 months of joining Tony's program, we secured $2.2 million in confirmed gift commitments.",
+    "The step-by-step guidance and community support made all the difference. Don't waste another year wishing you had an effective planned gift program in place for your nonprofit.\"",
   ],
   name: "Cheryl M. McCormick",
   role: "CEO",

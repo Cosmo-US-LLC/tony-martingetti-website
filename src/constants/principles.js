@@ -33,7 +33,7 @@ export const ONE_WEEK_LAUNCH_STEPS = [
     step: 1,
     title: "Identify your top prospects",
     description:
-      "Think of your loyal, committed, long-term donors ages 55–60 and older who take calls from someone at your nonprofit. Write down their names. You may not even need your CRM database names come to mind before you finish the sentence. If you identify six to ten top prospects just by thinking, you are done with Step 1.",
+      "Think of your loyal, committed, long-term donors ages 55–60 and older who take calls from someone at your nonprofit. Write down their names. You may not even need your CRM database, because names come to mind before you finish the sentence. If you identify six to ten top prospects just by thinking, you are done with Step 1.",
     icon: userListIcon,
   },
   {
@@ -61,7 +61,7 @@ export const ONE_WEEK_LAUNCH_STEPS = [
 
 export const ONE_WEEK_OUTCOMES = [
   "A top prospect list built from your existing donor database.",
-  "A clear understanding of why gifts in wills are the right starting gift.",
+  "A clear understanding of why gifts in wills are the right starting point.",
   "Your first cultivation and solicitation conversations underway.",
   "A simple system to track commitments and schedule follow-up.",
 ];
@@ -80,7 +80,7 @@ export const PLANNED_GIVING_MYTHS = [
     number: "MYTH 01",
     myth: "Planned Giving is only for our wealthy donors.",
     reality:
-      "Donor loyalty stands alone for Planned Giving prospecting. Charitable bequests are ideal for your small donors no lifetime cost means everyone has more liquid wealth at death than during life, regardless of their annual gift size.",
+      "Donor loyalty stands alone for Planned Giving prospecting. Charitable bequests are ideal for your small donors because there's no lifetime cost. That puts Planned Giving within every loyal donor's reach.",
     icon: DollarIcon,
   },
   {
@@ -138,58 +138,65 @@ export const PRINCIPLES_FAQS = [
   {
     id: "faq-1",
     question:
+      "What is The Martignetti 18 Reasons Why Bequests Are The Place To Launch Your Planned Giving?",
+    answer:
+      "These are Tony's 18 reasons why charitable bequests are the right place to start, like numbers 1-4:\n\n1. Most popular planned gift, by far.\n2. You don't need to educate your potential donors.\n3. You don't need to educate your staff.\n4. No lifetime cost.",
+  },
+  {
+    id: "faq-2",
+    question: "What is The Martignetti MEAL Plan?",
+    answer:
+      "Meals Expertly Allow Learning. The shared table, the understood cadence of meal service, the natural pauses with eating, and the timing, all create an environment ideal for learning a lot about your donor or potential donor.",
+  },
+  {
+    id: "faq-3",
+    question: "What is Planned Giving Multiplier?",
+    answer:
+      "The number of times greater a donor’s charitable bequest is, than their total lifetime giving.",
+  },
+  {
+    id: "faq-4",
+    question:
       "Is Planned Giving only for big nonprofits like universities and hospital systems?",
     answer:
       "No. Tony wrote this book specifically for small- and mid-size nonprofits. The myths that it requires large budgets, dedicated officers, or complex gift vehicles are false. You can launch with bequests alone and build a wildly successful program.",
   },
   {
-    id: "faq-2",
+    id: "faq-5",
     question: "How do I identify my top prospects?",
     answer:
       "Look for loyal, committed, long-term donors ages 55–60 and older with whom someone at your nonprofit has a strong enough relationship that the donor routinely takes your calls. When you describe these criteria in a room, names start coming to mind before you finish the sentence.",
   },
   {
-    id: "faq-3",
+    id: "faq-6",
     question: "What planned gift should I ask for first?",
     answer:
-      "A gift by will — a charitable bequest. It is the most popular planned gift by far. Everyone knows what a will is, how wills work, and that they need one. You don't need to educate your donors on the mechanics.",
+      "A gift by will, a charitable bequest. It is the most popular planned gift by far. Everyone knows what a will is, how wills work, and that they need one. You don't need to educate your donors on the mechanics.",
   },
   {
-    id: "faq-4",
+    id: "faq-7",
     question: "Is a Planned Giving conversation a conversation about death?",
     answer:
-      "No. It is a conversation about life — the life and sustainability of your nonprofit's work. You and your donor share a love of your mission. Focus there, and the conversation becomes natural.",
+      "No. It is a conversation about life, the life and sustainability of your nonprofit's work. You and your donor share a love of your mission. Focus there, and the conversation becomes natural.",
   },
   {
-    id: "faq-5",
+    id: "faq-8",
     question: "Do donors leave bequests for the tax benefits?",
     answer:
-      "Rarely. Fewer than one percent of estates face federal estate taxation. Donors leave bequests because they love your mission and want their values to keep working after they are gone. Tax advantages are a distant motivator at best.",
+      "Rarely. Fewer than one percent of estates face federal estate taxation. Donors leave bequests because they love your mission and want their values to keep working after they are gone. Tax advantages are only for the very wealthy.",
   },
   {
-    id: "faq-6",
+    id: "faq-9",
     question:
       "Will asking for planned gifts cause donors to reduce their annual giving?",
     answer:
       "Research shows the opposite. Donors who include your nonprofit in their will increase their other giving by an average of 75 percent. They feel closer to your work and give you more.",
   },
   {
-    id: "faq-7",
+    id: "faq-10",
     question: "How long does it take to start a Planned Giving program?",
     answer:
-      "You can begin within a week. You will not close a bequest in a week, but you can identify your top prospects, understand why you are launching with gifts in wills, and have your first solicitation conversations underway — all in that time.",
-  },
-  {
-    id: "faq-8",
-    question: "Do I need a large donor database to find top prospects?",
-    answer:
-      "No. Tony says when he begins a top prospect pool-building meeting with clients, names start coming to mind before he finishes explaining the criteria. You may not need your CRM at all for the first round of top prospects.",
-  },
-  {
-    id: "faq-9",
-    question: "What do I say in the first solicitation meeting?",
-    answer:
-      '"Because your work must continue in your community for decades and generations to come, your nonprofit is focusing on long-term gifts. We\'re asking lots of loyal donors, like you, to invest in our long-term. Would you consider including us in your will?" Then keep quiet. Let the donor speak next.',
+      "You can begin within a week. You will not close a bequest in a week, but you can identify your top prospects, understand why you are launching with gifts in wills, and have your first solicitation conversations underway, all in that time.",
   },
 ];
 
