@@ -32,7 +32,7 @@ const FRAMEWORK_CARDS = [
   {
     title: "1 Week Planned Giving Launch",
     description:
-      "A focused 1-week program to get your plan, messaging, and materials in place—fast.",
+      "A focused 1-week program to get your plan, messaging, and materials in place, fast.",
     icon: frameworkWeekIcon,
     targetId: "one-week-launch",
   },
