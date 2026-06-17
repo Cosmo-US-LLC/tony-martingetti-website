@@ -2,6 +2,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import PrinciplesHero from "@/components/PageComponents/Principles/PrinciplesHero";
 import ThreeStepLaunch from "@/components/PageComponents/Principles/ThreeStepLaunch";
 import SixMyths from "@/components/PageComponents/Principles/SixMyths";
+import OneWeekLaunch from "@/components/PageComponents/Principles/OneWeekLaunch";
 import PrinciplesFAQ from "@/components/PageComponents/Principles/PrinciplesFAQ";
 import PrinciplesFooter from "@/components/PageComponents/Principles/PrinciplesFooter";
 
@@ -16,6 +17,7 @@ function Principles() {
       <PrinciplesHero />
       <ThreeStepLaunch />
       <SixMyths />
+      <OneWeekLaunch />
       <PrinciplesFAQ />
       <PrinciplesFooter />
     </div>

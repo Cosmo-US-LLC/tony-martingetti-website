@@ -18,7 +18,7 @@ export default function PrinciplesFooter() {
                 Begin Today
               </p>
               <h2 className="heading_two text-white">
-                Ready to launch your planned giving program?
+                Ready to launch your Planned Giving program?
               </h2>
               <p className="card_body text-[#f7f7f7]">
                 <span className="block">

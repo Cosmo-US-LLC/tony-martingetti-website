@@ -16,8 +16,8 @@ export const SUCCESS_STATS = [
 
 export const FEATURED_SUCCESS_STORY = {
   quote: [
-    "Within 6 months of joining Tony's program, we secured $2.2 million in confirmed gift commitments.",
-    "The step-by-step guidance and community support made all the difference. Don't waste another year wishing you had an effective planned gift program in place for your nonprofit.",
+    "\"Within 6 months of joining Tony's program, we secured $2.2 million in confirmed gift commitments.",
+    "The step-by-step guidance and community support made all the difference. Don't waste another year wishing you had an effective planned gift program in place for your nonprofit.\"",
   ],
   name: "Cheryl M. McCormick",
   role: "CEO",
@@ -68,7 +68,7 @@ export const TESTIMONIALS = [
   {
     id: "radio-listener",
     quote:
-      "Tony is a font of knowledge — and a great partner in fundraising. If you need help, advice, or a trusted sounding board on planned giving, fundraising, or nonprofit management, Tony gets results. Thank you, Tony!",
+      "Tony is a font of knowledge — and a great partner in fundraising. If you need help, advice, or a trusted sounding board on Planned Giving, fundraising, or nonprofit management, Tony gets results. Thank you, Tony!",
     name: "Nonprofit Radio Listener",
     role: "Nonprofit Consultant",
     category: "Nonprofit Radio",
@@ -101,21 +101,39 @@ export const TESTIMONIALS = [
 
 export const VIDEO_TESTIMONIALS = [
   {
-    id: "video-kathryn",
-    imageKey: "kathryn_sides",
+    id: "video-Terry ",
+    imageKey: "terry_lawler",
     quote:
-      "Tony's guidance facilitated our successful navigation of NYS Department of Insurance requirements to formalize our charitable gift annuity program. His thoughtful strategy also enabled us to confirm several estate commitments.",
-    name: "Kathryn J. Sides",
-    role: "Director of Development, The Stony Brook School",
+      "Tony worked with our Planned Giving Committee, who had no experience in this, to help them understand how a Planned Giving program might work, and how to launch, publicize and integrate our Planned Giving program into our general communications.  He was very good working with the committee, very knowledgeable and great to work with.  I highly recommend him.",
+    name: "Terry Lawler",
+    role: "Principal at Terry Lawler Consulting",
     category: "Consulting",
   },
   {
-    id: "video-carole",
-    imageKey: "carole_weaver",
+    id: "video-norman",
+    imageKey: "norman_olshansky",
     quote:
-      "Fight for this budget line item! Overwhelmed by a $1.3 million annuity program, a rich bequest harvest, state audits, and compliance problems, I turned to Tony — and I'm so glad I did. Accessible, expert, and effective. Worth every cent.",
-    name: "Carole Weaver, Ph.D., CFRE",
-    role: "Major Gifts & Planned Giving, The College of New Rochelle",
-    category: "Program Growth",
+      "I was a guest on Tony's Nonprofit Radio show and was very impressed, not only with the quality of the questions asked, but also the thought and preparation he gave prior to the show. He made the experience very comfortable and enjoyable for me and as a result, informative and valuable to his listeners.",
+    name: "Norman Olshansky",
+    role: "President: NFP Consulting Resources",
+    category: "Consulting",
+  },
+  {
+    id: "video-dan",
+    imageKey: "dan_rostan",
+    quote:
+      "I learned a lot about Planned Giving from Tony. He has a fun-loving approach to a topic that's too-often branded (wrongly) as boring or (worse) depressing.",
+    name: "Dan Rostan",
+    role: "Mental Health Counselor in Training",
+    category: "Consulting",
+  },
+  {
+    id: "video-gail",
+    imageKey: "gail_bower",
+    quote:
+      "If you're not listening to Tony's fast-paced, pithy, and content-rich Nonprofit Radio, you're missing out on the most contemporary and thought-provoking ideas in the nonprofit sector. Tune in!",
+    name: "Gail Bower",
+    role: "Advisor to mission-driven organizations ",
+    category: "Consulting",
   },
 ];

@@ -9,7 +9,7 @@ import SuccessStoriesFooter from "@/components/PageComponents/SuccessStories/Suc
 function SuccessStories() {
   usePageMeta(
     "Success Stories | Tony Martignetti Planned Giving",
-    "Read real success stories and testimonials from nonprofits who built planned giving programs with Tony Martignetti.",
+    "Read real success stories and testimonials from nonprofits who built Planned Giving programs with Tony Martignetti.",
   );
 
   return (
