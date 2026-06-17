@@ -12,7 +12,7 @@ import ReadyToTransform from "@/components/PageComponents/Waitlist/ReadyToTransf
 function Waitlist() {
   usePageMeta(
     "Scale Your Legacy Fundraising | Planned Giving Accelerated by Tony",
-    "Stop missing out on 90% of potential legacy gifts. Get the blueprints, templates, and strategy to build a $2M+ planned giving program.",
+    "Stop missing out on 90% of potential legacy gifts. Get the blueprints, templates, and strategy to build a $2M+ Planned Giving program.",
   );
 
   return (

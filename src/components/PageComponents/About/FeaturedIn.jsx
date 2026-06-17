@@ -8,7 +8,23 @@ import logo6 from "@/assets/images/about/media/logo_6.webp";
 import logo7 from "@/assets/images/about/media/logo_7.webp";
 import logo8 from "@/assets/images/about/media/logo_8.webp";
 
-const MEDIA_LOGOS = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
+const MEDIA_LOGO_ROWS = [
+  [logo1, logo2, logo3],
+  [logo4, logo5, logo6],
+  [logo7, logo8],
+];
+
+function MediaLogoCard({ logo }) {
+  return (
+    <div className="flex h-16 min-w-0 flex-1 items-center justify-center rounded-[10px] border border-[#dedede] bg-white px-3">
+      <img
+        src={logo}
+        alt=""
+        className="max-h-10 w-auto max-w-full object-contain"
+      />
+    </div>
+  );
+}
 
 export default function FeaturedIn() {
   return (
@@ -28,17 +44,12 @@ export default function FeaturedIn() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            {MEDIA_LOGOS.map((logo, index) => (
-              <div
-                key={index}
-                className="flex h-16 items-center justify-center rounded-[10px] border border-[#dedede] bg-white px-3"
-              >
-                <img
-                  src={logo}
-                  alt=""
-                  className="max-h-10 w-auto max-w-full object-contain"
-                />
+          <div className="flex w-full flex-col gap-4">
+            {MEDIA_LOGO_ROWS.map((row, rowIndex) => (
+              <div key={rowIndex} className="flex w-full gap-2">
+                {row.map((logo, logoIndex) => (
+                  <MediaLogoCard key={logoIndex} logo={logo} />
+                ))}
               </div>
             ))}
           </div>

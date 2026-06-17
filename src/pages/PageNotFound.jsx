@@ -4,8 +4,8 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function PageNotFound() {
   usePageMeta(
-    "Page Not Found | Tony Martingetti",
-    "The page you’re looking for could not be found on Tony Martingetti’s website."
+    "Page Not Found | Tony Martignetti",
+    "The page you’re looking for could not be found on Tony Martignetti's website."
   );
 
   return (

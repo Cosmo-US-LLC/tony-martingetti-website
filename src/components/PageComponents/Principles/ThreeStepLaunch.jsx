@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { LAUNCH_STEPS } from "@/constants/principles";
+import stepTakeawayCheckIcon from "@/assets/images/principles/icons/step_takeaway_check.svg";
+import {
+  LAUNCH_STEP_TAKEAWAYS,
+  LAUNCH_STEPS,
+} from "@/constants/principles";
+import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
 import QuoteBlock from "./QuoteBlock";
 
 const STEP_COUNT = LAUNCH_STEPS.length;
@@ -35,10 +40,11 @@ export default function ThreeStepLaunch() {
         return;
       }
 
+      const stickyEl = track.querySelector(".launch-scroll-sticky");
       const rect = track.getBoundingClientRect();
       const trackHeight = track.offsetHeight;
-      const viewportHeight = window.innerHeight;
-      const scrollableDistance = trackHeight - viewportHeight;
+      const stickyHeight = stickyEl?.offsetHeight ?? window.innerHeight;
+      const scrollableDistance = trackHeight - stickyHeight;
 
       if (scrollableDistance <= 0) {
         setActiveStep(STEP_COUNT - 1);
@@ -85,31 +91,32 @@ export default function ThreeStepLaunch() {
   return (
     <section
       id="three-step-launch"
-      className="w-full scroll-mt-20 bg-white"
+      className="w-full scroll-mt-20 mt-16 mb-16 bg-white"
       data-name="Three Step Launch"
     >
       <div className="mx-auto w-full max-w-[1280px] px-4 md:px-8">
-        <div
-          ref={trackRef}
-          className="launch-scroll-track relative"
-          style={{ "--launch-step-count": STEP_COUNT }}
-        >
-          <div className="launch-scroll-sticky">
-            <div className="rounded-3xl bg-[#f8fafc] px-6 py-12 md:px-[50px] md:py-[60px]">
+        <div className="rounded-3xl bg-[#f8fafc] px-4 py-12 md:px-[50px] md:py-[60px]">
+          <div
+            ref={trackRef}
+            className="launch-scroll-track relative"
+            style={{ "--launch-step-count": STEP_COUNT }}
+          >
+            <div className="launch-scroll-sticky">
               <div className="flex flex-col gap-8 md:gap-[30px]">
-                <div className="flex max-w-[711px] flex-col gap-4">
+                <div className="flex max-w-[740px] flex-col gap-4">
                   <p className="font-sans text-base font-semibold leading-[22px] text-[#059669]">
                     Signature Framework
                   </p>
                   <h2 className="heading_two text-[#0f172a]">
-                    The Martignetti 3-Step Launch
+                    <span className="block">The Martignetti 3-Step,</span>
+                    <span className="block">1-Week Planned Giving Launch</span>
                   </h2>
                   <p className="font-sans text-lg leading-7 text-[#4b5563] md:text-xl md:leading-7">
-                    Most nonprofits stall on planned giving because they think
-                    they need a big budget, a dedicated officer, and years of
-                    runway. The Martignetti 3-Step Launch is built on the
-                    opposite idea: you can start with the donors and the gifts
-                    you already have access to.
+                    Everything you need to inaugurate Planned Giving at your
+                    nonprofit within a week. These are the steps you can start
+                    taking even next week to launch your Planned Giving program.
+                    Together they&apos;ll equip you to open conversations and get
+                    to solicitations of your top prospects all within a week.
                   </p>
                 </div>
 
@@ -133,7 +140,7 @@ export default function ThreeStepLaunch() {
                     {LAUNCH_STEPS.map((item, index) => (
                       <article
                         key={item.step}
-                        className={`launch-step relative flex flex-col gap-4 px-0 py-[30px] lg:px-6 ${
+                        className={`launch-step relative flex flex-col gap-6 md:gap-8 px-0 py-[30px] lg:px-6 ${
                           isStepVisible(index) ? "is-visible" : ""
                         }`}
                       >
@@ -143,7 +150,7 @@ export default function ThreeStepLaunch() {
                           </span>
                         </div>
                         <div className="flex flex-col gap-3">
-                          <h3 className="font-heading text-xl font-bold uppercase leading-8 text-[#040a16] md:text-2xl">
+                          <h3 className="font-heading text-xl font-bold uppercase leading-8 text-[#040a16] md:text-2xl md:leading-8">
                             {item.title}
                           </h3>
                           <p className="font-sans text-base leading-[26px] text-[#020120] md:text-lg">
@@ -154,13 +161,44 @@ export default function ThreeStepLaunch() {
                     ))}
                   </div>
                 </div>
-
-                <QuoteBlock
-                  quote={`"You do not start Planned Giving with your richest donors. You start with your most loyal ones."`}
-                  attribution="— Tony Martignetti, Planned Giving Advisor"
-                />
               </div>
             </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-8 md:mt-[30px] md:gap-[30px]">
+            <div className="w-full rounded-[30px] border border-[#d8d8d8] px-4 md:px-6 py-6 md:py-[30px]">
+              <h3 className="font-heading text-[28px] font-bold uppercase leading-8 text-[#040a16] md:text-[35px]">
+                Step takeaways
+              </h3>
+              <div className="mt-10 grid gap-10 md:grid-cols-2">
+                {LAUNCH_STEP_TAKEAWAYS.map((takeaway) => (
+                  <div key={takeaway} className="flex gap-3">
+                    <img
+                      src={stepTakeawayCheckIcon}
+                      alt=""
+                      className="mt-0.5 size-5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <p className="font-sans text-lg leading-[26px] text-[#020120]">
+                      {takeaway}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <QuoteBlock
+              quote={`"Because your work must continue in your community for decades and generations to come, your nonprofit is focusing on long-term gifts. Would you consider including us in your will?"`}
+              attribution="— Tony Martignetti"
+            />
+
+            <button
+              type="button"
+              onClick={() => scrollToPrinciplesJoin()}
+              className="primary_btn_two w-fit cursor-pointer px-8 py-[18px] text-base shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
+            >
+              Join Waitlist
+            </button>
           </div>
         </div>
       </div>

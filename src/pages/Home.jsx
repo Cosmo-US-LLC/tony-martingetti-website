@@ -4,15 +4,15 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Home() {
   usePageMeta(
-    "Tony Martingetti | Home",
-    "Discover Tony Martingetti’s work, resources, and ways to connect so you can lead with greater purpose and impact."
+    "Tony Martignetti | Home",
+    "Discover Tony Martignetti's work, resources, and ways to connect so you can lead with greater purpose and impact."
   );
 
   return (
     <div className="min-h-[60vh]">
       <section className="mx-auto max-w-6xl px-4 py-16 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-          Tony Martingetti
+          Tony Martignetti
         </h1>
         <p className="mt-4 text-lg text-gray-600">
           Welcome to the official website.
