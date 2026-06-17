@@ -1,6 +1,6 @@
 const STATS = [
   { value: "$150M+", label: "In bequests secured" },
-  { value: "29+", label: "Years in planned giving" },
+  { value: "29+", label: "Years in Planned Giving" },
   { value: "1000+", label: "Programs to launch" },
   { value: "750+", label: "Podcast Episodes" },
 ];

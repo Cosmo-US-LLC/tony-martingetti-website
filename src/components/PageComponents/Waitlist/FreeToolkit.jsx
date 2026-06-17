@@ -7,7 +7,7 @@ const TOOLKIT_ITEMS = [
   {
     id: 1,
     icon: icon_1,
-    title: "3-Step Launch Roadmap",
+    title: "My launch is 3 steps. It's in the book.",
     description:
       "A clear, actionable plan to go from zero to a thriving program in 90 days",
   },

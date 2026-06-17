@@ -1,4 +1,4 @@
-# Tony Martingetti Website
+# Tony Martignetti Website
 
 React + Vite + Tailwind CSS (v4) + react-router-dom + Lucide React icons.
 

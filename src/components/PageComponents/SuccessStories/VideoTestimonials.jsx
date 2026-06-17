@@ -1,13 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import kathrynImage from "@/assets/images/success_stories/video/kathryn_sides.webp";
-import caroleImage from "@/assets/images/success_stories/video/carole_weaver.webp";
-import playIcon from "@/assets/images/success_stories/icons/play.svg";
+import TerryImage from "@/assets/images/success_stories/video/terry_lawler.webp";
+import NormanImage from "@/assets/images/success_stories/video/norman_olshansky.webp";
+import DanImage from "@/assets/images/success_stories/video/dan_rostan.webp";
+import GailImage from "@/assets/images/success_stories/video/gail_bower.webp";
 import { VIDEO_TESTIMONIALS } from "@/constants/successStories";
 import { CategoryTag, StarRating } from "./TestimonialCard";
 
 const VIDEO_IMAGES = {
-  kathryn_sides: kathrynImage,
-  carole_weaver: caroleImage,
+  terry_lawler: TerryImage,
+  norman_olshansky: NormanImage,
+  dan_rostan: DanImage,
+  gail_bower: GailImage,
 };
 
 const SCROLL_EPSILON = 8;
@@ -16,15 +19,15 @@ const CARD_GAP = 24;
 function VideoTestimonialCard({ imageKey, quote, name, role, category }) {
   return (
     <article className="flex w-[min(807px,90vw)] shrink-0 snap-start flex-col rounded-xl border border-[#dedede] bg-white p-6">
-      <div className="flex flex-col gap-5 lg:flex-row lg:items-center">
-        <div className="relative h-[360px] w-full shrink-0 overflow-hidden rounded-xl lg:h-[330px] lg:w-[284px]">
+      <div className="flex flex-col gap-5 lg:h-[358px] lg:flex-row lg:items-stretch lg:gap-5">
+        <div className="relative h-[360px] w-full shrink-0 overflow-hidden rounded-xl lg:h-full lg:w-[284px]">
           <img
             src={VIDEO_IMAGES[imageKey]}
             alt={name}
             className="h-full w-full object-cover"
             draggable={false}
           />
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between px-3 pb-3.5">
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/30 via-black/30 to-transparent px-3 pb-3.5 pt-10">
             <div className="text-white">
               <p className="font-sans text-sm font-bold uppercase leading-6">
                 {name.split(",")[0]}
@@ -33,19 +36,21 @@ function VideoTestimonialCard({ imageKey, quote, name, role, category }) {
                 {role.split(",")[0]}
               </p>
             </div>
-            <img src={playIcon} alt="" className="size-[35px]" aria-hidden="true" />
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col gap-8 lg:gap-[90px]">
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-nowrap items-center justify-between gap-3">
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-between lg:h-full">
+          <div className="flex min-h-0 flex-col gap-5">
+            <div className="flex shrink-0 flex-nowrap items-center justify-between gap-3">
               <StarRating />
               <CategoryTag label={category} />
             </div>
-            <p className="paragraph_one text-[#4b5563]">&ldquo;{quote}&rdquo;</p>
+            <p className="paragraph_one min-h-0 overflow-y-auto text-[#4b5563] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              &ldquo;{quote}&rdquo;
+            </p>
           </div>
-          <div className="flex flex-col gap-5">
+
+          <div className="mt-5 flex shrink-0 flex-col gap-5 lg:mt-0">
             <div className="h-px w-full bg-[#252525]/10" />
             <div>
               <div className="flex items-center gap-1">
