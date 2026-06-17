@@ -188,7 +188,7 @@ export default function ThreeStepLaunch() {
             </div>
 
             <QuoteBlock
-              quote={`"Because your work must continue in your community for decades and generations to come, your nonprofit is focusing on long-term gifts. Would you consider including us in your will?"`}
+              quote={`"Because your work must continue in your community for decades and generations to come, your nonprofit is focusing on long-term gifts."`}
               attribution="— Tony Martignetti"
             />
 

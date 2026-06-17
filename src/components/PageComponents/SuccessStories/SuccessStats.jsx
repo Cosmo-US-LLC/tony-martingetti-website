@@ -7,7 +7,7 @@ export default function SuccessStats() {
         {SUCCESS_STATS.map((stat) => (
           <div
             key={stat.label}
-            className="flex w-full max-w-[290px] flex-col items-center gap-5 px-8 py-9 text-center"
+            className="flex w-full max-w-[320px] flex-col items-center gap-5 px-8 py-9 text-center"
           >
             <p className="font-heading text-[40px] font-bold uppercase leading-7 tracking-[0.36px] text-[#059669] md:text-[55px]">
               {stat.value}
