@@ -22,7 +22,7 @@ export function CategoryTag({ label, variant = "neutral" }) {
 
   return (
     <span
-      className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-4 py-2 font-sans text-xs uppercase leading-4 ${styles}`}
+      className={`inline-flex shrink-0 w-fit items-center whitespace-nowrap rounded-full px-4 py-2 font-sans text-xs uppercase leading-4 ${styles}`}
     >
       {label}
     </span>

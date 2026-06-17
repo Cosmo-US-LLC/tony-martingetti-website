@@ -44,7 +44,7 @@ export default function OneWeekLaunch() {
                 Proof of the speed promise
               </p>
               <h2 className="heading_two text-white">
-                The One-Week Planned Giving Launch
+                The Martignetti 3-Step, 1-Week Planned Giving Launch
               </h2>
               <p className="font-sans text-lg leading-7 text-[#f4f4f4] md:text-xl md:leading-7">
                 Here is what the first week looks like when you follow The
@@ -59,6 +59,7 @@ export default function OneWeekLaunch() {
                     <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-6">
                       {ONE_WEEK_LAUNCH_STEPS.map((item, index) => {
                         const isActive = index === activeStep;
+                        const isFollowUpStep = item.step === 4;
                         return (
                           <button
                             key={item.step}
@@ -69,12 +70,25 @@ export default function OneWeekLaunch() {
                             }`}
                             aria-current={isActive ? "step" : undefined}
                           >
-                            <span className="font-sans text-base opacity-80">
-                              Step
-                            </span>
-                            <span className="font-heading text-[40px] font-bold leading-none md:text-[48px]">
-                              {String(item.step).padStart(2, "0")}
-                            </span>
+                            {isFollowUpStep ? (
+                              <>
+                                <span className="font-sans text-base opacity-80">
+                                  Follow
+                                </span>
+                                <span className="font-heading text-[40px] font-bold leading-none md:text-[48px]">
+                                  up
+                                </span>
+                              </>
+                            ) : (
+                              <>
+                                <span className="font-sans text-base opacity-80">
+                                  Step
+                                </span>
+                                <span className="font-heading text-[40px] font-bold leading-none md:text-[48px]">
+                                  {String(item.step).padStart(2, "0")}
+                                </span>
+                              </>
+                            )}
                           </button>
                         );
                       })}
