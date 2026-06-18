@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import SuccessStories from "./pages/SuccessStories";
 import Principles from "./pages/Principles";
+import MyBook from "./pages/MyBook";
 import Waitlist from "./pages/Waitlist";
 import PageNotFound from "./pages/PageNotFound";
 import ScrollToHash from "./utils/ScrollToHash";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/principles" element={<Principles />} />
+          <Route path="/my-book" element={<MyBook />} />
           <Route path="/waitlist" element={<Waitlist />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />

@@ -5,6 +5,7 @@ import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
 import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
 import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
 import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
+import { scrollToMyBookNotify } from "@/utils/scrollToMyBookNotify";
 import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 export default function Navbar() {
@@ -19,6 +20,8 @@ export default function Navbar() {
       scrollToSuccessStoriesJoin();
     } else if (location.pathname === "/principles") {
       scrollToPrinciplesJoin();
+    } else if (location.pathname === "/my-book") {
+      scrollToMyBookNotify();
     } else if (
       location.pathname === "/waitlist" ||
       location.pathname === "/"
@@ -60,6 +63,14 @@ export default function Navbar() {
               Success Stories
             </Link>
 
+            <Link to="/principles" className="nav_link whitespace-nowrap">
+              Principles
+            </Link>
+
+            <Link to="/my-book" className="nav_link whitespace-nowrap">
+              My Book
+            </Link>
+
             {/* Join Waitlist CTA */}
             <button
               onClick={() => handleJoinClick()}
@@ -96,6 +107,22 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               Success Stories
+            </Link>
+
+            <Link
+              to="/principles"
+              className="nav_link"
+              onClick={() => setMobileOpen(false)}
+            >
+              Principles
+            </Link>
+
+            <Link
+              to="/my-book"
+              className="nav_link"
+              onClick={() => setMobileOpen(false)}
+            >
+              My Book
             </Link>
 
             {/* Mobile CTA */}

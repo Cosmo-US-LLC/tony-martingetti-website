@@ -80,6 +80,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    to="/my-book"
+                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  >
+                    My Book
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     // to="/contact"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >

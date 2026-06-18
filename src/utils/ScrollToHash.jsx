@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { scrollToAboutJoin } from "./scrollToAboutJoin";
 import { scrollToSuccessStoriesJoin } from "./scrollToSuccessStoriesJoin";
 import { scrollToPrinciplesJoin } from "./scrollToPrinciplesJoin";
+import { scrollToMyBookNotify } from "./scrollToMyBookNotify";
 import { scrollToWaitlistJoin } from "./scrollToWaitlistJoin";
 
 export default function ScrollToHash() {
@@ -23,6 +24,11 @@ export default function ScrollToHash() {
 
     if (hash === "#principles-join") {
       scrollToPrinciplesJoin();
+      return;
+    }
+
+    if (hash === "#my-book-notify") {
+      scrollToMyBookNotify();
       return;
     }
 
