@@ -7,7 +7,8 @@ export default function Layout() {
   const hideFooter =
     pathname === "/about" ||
     pathname === "/success-stories" ||
-    pathname === "/principles";
+    pathname === "/principles" ||
+    pathname === "/my-book";
 
   return (
     <div>
