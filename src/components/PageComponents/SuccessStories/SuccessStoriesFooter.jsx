@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useWaitlistForm } from "@/hooks/useWaitlistForm";
 
 export default function SuccessStoriesFooter() {
@@ -73,9 +74,9 @@ export default function SuccessStoriesFooter() {
             Planned Giving made practical
           </p>
           <p className="mt-1 whitespace-nowrap md:hidden">
-            <a href="#" className="underline hover:text-[#059669]">
+            <Link to="/privacy-policy" className="underline hover:text-[#059669]">
               Privacy Policy
-            </a>
+            </Link>
             <span className="mx-1">|</span>
             <a
               href="mailto:support@tonymartignetti.com"
@@ -89,9 +90,9 @@ export default function SuccessStoriesFooter() {
             © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned
             Giving made practical{" "}
             <span className="mx-1">|</span>
-            <a href="#" className="underline hover:text-[#059669]">
+            <Link to="/privacy-policy" className="underline hover:text-[#059669]">
               Privacy Policy
-            </a>
+            </Link>
             <span className="mx-1">|</span>
             <a
               href="mailto:support@tonymartignetti.com"

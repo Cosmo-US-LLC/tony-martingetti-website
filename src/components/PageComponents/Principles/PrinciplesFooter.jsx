@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function PrinciplesFooter() {
   const currentYear = new Date().getFullYear();
@@ -52,18 +52,18 @@ export default function PrinciplesFooter() {
               Contact Us
             </a>
             <span className="mx-1">|</span>
-            <a href="#" className="underline hover:text-[#059669]">
+            <Link to="/privacy-policy" className="underline hover:text-[#059669]">
               Privacy Policy
-            </a>
+            </Link>
           </p>
 
           <p className="hidden md:block">
             © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned
             Giving made practical{" "}
             <span className="mx-1">·</span>
-            <a href="#" className="underline hover:text-[#059669]">
+            <Link to="/privacy-policy" className="underline hover:text-[#059669]">
               Privacy Policy
-            </a>
+            </Link>
           </p>
         </div>
       </div>

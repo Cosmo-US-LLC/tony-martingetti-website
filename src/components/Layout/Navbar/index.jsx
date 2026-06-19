@@ -8,6 +8,7 @@ import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
 import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const NAV_LINKS = [
+  { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/principles", label: "Principles" },
@@ -71,10 +72,11 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-8 md:flex" data-name="Nav links">
-            {NAV_LINKS.map(({ to, label }) => (
+            {NAV_LINKS.map(({ to, label, end }) => (
               <NavLink
                 key={to}
                 to={to}
+                end={end}
                 className={({ isActive }) => getNavLinkClass(isActive)}
               >
                 {label}
@@ -102,10 +104,11 @@ export default function Navbar() {
 
         {mobileOpen && (
           <div className="flex flex-col items-center justify-center gap-5 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-12 backdrop-blur-sm md:hidden">
-            {NAV_LINKS.map(({ to, label }) => (
+            {NAV_LINKS.map(({ to, label, end }) => (
               <NavLink
                 key={to}
                 to={to}
+                end={end}
                 className={({ isActive }) => getNavLinkClass(isActive, true)}
                 onClick={() => setMobileOpen(false)}
               >
