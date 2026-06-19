@@ -41,10 +41,7 @@ export default function AboutTheAuthor() {
             decades helping small- and mid-size nonprofits build lasting
             endowments not with complicated gift vehicles or expensive
             consultants, but with a simple, repeatable process starting with
-            bequests.
-          </p>
-          <p className="mt-4">
-            This book cuts through the myths that keep nonprofits stuck, and
+            bequests. This book cuts through the myths that keep nonprofits stuck, and
             gives you a clear 3-step, 1-week launch plan you can start on
             Monday. Written for executive directors, fundraisers, and board
             members who are tired of &quot;someday&quot; and ready to build

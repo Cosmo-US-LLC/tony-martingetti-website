@@ -1,12 +1,28 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
 import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
 import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
 import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
-import { scrollToMyBookNotify } from "@/utils/scrollToMyBookNotify";
 import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+
+const NAV_LINKS = [
+  { to: "/about", label: "About" },
+  { to: "/success-stories", label: "Success Stories" },
+  { to: "/principles", label: "Principles" },
+  { to: "/my-book", label: "My Book" },
+];
+
+function getNavLinkClass(isActive, mobile = false) {
+  return [
+    "nav_link",
+    isActive ? "nav_link_active" : "",
+    mobile ? "" : "whitespace-nowrap",
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -21,7 +37,7 @@ export default function Navbar() {
     } else if (location.pathname === "/principles") {
       scrollToPrinciplesJoin();
     } else if (location.pathname === "/my-book") {
-      scrollToMyBookNotify();
+      navigate("/#join");
     } else if (
       location.pathname === "/waitlist" ||
       location.pathname === "/"
@@ -55,21 +71,15 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-8 md:flex" data-name="Nav links">
-            <Link to="/about" className="nav_link whitespace-nowrap">
-              About
-            </Link>
-
-            <Link to="/success-stories" className="nav_link whitespace-nowrap">
-              Success Stories
-            </Link>
-
-            <Link to="/principles" className="nav_link whitespace-nowrap">
-              Principles
-            </Link>
-
-            <Link to="/my-book" className="nav_link whitespace-nowrap">
-              My Book
-            </Link>
+            {NAV_LINKS.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) => getNavLinkClass(isActive)}
+              >
+                {label}
+              </NavLink>
+            ))}
 
             {/* Join Waitlist CTA */}
             <button
@@ -92,38 +102,16 @@ export default function Navbar() {
 
         {mobileOpen && (
           <div className="flex flex-col items-center justify-center gap-5 border-t border-[#f3f4f6] bg-[rgba(255,255,255,0.98)] px-6 py-12 backdrop-blur-sm md:hidden">
-            
-            <Link
-              to="/about"
-              className="nav_link"
-              onClick={() => setMobileOpen(false)}
-            >
-              About
-            </Link>
-
-            <Link
-              to="/success-stories"
-              className="nav_link"
-              onClick={() => setMobileOpen(false)}
-            >
-              Success Stories
-            </Link>
-
-            <Link
-              to="/principles"
-              className="nav_link"
-              onClick={() => setMobileOpen(false)}
-            >
-              Principles
-            </Link>
-
-            <Link
-              to="/my-book"
-              className="nav_link"
-              onClick={() => setMobileOpen(false)}
-            >
-              My Book
-            </Link>
+            {NAV_LINKS.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) => getNavLinkClass(isActive, true)}
+                onClick={() => setMobileOpen(false)}
+              >
+                {label}
+              </NavLink>
+            ))}
 
             {/* Mobile CTA */}
             <button

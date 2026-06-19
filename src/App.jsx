@@ -22,7 +22,7 @@ function App() {
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/principles" element={<Principles />} />
           <Route path="/my-book" element={<MyBook />} />
-          <Route path="/waitlist" element={<Waitlist />} />
+          {/* <Route path="/waitlist" element={<Waitlist />} /> */}
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

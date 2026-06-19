@@ -11,7 +11,7 @@ export default function BookFooter() {
     >
       <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center gap-5 px-4 md:px-8">
         <div className="w-full rounded-[20px] bg-[#0f172a] px-6 py-12 md:px-16 md:py-[70px]">
-          <div className="mx-auto flex max-w-[576px] flex-col items-center gap-3 text-center">
+          <div className="mx-auto flex max-w-[700px] flex-col items-center gap-3 text-center">
             <p className="font-sans text-base font-semibold leading-[22px] text-[#059669]">
               Begin Today
             </p>

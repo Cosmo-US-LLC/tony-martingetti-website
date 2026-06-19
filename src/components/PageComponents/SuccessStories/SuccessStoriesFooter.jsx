@@ -1,19 +1,9 @@
-import { useState } from "react";
+import { useWaitlistForm } from "@/hooks/useWaitlistForm";
 
 export default function SuccessStoriesFooter() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle");
+  const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
+    useWaitlistForm("success-stories");
   const currentYear = new Date().getFullYear();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setStatus("loading");
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-    }, 800);
-  }
 
   return (
     <footer
@@ -51,21 +41,27 @@ export default function SuccessStoriesFooter() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
                 required
-                disabled={status === "loading"}
+                disabled={isLoading}
                 className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-4 font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#059669] disabled:opacity-60"
               />
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={isLoading}
                 className="primary_btn_two shrink-0 cursor-pointer px-8 py-[18px] text-base disabled:cursor-not-allowed sm:w-auto"
               >
-                {status === "loading" ? "Joining…" : "Join Waitlist Now"}
+                {isLoading ? "Joining…" : "Join Waitlist Now"}
               </button>
             </form>
 
             {status === "success" && (
               <p className="font-sans text-base font-medium text-[#6ee7b7]">
                 Thanks! You&apos;re on the list.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="font-sans text-base font-medium text-red-300">
+                {errorMessage}
               </p>
             )}
           </div>
@@ -77,7 +73,6 @@ export default function SuccessStoriesFooter() {
             Planned Giving made practical
           </p>
           <p className="mt-1 whitespace-nowrap md:hidden">
-            
             <a href="#" className="underline hover:text-[#059669]">
               Privacy Policy
             </a>

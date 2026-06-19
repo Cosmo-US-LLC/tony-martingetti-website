@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { Linkedin, Mail } from "lucide-react";
 import FOOTER_LOGO_URL from "@/assets/images/footer/tm_footer_logo.svg";
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -46,14 +46,14 @@ export default function Footer() {
                 Quick Links
               </h4>
               <ul className="flex flex-col gap-3">
-                <li>
+                {/* <li>
                   <Link
                     to="/waitlist"
                     className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
                   >
                     Join Waitlist
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     to="/about"
@@ -86,46 +86,33 @@ export default function Footer() {
                     My Book
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    // to="/contact"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
               </ul>
             </div>
 
-            {/* Contact */}
             <div className="flex w-full max-w-[272px] flex-col gap-6">
               <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
-                Contact
+                Social Links
               </h4>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex items-center gap-4">
                 <li>
                   <a
                     href="mailto:support@tonymartignetti.com"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                    className="footer_link inline-flex size-10 items-center justify-center rounded-full border border-[#374151] text-[#d1d5db] transition-colors hover:border-[#10b981] hover:text-[#10b981]"
+                    aria-label="Email support@tonymartignetti.com"
                   >
-                    support@tonymartignetti.com
+                    <Mail className="size-5" aria-hidden="true" />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#schedule"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                    href="https://www.linkedin.com/in/tonymartignetti/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer_link inline-flex size-10 items-center justify-center rounded-full border border-[#374151] text-[#d1d5db] transition-colors hover:border-[#10b981] hover:text-[#10b981]"
+                    aria-label="Tony Martignetti on LinkedIn"
                   >
-                    Schedule a Call
+                    <Linkedin className="size-5" aria-hidden="true" />
                   </a>
-                </li>
-                <li>
-                  <Link
-                    to="/#faq"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
-                  >
-                    FAQ
-                  </Link>
                 </li>
               </ul>
             </div>

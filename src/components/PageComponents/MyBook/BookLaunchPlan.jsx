@@ -1,9 +1,14 @@
 import stepDotIcon from "@/assets/images/my_book/icons/step_dot.svg";
 import { BOOK_LAUNCH_STEPS } from "@/constants/myBook";
 
-const DASHED_LINE_STYLE = {
+const DASHED_LINE_HORIZONTAL = {
   backgroundImage:
-    "repeating-linear-gradient(to right, rgba(14, 113, 89, 0.45) 0, rgba(14, 113, 89, 0.45) 5px, transparent 8px, transparent 12px)",
+    "repeating-linear-gradient(to right, rgba(14, 113, 89, 0.45) 0, rgba(14, 113, 89, 0.45) 5px, transparent 5px, transparent 10px)",
+};
+
+const DASHED_LINE_VERTICAL = {
+  backgroundImage:
+    "repeating-linear-gradient(to bottom, rgba(14, 113, 89, 0.45) 0, rgba(14, 113, 89, 0.45) 5px, transparent 5px, transparent 10px)",
 };
 
 export default function BookLaunchPlan() {
@@ -24,31 +29,37 @@ export default function BookLaunchPlan() {
 
         <div className="relative mt-12 md:mt-[50px]">
           <div
-            className="pointer-events-none absolute left-0 right-0 top-[62px] z-0 hidden h-px md:block"
-            style={DASHED_LINE_STYLE}
+            className="pointer-events-none absolute left-0 right-0 top-[61px] z-0 hidden h-px md:block"
+            style={DASHED_LINE_HORIZONTAL}
             aria-hidden="true"
           />
 
-          <div className="grid gap-10 md:grid-cols-3 md:gap-8">
-            {BOOK_LAUNCH_STEPS.map((step) => (
-              <div key={step.title} className="relative flex flex-col gap-5">
-                <p className="font-heading text-[40px] font-bold leading-[26px] text-[#0e7159]">
-                  {step.number}
-                </p>
-                <div className="relative w-fit">
-                  <div
-                    className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-px w-[200vw] -translate-x-1/2 -translate-y-1/2 hidden"
-                    style={DASHED_LINE_STYLE}
-                    aria-hidden="true"
-                  />
+          <div className="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-8">
+            {BOOK_LAUNCH_STEPS.map((step, index) => (
+              <div
+                key={step.title}
+                className="flex items-stretch gap-4 md:flex-col md:gap-5"
+              >
+                <div className="flex w-[30px] shrink-0 flex-col items-center md:w-auto md:items-start">
+                  <p className="font-heading md:text-[40px] text-[32px] font-bold leading-[26px] text-[#0e7159]">
+                    {step.number}
+                  </p>
                   <img
                     src={stepDotIcon}
                     alt=""
-                    className="relative z-10 size-[30px]"
+                    className="relative z-10 mt-3 md:size-[30px] size-[26px] md:mt-5"
                     aria-hidden="true"
                   />
+                  {index < BOOK_LAUNCH_STEPS.length - 1 && (
+                    <div
+                      className="my-2 w-px min-h-6 flex-1 md:hidden"
+                      style={DASHED_LINE_VERTICAL}
+                      aria-hidden="true"
+                    />
+                  )}
                 </div>
-                <div className="flex flex-col gap-3">
+
+                <div className="flex flex-1 flex-col gap-3 pt-1 md:flex-none md:pt-0">
                   <h3 className="font-heading text-[26px] font-bold uppercase leading-[26px] text-[#252525]">
                     {step.title}
                   </h3>

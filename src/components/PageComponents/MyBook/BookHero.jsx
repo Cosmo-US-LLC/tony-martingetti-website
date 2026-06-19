@@ -1,25 +1,15 @@
-import { useState } from "react";
 import bookCoverImage from "@/assets/images/my_book/hero/book_cover.webp";
 import amazonKindleLogo from "@/assets/images/my_book/hero/amazon_kindle_src.webp";
-import { scrollToMyBookNotify } from "@/utils/scrollToMyBookNotify";
+import { useWaitlistForm } from "@/hooks/useWaitlistForm";
 
 export default function BookHero() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setStatus("loading");
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-    }, 800);
-  }
+  const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
+    useWaitlistForm("my-book", { form: "my-book" });
 
   return (
     <section
       className="w-full py-12 md:py-16"
+      id="my-book-hero-notify"
       style={{
         backgroundImage:
           "linear-gradient(140.97deg, #0f172a 0%, #1e3a8a 100%)",
@@ -48,7 +38,6 @@ export default function BookHero() {
           </div>
 
           <form
-            id="my-book-hero-notify"
             onSubmit={handleSubmit}
             className="flex w-full max-w-[590px] flex-col gap-3 sm:flex-row"
           >
@@ -62,21 +51,27 @@ export default function BookHero() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
-              disabled={status === "loading"}
+              disabled={isLoading}
               className="min-h-[52px] flex-1 rounded-lg border border-white/20 bg-white/10 px-4 font-sans text-sm text-white placeholder:text-white/45 focus:outline-none focus:ring-2 focus:ring-[#059669] disabled:opacity-60"
             />
             <button
               type="submit"
-              disabled={status === "loading"}
+              disabled={isLoading}
               className="primary_btn_two min-h-[52px] shrink-0 cursor-pointer px-8 py-3 text-sm uppercase tracking-[0.5px] disabled:cursor-not-allowed"
             >
-              {status === "loading" ? "Submitting…" : "Notify Me"}
+              {isLoading ? "Submitting…" : "Notify Me"}
             </button>
           </form>
 
           {status === "success" && (
             <p className="font-sans text-sm font-medium text-[#6ee7b7]">
               Thanks! We&apos;ll notify you at launch.
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="font-sans text-sm font-medium text-red-300">
+              {errorMessage}
             </p>
           )}
 
