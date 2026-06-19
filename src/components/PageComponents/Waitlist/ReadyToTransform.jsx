@@ -1,19 +1,8 @@
-import { useState } from "react";
+import { useWaitlistForm } from "@/hooks/useWaitlistForm";
 
 function ReadyToTransform() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); // 'idle' | 'loading' | 'success' | 'error'
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setStatus("loading");
-    // TODO: replace with your waitlist API
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-    }, 800);
-  }
+  const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
+    useWaitlistForm("home");
 
   return (
     <section
@@ -55,23 +44,29 @@ function ReadyToTransform() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
             required
-            disabled={status === "loading"}
+            disabled={isLoading}
             className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-[16px] font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#059669] disabled:opacity-60"
             data-name="Input"
           />
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={isLoading}
             className="secondary_btn inline-flex! shrink-0 cursor-pointer flex-row! py-[16px]! disabled:cursor-not-allowed sm:w-auto"
             data-name="Button"
           >
-            {status === "loading" ? "Joining…" : "Join Waitlist"}
+            {isLoading ? "Joining…" : "Join Waitlist"}
           </button>
         </form>
 
         {status === "success" && (
           <p className="text-center font-sans text-lg font-medium text-white">
-            Thanks! You’re on the list.
+            Thanks! You&apos;re on the list.
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="text-center font-sans text-base font-medium text-red-100">
+            {errorMessage}
           </p>
         )}
 

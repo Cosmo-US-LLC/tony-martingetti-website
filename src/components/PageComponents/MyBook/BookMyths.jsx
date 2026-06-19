@@ -33,7 +33,7 @@ export default function BookMyths() {
             The Lies Holding Your Nonprofit Back
           </h2>
 
-          <div className="mt-4 divide-y divide-[#e5e5e5] border-t border-[#e5e5e5]">
+          <div className="mt-4 divide-y divide-[#e5e5e5] border-b border-[#e5e5e5]">
             {BOOK_MYTHS.map((item) => (
               <div
                 key={item.myth}
