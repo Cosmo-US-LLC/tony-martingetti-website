@@ -46,14 +46,6 @@ export default function Footer() {
                 Quick Links
               </h4>
               <ul className="flex flex-col gap-3">
-                {/* <li>
-                  <Link
-                    to="/waitlist"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
-                  >
-                    Join Waitlist
-                  </Link>
-                </li> */}
                 <li>
                   <Link
                     to="/about"
@@ -124,8 +116,10 @@ export default function Footer() {
             data-name="HorizontalBorder"
           >
             <p className="text-center font-sans text-[14px] font-normal leading-5 text-[#6b7280]">
-              © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned Giving made practical
+              © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned Giving made practical <span className="mx-1">·</span>
+              <Link to="/privacy-policy" className="underline hover:text-[#059669]">Privacy Policy</Link>
             </p>
+            
           </div>
         </div>
       </div>
