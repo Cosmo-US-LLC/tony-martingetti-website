@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function PrinciplesFooter() {
   const currentYear = new Date().getFullYear();
@@ -34,7 +34,7 @@ export default function PrinciplesFooter() {
 
             <button
               type="button"
-              onClick={() => navigate("/waitlist#join")}
+              onClick={() => navigate("/#join")}
               className="primary_btn_two mt-2.5 cursor-pointer px-8 py-[18px] text-base shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
             >
               Join Waitlist Now
@@ -52,22 +52,18 @@ export default function PrinciplesFooter() {
               Contact Us
             </a>
             <span className="mx-1">|</span>
-            <a href="#" className="underline hover:text-[#059669]">
+            <Link to="/privacy-policy" className="underline hover:text-[#059669]">
               Privacy Policy
-            </a>
+            </Link>
           </p>
 
           <p className="hidden md:block">
             © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned
             Giving made practical{" "}
             <span className="mx-1">·</span>
-            <a href="#" className="underline hover:text-[#059669]">
-              Contact Us
-            </a>
-            <span className="mx-1">·</span>
-            <a href="#" className="underline hover:text-[#059669]">
+            <Link to="/privacy-policy" className="underline hover:text-[#059669]">
               Privacy Policy
-            </a>
+            </Link>
           </p>
         </div>
       </div>
