@@ -18,12 +18,12 @@ export default function BookLaunchPlan() {
       data-name="Book Launch Plan"
     >
       <div className="mx-auto w-full max-w-[1280px] px-4 md:px-8">
-        <div className="max-w-[558px]">
+        <div className="max-w-[900px]">
           <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#059669]">
             What You&apos;ll Find Inside
           </p>
           <h2 className="mt-3 font-heading text-[28px] font-bold uppercase leading-tight tracking-[0.7px] text-[#0f172a] md:text-[34px]">
-            A Clear 3-Step, 1-Week Launch Plan
+            The Martignetti 3-Step, 1-Week Planned Giving Launch
           </h2>
         </div>
 

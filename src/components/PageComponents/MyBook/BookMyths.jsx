@@ -76,7 +76,7 @@ export default function BookMyths() {
               <div>
                 <p className="font-heading text-lg leading-7 text-black md:text-[19px]">
                   &quot;Your mission deserves a longer runway. Start building
-                  it this week.&quot;
+                  it next week.&quot;
                 </p>
                 <p className="mt-2 font-sans text-[13px] font-semibold text-black">
                   — Tony Martignetti

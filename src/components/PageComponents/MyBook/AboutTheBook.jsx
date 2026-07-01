@@ -2,7 +2,7 @@ import { BOOK_STATS } from "@/constants/myBook";
 
 function StatRow({ label, value }) {
   return (
-    <div className="rounded-xl border border-[#dedede] bg-white p-5">
+    <div className="rounded-xl border border-[#dedede] bg-white md:py-8 py-6 md:px-6 px-4">
       <div className="flex items-center justify-between gap-4">
         <p className="font-sans text-lg leading-[22.75px] text-[#0f172a]">
           {label}
@@ -24,6 +24,9 @@ export default function AboutTheBook() {
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 md:px-8 lg:flex-row lg:items-center lg:gap-[60px]">
         <div className="flex-1">
           <h2 className="heading_two text-[#0f172a]">About The Book</h2>
+          <p className="font-heading text-[20px] font-bold uppercase leading-[40px] tracking-[0.72px] text-[#059669]">
+            Forget someday, start Monday.
+          </p>
           <div className="mt-4 space-y-0 font-sans text-lg leading-7 text-[#4b5563]">
             <p>
               If your nonprofit doesn&apos;t have an active Planned Giving
