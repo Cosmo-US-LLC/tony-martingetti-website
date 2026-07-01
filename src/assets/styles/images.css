@@ -281,3 +281,24 @@
     transition: none;
   }
 }
+
+@keyframes bequest-reason-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.bequest-reason-progress-bar {
+  width: 0;
+  animation: bequest-reason-progress 5s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bequest-reason-progress-bar {
+    animation: none;
+    width: 100%;
+  }
+}

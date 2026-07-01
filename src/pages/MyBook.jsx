@@ -3,6 +3,7 @@ import BookHero from "@/components/PageComponents/MyBook/BookHero";
 import AboutTheBook from "@/components/PageComponents/MyBook/AboutTheBook";
 import BookLaunchPlan from "@/components/PageComponents/MyBook/BookLaunchPlan";
 import BookMyths from "@/components/PageComponents/MyBook/BookMyths";
+import BookBequestReasons from "@/components/PageComponents/MyBook/BookBequestReasons";
 import AboutTheAuthor from "@/components/PageComponents/MyBook/AboutTheAuthor";
 import BookFooter from "@/components/PageComponents/MyBook/BookFooter";
 
@@ -18,6 +19,7 @@ function MyBook() {
       <AboutTheBook />
       <BookLaunchPlan />
       <BookMyths />
+      <BookBequestReasons />
       <AboutTheAuthor />
       <BookFooter />
     </div>

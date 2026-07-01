@@ -29,8 +29,10 @@ export default function BookHero() {
             </h1>
             <p className="mt-4 font-sans text-base leading-[26px] text-[#f7f7f7] md:text-lg">
               The Cut Through the Sh!t, No Nonsense, Practical, Step-by-Step
-              Guide to Start Legacy Giving at Your Small to Mid-Size Nonprofit
-              Simply In One Week With Bequests
+              Guide to Start Legacy Fundraising at Your Small to Mid-Size Nonprofit
+              Simply In One Week With Bequests.
+              <br />
+              The title may be longer than the book. Did you need a map?
             </p>
             <p className="mt-3 font-sans text-[15px] font-semibold text-[#059669]">
               by Tony Martignetti, Esq.
@@ -96,7 +98,7 @@ export default function BookHero() {
           <img
             src={bookCoverImage}
             alt="Planned Giving Accelerated book cover"
-            className="h-auto w-full max-w-[337px] rounded-[10px] object-cover opacity-90 shadow-2xl"
+            className="h-[400px] w-[250px] md:h-auto md:w-full max-w-[337px] rounded-[10px]"
           />
         </div>
       </div>
