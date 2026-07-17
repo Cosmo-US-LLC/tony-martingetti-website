@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { submitHubSpotForm } from "@/utils/submitHubSpotForm";
+import { submitKlaviyoForm } from "@/utils/submitKlaviyoForm";
 
 /**
  * @param {string} pageSource - e.g. "home", "about", "success-stories", "my-book"
@@ -26,7 +26,7 @@ export function useWaitlistForm(pageSource, { form = "waitlist" } = {}) {
     setErrorMessage("");
 
     try {
-      await submitHubSpotForm({
+      await submitKlaviyoForm({
         email: email.trim(),
         pageSource,
         form,
