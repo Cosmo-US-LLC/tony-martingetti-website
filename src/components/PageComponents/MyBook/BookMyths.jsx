@@ -30,7 +30,7 @@ export default function BookMyths() {
             Myths This Book Destroys
           </p>
           <h2 className="mt-2.5 font-heading text-[28px] font-bold uppercase leading-tight tracking-[0.7px] text-[#0f172a] md:text-[34px]">
-            The Lies Holding Your Nonprofit Back
+            TONY’s TOP 6 MYTHS OF PLANNED GIVING
           </h2>
 
           <div className="mt-4 divide-y divide-[#e5e5e5] border-b border-[#e5e5e5]">

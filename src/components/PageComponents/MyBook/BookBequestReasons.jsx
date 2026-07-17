@@ -55,8 +55,8 @@ export default function BookBequestReasons() {
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-10 px-4 md:gap-12 md:px-8">
         <div className="flex max-w-[800px] flex-col items-center gap-4 text-center">
           <h2 className="font-heading text-[28px] font-bold uppercase leading-10 tracking-[0.7px] text-[#0f172a] md:text-[34px]">
-            <span className="block">18 Reasons Bequests Are Where You Start.</span>
-            <span className="block">Not Where You Settle</span>
+            <span className="block">THE MARTIGNETTI 18 REASONS WHY BEQUESTS ARE THE PLACE TO LAUNCH YOUR PLANNED GIVING</span>
+            {/* <span className="block">Not Where You Settle</span> */}
           </h2>
           <p className="font-sans text-lg font-normal leading-7 text-[#4b5563]">
             You don&apos;t need a complicated gift menu to launch Planned Giving.
