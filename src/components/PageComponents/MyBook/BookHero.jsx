@@ -32,7 +32,7 @@ export default function BookHero() {
               Guide to Start Legacy Fundraising at Your Small to Mid-Size Nonprofit
               Simply In One Week With Bequests.
               <br />
-              The title may be longer than the book. Did you need a nap?
+              (The title may be longer than the book. Did you need a nap?)
             </p>
             <p className="mt-3 font-sans text-[15px] font-semibold text-[#059669]">
               by Tony Martignetti, Esq.
