@@ -11,8 +11,16 @@ function XIcon(props) {
 
 const SOCIAL_LINKS = [
   { label: "X", icon: null, href: "#" },
-  { label: "YouTube", icon: Youtube, href: "#" },
-  { label: "LinkedIn", icon: Linkedin, href: "#" },
+  {
+    label: "YouTube",
+    icon: Youtube,
+    href: "https://www.youtube.com/realtonymartignetti",
+  },
+  {
+    label: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/tonymartignetti/",
+  },
 ];
 
 export default function LandingFooter() {
@@ -33,6 +41,8 @@ export default function LandingFooter() {
             <a
               key={label}
               href={href}
+              target={href !== "#" ? "_blank" : undefined}
+              rel={href !== "#" ? "noopener noreferrer" : undefined}
               aria-label={label}
               className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#FDE8F8] text-[#951B81] transition-colors hover:bg-[#951B81] hover:text-white"
             >
