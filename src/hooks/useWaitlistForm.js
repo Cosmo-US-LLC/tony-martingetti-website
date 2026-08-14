@@ -3,7 +3,7 @@ import { submitKlaviyoForm } from "@/utils/submitKlaviyoForm";
 
 /**
  * @param {string} pageSource - e.g. "home", "about", "success-stories", "my-book"
- * @param {{ form?: "waitlist" | "my-book" }} [options]
+ * @param {{ form?: "waitlist" | "my-book" | "book-waitlist" }} [options]
  */
 export function useWaitlistForm(pageSource, { form = "waitlist" } = {}) {
   const [email, setEmail] = useState("");

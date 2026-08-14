@@ -3,6 +3,18 @@
 @import "shadcn/tailwind.css";
 @import "./assets/styles/fonts.css";
 @import "./assets/styles/images.css";
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Shadows+Into+Light&family=Manrope:wght@400&display=swap");
+
+.font-landing {
+  font-family:
+    "Google Sans Flex", "Google Sans", Arial, ui-sans-serif, sans-serif;
+}
+.font-script {
+  font-family: "Shadows Into Light", cursive;
+}
+.font-manrope {
+  font-family: "Manrope", ui-sans-serif, sans-serif;
+}
 
 @custom-variant dark (&:is(.dark *));
 

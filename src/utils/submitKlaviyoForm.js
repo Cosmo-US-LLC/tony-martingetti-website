@@ -8,6 +8,9 @@ const FORM_ENV_KEYS = {
   "my-book": {
     listId: "VITE_KLAVIYO_LIST_ID_MY_BOOK",
   },
+  "book-waitlist": {
+    listId: "VITE_KLAVIYO_LIST_ID_BOOK_WAITLIST",
+  },
 };
 
 function getConfig(form = "waitlist") {
@@ -50,7 +53,7 @@ async function parseKlaviyoError(response) {
 
 /**
  * Submit email to Klaviyo's Client Subscriptions API.
- * @param {{ email: string, pageSource?: string, form?: "waitlist" | "my-book" }} options
+ * @param {{ email: string, pageSource?: string, form?: "waitlist" | "my-book" | "book-waitlist" }} options
  */
 export async function submitKlaviyoForm({ email, form = "waitlist" }) {
   const config = getConfig(form);
