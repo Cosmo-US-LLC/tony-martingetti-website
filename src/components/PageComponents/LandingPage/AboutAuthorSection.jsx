@@ -38,7 +38,7 @@ export default function AboutAuthorSection() {
           <img
             src={tonyAuthorImage}
             alt="Tony Martignetti"
-            className="h-[280px] w-full object-fill md:h-auto md:aspect-[620/540]"
+            className="h-auto w-full object-cover aspect-[1514/1581]"
           />
         </div>
       </div>
