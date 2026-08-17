@@ -42,7 +42,7 @@ export default function FAQSection() {
           <span className="font-script text-[20px] leading-[28px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
             Questions
           </span>
-          <h2 className="text-[28px] font-bold leading-tight tracking-[-0.6px] text-[#00150B] md:text-[40px] md:tracking-[-0.8px]">
+          <h2 className="text-[28px] font-bold leading-tight tracking-[-0.6px] text-[#00150B] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             Before You Join
           </h2>
         </div>
@@ -60,7 +60,7 @@ export default function FAQSection() {
                     aria-expanded={isOpen}
                   >
                     <span
-                      className={`text-base font-semibold md:text-lg md:font-medium ${
+                      className={`text-base font-semibold md:text-xl md:font-medium md:tracking-[-0.5px] ${
                         isOpen ? "text-[#951B81]" : "text-black"
                       }`}
                     >
@@ -69,7 +69,7 @@ export default function FAQSection() {
                     <PlusIcon active={isOpen} className="mt-1 shrink-0" />
                   </button>
                   {isOpen && (
-                    <p className="px-6 pb-5 text-base leading-6 text-[#323232]">
+                    <p className="px-6 pb-5 text-base leading-[22.4px] tracking-[-0.16px] text-[#323232]">
                       {item.answer}
                     </p>
                   )}

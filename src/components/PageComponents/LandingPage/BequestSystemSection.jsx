@@ -15,7 +15,7 @@ export default function BequestSystemSection() {
             <span className="font-script text-[20px] leading-[28px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
               Inside The Book
             </span>
-            <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-white md:text-[40px] md:leading-tight md:tracking-[-0.8px]">
+            <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-white md:text-[40px] md:leading-[46px] md:tracking-[-0.8px]">
               The Complete Bequest-First System
             </h2>
           </div>
@@ -35,7 +35,7 @@ export default function BequestSystemSection() {
               <h3 className="text-base font-semibold leading-6 text-white md:text-[28px] md:font-bold md:leading-[39.2px]">
                 {card.title}
               </h3>
-              <p className="text-base leading-6 text-white">
+              <p className="text-base leading-6 text-white md:text-xl md:leading-7 md:tracking-[-0.5px]">
                 {card.description}
               </p>
             </div>

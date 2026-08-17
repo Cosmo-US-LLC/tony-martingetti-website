@@ -8,10 +8,10 @@ export default function LiveSessionSection() {
           <span className="font-script text-[20px] leading-[28px] text-[#059669] md:text-[32px] md:leading-[44.8px]">
             Waitlist Bonus &middot; First 50 Only
           </span>
-          <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#00150B] md:text-[40px] md:leading-tight md:tracking-[-0.8px]">
+          <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#00150B] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             A Live Working Session With Tony
           </h2>
-          <p className="max-w-[620px] text-base leading-6 text-[#494949]">
+          <p className="max-w-[620px] text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
             Not a webinar and not a sales pitch. The first 50 people on the
             waitlist get a seat on a virtual session where Tony works through
             the real bottlenecks in your programs.
@@ -24,13 +24,13 @@ export default function LiveSessionSection() {
               key={card.title}
               className="flex flex-col gap-2.5 rounded-2xl bg-white p-6"
             >
-              <span className="inline-flex w-fit items-center rounded-lg bg-[#FDE8F8] px-3 py-1 text-xs font-bold text-[#951B81]">
+              <span className="inline-flex w-fit items-center rounded-lg bg-[#FDE8F8] px-3 py-1 text-xs leading-[14.4px] font-bold text-[#951B81]">
                 {card.tag}
               </span>
               <h3 className="text-[20px] font-semibold leading-6 text-black md:text-[28px] md:font-bold md:leading-[39.2px]">
                 {card.title}
               </h3>
-              <p className="text-base leading-[22.4px] tracking-[-0.16px] text-black md:font-manrope md:text-lg md:leading-6 md:tracking-normal">
+              <p className="text-base leading-[22.4px] tracking-[-0.16px] text-black md:font-manrope md:text-lg md:leading-[26px] md:tracking-normal">
                 {card.description}
               </p>
             </div>

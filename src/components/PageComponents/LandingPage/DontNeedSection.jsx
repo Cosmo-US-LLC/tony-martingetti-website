@@ -22,10 +22,10 @@ export default function DontNeedSection() {
           <span className="font-script text-[20px] leading-[28px] text-[#059669] md:text-[32px] md:leading-[44.8px]">
             What You Don&apos;t Need
           </span>
-          <h2 className="text-[28px] font-bold leading-tight tracking-[-0.6px] text-[#00150B] md:text-[40px] md:tracking-[-0.8px]">
+          <h2 className="text-[28px] font-bold leading-tight tracking-[-0.6px] text-[#00150B] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             You Don&apos;t Need What They&apos;re Selling You
           </h2>
-          <p className="max-w-[620px] text-base leading-6 text-[#494949]">
+          <p className="max-w-[620px] text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
             Twenty-nine years of planned giving work taught Tony what
             actually moves a bequest forward, and it&apos;s rarely the thing
             nonprofits are told to buy first.
@@ -54,7 +54,7 @@ export default function DontNeedSection() {
                 <h3 className="text-[20px] font-semibold leading-6 text-black md:text-2xl md:font-bold md:leading-[28.8px] md:tracking-[-0.48px]">
                   {item.title}
                 </h3>
-                <p className="text-base leading-6 text-[#494949]">
+                <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
                   {item.description}
                 </p>
               </div>

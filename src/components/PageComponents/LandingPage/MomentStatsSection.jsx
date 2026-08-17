@@ -8,10 +8,10 @@ export default function MomentStatsSection() {
           <span className="font-script text-[20px] leading-[28px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
             The Moment
           </span>
-          <h2 className="max-w-[720px] text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#151515] md:text-[40px] md:leading-tight md:tracking-[-0.8px]">
+          <h2 className="max-w-[720px] text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#151515] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             $18 Trillion Is Moving. Most Nonprofits Aren&apos;t Positioned
           </h2>
-          <p className="max-w-[620px] text-base leading-6 text-[#494949]">
+          <p className="max-w-[620px] text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
             The largest generational wealth transfer in history is already
             underway and it&apos;s showing up in the giving data right now.
           </p>
@@ -31,18 +31,18 @@ export default function MomentStatsSection() {
                 <span className="font-script text-[32px] leading-[44.8px] text-[#079669] md:text-[64px] md:leading-[89.6px]">
                   {stat.value}
                 </span>
-                <p className="text-base leading-6 text-[#151515]">
+                <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#151515]">
                   {stat.description}
                 </p>
               </div>
-              <span className="flex w-full items-center justify-center rounded-lg bg-[#EDEDED] px-2.5 py-2.5 text-xs text-[#151515]">
+              <span className="flex w-full items-center justify-center rounded-lg bg-[#EDEDED] px-2.5 py-2.5 text-[14px] leading-[19.6px] text-[#151515]">
                 {stat.source}
               </span>
             </div>
           ))}
         </div>
 
-        <p className="mx-auto max-w-[620px] text-center text-sm leading-5 text-[#323232]">
+        <p className="mx-auto max-w-[620px] text-center text-sm leading-[19.6px] text-[#323232]">
           Most small and mid-size nonprofits don&apos;t have a plan built to
           capture any of it. <span className="font-bold">Planned Giving
           Accelerated</span> is that plan.

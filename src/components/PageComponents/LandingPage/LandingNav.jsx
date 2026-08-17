@@ -12,7 +12,7 @@ export default function LandingNav() {
         </a>
         <a
           href="#join-waitlist"
-          className="inline-flex shrink-0 items-center justify-center rounded-lg bg-[#059669] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] md:px-5 md:py-3.5 md:text-base"
+          className="inline-flex shrink-0 items-center justify-center rounded-lg bg-[#059669] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#047857] md:px-5 md:py-3.5 md:text-base md:leading-6 md:tracking-[-0.5px]"
         >
           Join the Waitlist
         </a>

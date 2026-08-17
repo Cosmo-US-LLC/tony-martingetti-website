@@ -9,14 +9,14 @@ export default function AboutAuthorSection() {
           <span className="font-script text-[20px] leading-[28px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
             About The Author
           </span>
-          <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#00150B] md:text-[40px] md:leading-tight md:tracking-[-0.8px]">
+          <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#00150B] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             Twenty-Nine Years In The Room With Donors
           </h2>
           <div className="flex flex-col gap-4">
             {AUTHOR_BIO_PARAGRAPHS.map((paragraph) => (
               <p
                 key={paragraph.slice(0, 20)}
-                className="text-base leading-6 text-[#494949]"
+                className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]"
               >
                 {paragraph}
               </p>
