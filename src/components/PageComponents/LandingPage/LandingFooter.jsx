@@ -1,16 +1,12 @@
-import { Linkedin, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 import LandingLogo from "./LandingLogo";
 
-function XIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
 const SOCIAL_LINKS = [
-  { label: "X", icon: null, href: "#" },
+  {
+    label: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/plannedgivingaccelerated/",
+  },
   {
     label: "YouTube",
     icon: Youtube,
@@ -41,12 +37,12 @@ export default function LandingFooter() {
             <a
               key={label}
               href={href}
-              target={href !== "#" ? "_blank" : undefined}
-              rel={href !== "#" ? "noopener noreferrer" : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={label}
               className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#FDE8F8] text-[#951B81] transition-colors hover:bg-[#951B81] hover:text-white"
             >
-              {Icon ? <Icon className="h-5 w-5" /> : <XIcon className="h-4 w-4" />}
+              <Icon className="h-5 w-5" />
             </a>
           ))}
         </div>
