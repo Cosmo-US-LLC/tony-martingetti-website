@@ -7,8 +7,16 @@ import {
 } from "@/constants/landingPage";
 
 export default function ChapterCTASection() {
-  const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
-    useWaitlistForm("book-waitlist", { form: "book-waitlist" });
+  const {
+    name,
+    setName,
+    email,
+    setEmail,
+    status,
+    errorMessage,
+    handleSubmit,
+    isLoading,
+  } = useWaitlistForm("book-waitlist", { form: "book-waitlist" });
 
   const seatsPercent = Math.round(
     (WORKING_SESSION_SEATS_CLAIMED / WORKING_SESSION_SEATS_TOTAL) * 100,
@@ -30,7 +38,7 @@ export default function ChapterCTASection() {
           </p>
         </div>
 
-        <div className="flex w-full max-w-[600px] flex-col gap-6 rounded-2xl bg-white/[0.04] p-6 md:p-8">
+        <div className="flex w-fit max-w-[600px] flex-col gap-6 rounded-2xl bg-white/[0.04] p-6 md:p-8">
           <p className="text-xl font-semibold leading-7 text-white">
             Join the waitlist, and you get
           </p>
@@ -71,8 +79,22 @@ export default function ChapterCTASection() {
 
           <form
             onSubmit={handleSubmit}
-            className="flex w-full flex-col gap-3 sm:flex-row"
+            className="flex w-full flex-col items-start gap-3"
           >
+            <label className="sr-only" htmlFor="landing-cta-name">
+              Name
+            </label>
+            <input
+              id="landing-cta-name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              required
+              disabled={isLoading}
+              className="min-h-[54px] w-full max-w-[420px] rounded-lg bg-white px-4 text-base leading-[22.4px] tracking-[-0.16px] text-[#00150B] placeholder:text-[#00150B]/60 focus:outline-none focus:ring-2 focus:ring-[#951B81] disabled:opacity-60"
+            />
+
             <label className="sr-only" htmlFor="landing-cta-email">
               Email address
             </label>
@@ -84,12 +106,12 @@ export default function ChapterCTASection() {
               placeholder="Enter your email address"
               required
               disabled={isLoading}
-              className="min-h-[54px] flex-1 rounded-lg bg-white px-4 text-base leading-[22.4px] tracking-[-0.16px] text-[#00150B] placeholder:text-[#00150B]/60 focus:outline-none focus:ring-2 focus:ring-[#951B81] disabled:opacity-60"
+              className="min-h-[54px] w-full max-w-[420px] rounded-lg bg-white px-4 text-base leading-[22.4px] tracking-[-0.16px] text-[#00150B] placeholder:text-[#00150B]/60 focus:outline-none focus:ring-2 focus:ring-[#951B81] disabled:opacity-60"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="min-h-[54px] shrink-0 cursor-pointer rounded-lg bg-[#951B81] px-6 text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#7A1668] disabled:cursor-not-allowed disabled:opacity-60"
+              className="min-h-[54px] w-full max-w-[280px] shrink-0 cursor-pointer rounded-lg bg-[#951B81] px-6 text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#7A1668] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isLoading ? "Submitting…" : "Get Chapter 1 Free"}
             </button>

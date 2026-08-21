@@ -6,9 +6,18 @@ import { submitKlaviyoForm } from "@/utils/submitKlaviyoForm";
  * @param {{ form?: "waitlist" | "my-book" | "book-waitlist" }} [options]
  */
 export function useWaitlistForm(pageSource, { form = "waitlist" } = {}) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  function handleNameChange(value) {
+    setName(value);
+    if (status === "success" || status === "error") {
+      setStatus("idle");
+      setErrorMessage("");
+    }
+  }
 
   function handleEmailChange(value) {
     setEmail(value);
@@ -20,18 +29,20 @@ export function useWaitlistForm(pageSource, { form = "waitlist" } = {}) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!name.trim() || !email.trim()) return;
 
     setStatus("loading");
     setErrorMessage("");
 
     try {
       await submitKlaviyoForm({
+        name: name.trim(),
         email: email.trim(),
         pageSource,
         form,
       });
       setStatus("success");
+      setName("");
       setEmail("");
     } catch (err) {
       setStatus("error");
@@ -44,6 +55,8 @@ export function useWaitlistForm(pageSource, { form = "waitlist" } = {}) {
   }
 
   return {
+    name,
+    setName: handleNameChange,
     email,
     setEmail: handleEmailChange,
     status,

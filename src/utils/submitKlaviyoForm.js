@@ -52,10 +52,10 @@ async function parseKlaviyoError(response) {
 }
 
 /**
- * Submit email to Klaviyo's Client Subscriptions API.
- * @param {{ email: string, pageSource?: string, form?: "waitlist" | "my-book" | "book-waitlist" }} options
+ * Submit email (and optional name) to Klaviyo's Client Subscriptions API.
+ * @param {{ email: string, name?: string, pageSource?: string, form?: "waitlist" | "my-book" | "book-waitlist" }} options
  */
-export async function submitKlaviyoForm({ email, form = "waitlist" }) {
+export async function submitKlaviyoForm({ email, name, form = "waitlist" }) {
   const config = getConfig(form);
   if (!config) {
     throw new Error(
@@ -72,7 +72,7 @@ export async function submitKlaviyoForm({ email, form = "waitlist" }) {
         profile: {
           data: {
             type: "profile",
-            attributes: { email },
+            attributes: name ? { email, first_name: name } : { email },
           },
         },
       },
