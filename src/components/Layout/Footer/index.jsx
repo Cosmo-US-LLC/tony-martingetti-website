@@ -88,9 +88,9 @@ export default function Footer() {
               <ul className="flex items-center gap-4">
                 <li>
                   <a
-                    href="mailto:support@tonymartignetti.com"
+                    href="mailto:tony@tonymartignetti.com"
                     className="footer_link inline-flex size-10 items-center justify-center rounded-full border border-[#374151] text-[#d1d5db] transition-colors hover:border-[#10b981] hover:text-[#10b981]"
-                    aria-label="Email support@tonymartignetti.com"
+                    aria-label="Email tony@tonymartignetti.com"
                   >
                     <Mail className="size-5" aria-hidden="true" />
                   </a>
