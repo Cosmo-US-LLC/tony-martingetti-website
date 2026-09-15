@@ -140,7 +140,7 @@ export default function BookHero() {
                 aria-hidden="true"
               />
               <span className="text-center font-sans text-xs font-semibold leading-5 text-white/85 sm:text-sm sm:whitespace-nowrap">
-                Order Now on Amazon
+                Order Now for paper back and Kindle
               </span>
             </a>
 
@@ -157,7 +157,7 @@ export default function BookHero() {
                 aria-hidden="true"
               />
               <span className="text-center font-sans text-xs font-semibold leading-5 text-white/85 sm:text-sm sm:whitespace-nowrap">
-                Order Now on Barnes &amp; Noble
+                Order Now for hard back
               </span>
             </a>
           </div>
