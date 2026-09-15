@@ -1,207 +1,103 @@
-import { useEffect, useRef, useState } from "react";
-import stepTakeawayCheckIcon from "@/assets/images/principles/icons/step_takeaway_check.svg";
-import {
-  LAUNCH_STEP_TAKEAWAYS,
-  LAUNCH_STEPS,
-} from "@/constants/principles";
-import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
-import QuoteBlock from "./QuoteBlock";
+import TakeawayMarquee from "./TakeawayMarquee";
 
-const STEP_COUNT = LAUNCH_STEPS.length;
-const NAVBAR_OFFSET = 80;
+const STEPS = [
+  {
+    num: "1.",
+    title: "Identify your top prospects in your existing database",
+    desc: "Your top prospects are your loyal, committed, long-term donors ages 55–60 and older. You may not even need your CRM database; names often come to mind immediately when you think about who represents your nonprofit.",
+  },
+  {
+    num: "2.",
+    title: "Launch with gifts in wills, the most accessible planned gift",
+    desc: "You don't need a menu of gift vehicles. Bequests are the most popular planned gift by far, they cost your donor nothing today, and they require no specialised training to ask for. One gift type is all you need to launch.",
+  },
+  {
+    num: "3.",
+    title: "Cultivate and solicit your top prospects the right way",
+    desc: "Be relational, not transactional. Start with the prospect you find easiest to talk to and the one most invested in your mission. Ask genuinely if they would consider including you in their will.",
+  },
+];
 
-function getActiveStep(progress) {
-  if (progress >= 2 / 3) return 2;
-  if (progress >= 1 / 3) return 1;
-  return 0;
-}
+const TAKEAWAYS = [
+  "Your top prospects are your loyal, committed, long-term donors ages 55 and older.",
+  "Start with the prospect who is easiest to talk to and most invested in your mission.",
+  "Remember Cheryl McCormick's advice: be genuinely interested in how your top prospects want to be remembered.",
+  "Charitable bequests, gifts in wills, are the most popular planned gift by far.",
+  "Follow Sherry Quam Taylor's admonition: be relational, be yourself.",
+  "You can open conversations and reach solicitation inside a single week.",
+];
 
 export default function ThreeStepLaunch() {
-  const trackRef = useRef(null);
-  const [activeStep, setActiveStep] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const mobileQuery = window.matchMedia("(max-width: 1023px)");
-    const reducedMotionQuery = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    );
-
-    const shouldDisableAnimation = () =>
-      mobileQuery.matches || reducedMotionQuery.matches;
-
-    const updateStep = () => {
-      if (shouldDisableAnimation()) {
-        setActiveStep(STEP_COUNT - 1);
-        setIsComplete(true);
-        return;
-      }
-
-      const stickyEl = track.querySelector(".launch-scroll-sticky");
-      const rect = track.getBoundingClientRect();
-      const trackHeight = track.offsetHeight;
-      const stickyHeight = stickyEl?.offsetHeight ?? window.innerHeight;
-      const scrollableDistance = trackHeight - stickyHeight;
-
-      if (scrollableDistance <= 0) {
-        setActiveStep(STEP_COUNT - 1);
-        setIsComplete(true);
-        return;
-      }
-
-      const scrolled = Math.min(
-        scrollableDistance,
-        Math.max(0, NAVBAR_OFFSET - rect.top),
-      );
-      const progress = scrolled / scrollableDistance;
-
-      if (progress >= 0.98) {
-        setIsComplete(true);
-        setActiveStep(STEP_COUNT - 1);
-        return;
-      }
-
-      setIsComplete(false);
-      setActiveStep(getActiveStep(progress));
-    };
-
-    updateStep();
-    window.addEventListener("scroll", updateStep, { passive: true });
-    window.addEventListener("resize", updateStep);
-    mobileQuery.addEventListener("change", updateStep);
-    reducedMotionQuery.addEventListener("change", updateStep);
-
-    return () => {
-      window.removeEventListener("scroll", updateStep);
-      window.removeEventListener("resize", updateStep);
-      mobileQuery.removeEventListener("change", updateStep);
-      reducedMotionQuery.removeEventListener("change", updateStep);
-    };
-  }, []);
-
-  const progressPercent = isComplete
-    ? 100
-    : ((activeStep + 1) / STEP_COUNT) * 100;
-
-  const isStepVisible = (index) => index <= activeStep;
-
   return (
-    <section
-      id="three-step-launch"
-      className="w-full scroll-mt-20 mt-16 mb-16 bg-white"
-      data-name="Three Step Launch"
-    >
-      <div className="mx-auto w-full max-w-[1280px] px-4 md:px-8">
-        <div className="rounded-3xl bg-[#f8fafc] px-4 py-12 md:px-[50px] md:py-[60px]">
-          <div
-            ref={trackRef}
-            className="launch-scroll-track relative"
-            style={{ "--launch-step-count": STEP_COUNT }}
-          >
-            <div className="launch-scroll-sticky">
-              <div className="flex flex-col gap-8 md:gap-[30px]">
-                <div className="flex max-w-[740px] flex-col gap-4">
-                  <p className="font-sans text-base font-semibold leading-[22px] text-[#059669]">
-                    Signature Framework
-                  </p>
-                  <h2 className="heading_two text-[#0f172a]">
-                    <span className="block">The Martignetti 3-Step,</span>
-                    <span className="block">1-Week Planned Giving Launch</span>
-                  </h2>
-                  <p className="font-sans text-lg leading-7 text-[#4b5563] md:text-xl md:leading-7">
-                    Everything you need to inaugurate Planned Giving at your
-                    nonprofit within a week. These are the steps you can start
-                    taking even next week to launch your Planned Giving program.
-                    Together they&apos;ll equip you to open conversations and get
-                    to solicitations of your top prospects all within a week.
-                  </p>
-                </div>
-
-                <div
-                  className={`launch-steps-animated relative ${
-                    isComplete ? "is-complete" : ""
-                  }`}
-                >
-                  <div className="absolute left-[88px] right-[88px] top-[68px] hidden h-[5px] overflow-hidden rounded-full bg-[#f3f3f3] lg:block">
-                    <div
-                      className="launch-progress-fill h-full rounded-full bg-[#059669]"
-                      style={{ width: `${progressPercent}%` }}
-                    />
-                  </div>
-
-                  <div
-                    className={`launch-steps-stage grid gap-0 md:gap-6 lg:grid-cols-3 lg:gap-6 ${
-                      isComplete ? "is-complete" : ""
-                    }`}
-                  >
-                    {LAUNCH_STEPS.map((item, index) => (
-                      <article
-                        key={item.step}
-                        className={`launch-step relative flex flex-col gap-6 md:gap-8 px-0 py-[30px] lg:px-6 ${
-                          isStepVisible(index) ? "is-visible" : ""
-                        }`}
-                      >
-                        <div className="launch-step-badge flex md:size-20 size-16 shrink-0 items-center justify-center rounded-2xl bg-white shadow-[0px_4px_2px_rgba(0,0,0,0.04)]">
-                          <span className="font-heading text-[32px] md:text-[48px] font-semibold uppercase leading-[56px] text-[#0f172a]">
-                            {item.step}
-                          </span>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                          <h3 className="font-heading text-xl font-bold uppercase leading-8 text-[#040a16] md:text-2xl md:leading-8">
-                            {item.title}
-                          </h3>
-                          <p className="font-sans text-base leading-[26px] text-[#020120] md:text-lg">
-                            {item.description}
-                          </p>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              </div>
+    <>
+      <section className="w-full bg-white px-4 pb-5 pt-12 md:px-[60px] md:pb-5 md:pt-20">
+        <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-8 md:gap-12">
+          <div className="mx-auto flex max-w-[830px] flex-col gap-3.5 text-center md:gap-[18px]">
+            <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
+              Signature framework
+            </p>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-[28px] font-bold leading-[39.2px] text-[#00150b] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
+                The Martignetti 3-step, 1-week Planned Giving launch
+              </h2>
+              <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
+                Everything you need to inaugurate Planned Giving at your
+                nonprofit within a week. These are the steps you can start
+                taking even next week to launch your Planned Giving program.
+                Together they'll equip you to open conversations and get to
+                solicitations of your top prospects, all within a week.
+              </p>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col gap-8 md:mt-[30px] md:gap-[30px]">
-            <div className="w-full rounded-[30px] border border-[#d8d8d8] px-4 md:px-6 py-6 md:py-[30px]">
-              <h3 className="font-heading text-[28px] font-bold uppercase leading-8 text-[#040a16] md:text-[35px]">
-                Step takeaways
-              </h3>
-              <div className="mt-10 grid gap-10 md:grid-cols-2">
-                {LAUNCH_STEP_TAKEAWAYS.map((takeaway) => (
-                  <div key={takeaway} className="flex gap-3">
-                    <img
-                      src={stepTakeawayCheckIcon}
-                      alt=""
-                      className="mt-0.5 size-5 shrink-0"
-                      aria-hidden="true"
-                    />
-                    <p className="font-sans text-lg leading-[26px] text-[#020120]">
-                      {takeaway}
+          <div className="flex flex-col gap-4 md:gap-6">
+            <div className="flex flex-col gap-4 md:flex-row md:gap-6">
+              {STEPS.map((s) => (
+                <div
+                  key={s.num}
+                  className="flex flex-1 flex-col gap-5 rounded-2xl border border-[#e2e2e2] p-6 md:gap-12 md:border-0 md:p-9"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, rgba(238,238,238,0.5) 0%, rgba(136,136,136,0) 100%)",
+                  }}
+                >
+                  <p className="font-script text-[40px] leading-[56px] text-[#079669]">
+                    {s.num}
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-xl font-semibold leading-7 text-[#00150b]">
+                      {s.title}
+                    </h3>
+                    <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
+                      {s.desc}
                     </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
 
-            <QuoteBlock
-              quote={`"Because your work must continue in your community for decades and generations to come, your nonprofit is focusing on long-term gifts."`}
-              attribution="— Tony Martignetti"
-            />
-
-            <button
-              type="button"
-              onClick={() => scrollToPrinciplesJoin()}
-              className="primary_btn_two w-fit cursor-pointer px-8 py-[18px] text-base shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
-            >
-              Join Waitlist
-            </button>
+            <div className="flex flex-col gap-6 rounded-2xl bg-[#079669] p-6 md:flex-row md:items-center md:gap-12 md:p-9">
+              <p className="whitespace-nowrap text-center font-script text-[40px] leading-[56px] text-white md:shrink-0">
+                Follow Up
+              </p>
+              <div className="flex flex-col gap-4">
+                <h3 className="text-xl font-semibold leading-7 text-white">
+                  Set up tracking and follow through
+                </h3>
+                <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white">
+                  If they say yes, thank them effusively. If they say maybe,
+                  agree on a clear next step and timeframe. Put a reminder in
+                  your calendar or CRM. Keep all regular communications
+                  flowing you want the donor to know that a planned gift is
+                  additive, not a substitute for their other giving.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <TakeawayMarquee items={TAKEAWAYS} />
+    </>
   );
 }

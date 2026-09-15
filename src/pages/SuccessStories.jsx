@@ -16,8 +16,8 @@ function SuccessStories() {
     <div>
       <SuccessStoriesHero />
       <SuccessStats />
-      <FeaturedSuccessStory />
       <TestimonialLibrary />
+      <FeaturedSuccessStory />
       <VideoTestimonials />
       <SuccessStoriesFooter />
     </div>

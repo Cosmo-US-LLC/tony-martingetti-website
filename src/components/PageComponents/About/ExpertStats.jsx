@@ -1,43 +1,41 @@
 const STATS = [
-  { value: "$150M+", label: "In bequests secured" },
-  { value: "29+", label: "Years in Planned Giving" },
-  { value: "1000+", label: "Programs to launch" },
-  { value: "750+", label: "Podcast Episodes" },
+  { value: "$150M+", desc: "In bequests secured" },
+  { value: "29+", desc: "Years in Planned Giving" },
+  { value: "1,000+", desc: "Programs to launch" },
+  { value: "800+", desc: "Podcast episodes" },
 ];
-
-function StatCard({ value, label }) {
-  return (
-    <div className="flex h-[180px] flex-col justify-between rounded-xl bg-white px-4 py-6 md:h-[210px] md:px-6 md:py-8">
-      <p className="font-sans text-base font-normal uppercase leading-[22.75px] text-[#0f172a] md:text-lg">
-        {label}
-      </p>
-      <p className="font-heading text-[40px] font-bold uppercase leading-7 tracking-[0.36px] text-[#059669] md:text-[55px]">
-        {value}
-      </p>
-    </div>
-  );
-}
 
 export default function ExpertStats() {
   return (
-    <section
-      className="w-full bg-[#f8fafc] py-12 md:py-[60px]"
-      data-name="Expert Stats"
-    >
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 md:px-8 lg:flex-row lg:items-start lg:gap-20">
-        <div className="flex flex-1 flex-col justify-center gap-1.5">
-          <p className="font-sans text-base font-semibold leading-[22px] text-[#059669]">
-            Planned Giving Expert
+    <section className="w-full bg-[#fafafa] px-4 py-12 md:px-[60px] md:py-20">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-8 md:gap-12">
+        <div className="mx-auto flex max-w-[830px] flex-col gap-3.5 text-center md:gap-[18px]">
+          <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
+            Planned Giving expert
           </p>
-          <h2 className="heading_two max-w-[578px] text-[#0f172a] md:leading-[46px]">
-            Turn Supporter Loyalty Into Legacy Gifts That Fund Your Mission for
-            Decades
+          <h2 className="text-[28px] font-bold leading-[39.2px] text-[#151515] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
+            Turn supporter loyalty into legacy gifts that fund your mission
+            for decades
           </h2>
         </div>
 
-        <div className="grid w-full max-w-[576px] grid-cols-2 gap-5 sm:grid-cols-2 lg:shrink-0">
-          {STATS.map((stat) => (
-            <StatCard key={stat.label} {...stat} />
+        <div className="grid grid-cols-2 gap-2 md:flex md:gap-6">
+          {STATS.map((s) => (
+            <div
+              key={s.desc}
+              className="flex flex-col items-center gap-4 rounded-2xl px-6 py-10 text-center md:flex-1 md:gap-6 md:px-6 md:py-12"
+              style={{
+                backgroundImage:
+                  "linear-gradient(180deg, rgba(238,238,238,0.7) 0%, rgba(136,136,136,0.08) 100%)",
+              }}
+            >
+              <p className="font-script text-2xl leading-[28.8px] text-[#079669] md:text-[48px] md:leading-[56px]">
+                {s.value}
+              </p>
+              <p className="text-base leading-[22.4px] text-[#21021b] md:text-lg md:leading-[26px]">
+                {s.desc}
+              </p>
+            </div>
           ))}
         </div>
       </div>
