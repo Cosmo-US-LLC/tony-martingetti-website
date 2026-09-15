@@ -6,7 +6,7 @@ import frameworkMythsIcon from "@/assets/images/principles/hero/framework_myths.
 import frameworkWeekIcon from "@/assets/images/principles/hero/framework_week.svg";
 import heroArrowLeft from "@/assets/images/principles/hero/hero_arrow_left.svg";
 import heroArrowRight from "@/assets/images/principles/hero/hero_arrow_right.svg";
-import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 const HERO_PILLS = [
   { label: "3-Step Launch", icon: threeStepRocketIcon, targetId: "three-step-launch" },
@@ -104,13 +104,14 @@ export default function PrinciplesHero() {
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={() => scrollToPrinciplesJoin()}
+          <a
+            href={AMAZON_BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="primary_btn_two w-fit cursor-pointer px-8 py-[18px] text-base shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
           >
-            Join Waitlist
-          </button>
+            Order Now
+          </a>
         </div>
 
         <div className="relative hidden w-full max-w-[598px] shrink-0 lg:block">

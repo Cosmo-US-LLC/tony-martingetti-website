@@ -1,11 +1,7 @@
 import heroImage from "@/assets/images/about/hero/tony_hero.webp";
-import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 export default function AboutHero() {
-  const handleJoinClick = () => {
-    scrollToAboutJoin();
-  };
-
   return (
     <section
       className="w-full py-16 md:py-20"
@@ -34,13 +30,14 @@ export default function AboutHero() {
               helped nonprofits raise over $150 million in bequests ever since.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={handleJoinClick}
+          <a
+            href={AMAZON_BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="primary_btn_two w-fit cursor-pointer"
           >
-            Join the Waitlist Now
-          </button>
+            Order Now
+          </a>
         </div>
 
         <div className="relative h-[320px] w-full max-w-[558px] shrink-0 overflow-hidden rounded-2xl md:h-[420px] lg:h-[509px]">

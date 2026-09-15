@@ -1,10 +1,6 @@
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 export default function JoinWaitlistHero() {
-  const handleJoinClick = () => {
-    scrollToWaitlistJoin();
-  };
-
   return (
     <section className="relative w-full overflow-hidden px-6 py-28 min-h-[85vh] 
          md:min-h-[720px] 
@@ -19,7 +15,7 @@ export default function JoinWaitlistHero() {
           data-name="Overlay+Border"
         >
           <span className="text-sm font-bold uppercase leading-5 tracking-[0.7px] text-[#6ee7b7]">
-            ✨ Limited Spots Available
+            ✨ Book is Live Now
           </span>
         </div>
 
@@ -27,9 +23,9 @@ export default function JoinWaitlistHero() {
           className="heading_one text-center text-white"
           data-name="Heading 1"
         >
-          <span className="block">Join 500+ Nonprofits</span>
-          <span className="block">Waiting to Launch</span>
-          <span className="block text-[#34d399]">Their Planned Giving</span>
+          <span className="block">500+ Nonprofits Are</span>
+          <span className="block">Launching Their</span>
+          <span className="block text-[#34d399]">Planned Giving</span>
           <span className="block text-[#34d399]">Programs</span>
         </h1>
 
@@ -37,18 +33,19 @@ export default function JoinWaitlistHero() {
           className="mt-6 max-w-[632px] text-center paragraph_one text-[#DBEAFE]"
           data-name="Subtext"
         >
-          Get priority access to Tony Martignetti's proven program + your FREE
-          Success Toolkit (valued at $297)
+          Get Tony Martignetti's proven program in Planned Giving Accelerated
+          - live now on Amazon.
         </p>
 
-        <button
-          type="button"
-          onClick={handleJoinClick}
+        <a
+          href={AMAZON_BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="primary_btn_two mt-8 shrink-0 cursor-pointer"
           data-name="Button"
         >
-          Join the Waitlist Now
-        </button>
+          Order Now
+        </a>
       </div>
     </section>
   );

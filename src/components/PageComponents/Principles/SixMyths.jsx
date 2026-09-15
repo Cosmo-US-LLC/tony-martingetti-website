@@ -1,6 +1,6 @@
 import stepTakeawayCheckIcon from "@/assets/images/principles/icons/step_takeaway_check.svg";
 import { MYTH_TAKEAWAYS, PLANNED_GIVING_MYTHS } from "@/constants/principles";
-import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 import MythCard from "./MythCard";
 import QuoteBlock from "./QuoteBlock";
 
@@ -58,13 +58,14 @@ export default function SixMyths() {
           attribution="— Tony Martignetti"
         />
 
-        <button
-          type="button"
-          onClick={() => scrollToPrinciplesJoin()}
+        <a
+          href={AMAZON_BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="primary_btn_two mx-auto w-fit cursor-pointer px-8 py-[18px] text-base shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
         >
-          Join Waitlist
-        </button>
+          Order Now
+        </a>
       </div>
     </section>
   );

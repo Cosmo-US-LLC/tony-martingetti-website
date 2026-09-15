@@ -1,8 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 export default function PrinciplesFooter() {
   const currentYear = new Date().getFullYear();
-  const navigate = useNavigate();
 
   return (
     <footer
@@ -22,8 +22,8 @@ export default function PrinciplesFooter() {
               </h2>
               <p className="card_body text-[#f7f7f7]">
                 <span className="block">
-                  Join 500+ nonprofits already on the waitlist for Planned
-                  Giving Accelerated
+                  Join 500+ nonprofits already using Planned Giving
+                  Accelerated
                 </span>
                 <span className="block">
                   Tony Martignetti&apos;s proven program that gets your bequest
@@ -32,13 +32,14 @@ export default function PrinciplesFooter() {
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => navigate("/#join")}
+            <a
+              href={AMAZON_BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="primary_btn_two mt-2.5 cursor-pointer px-8 py-[18px] text-base shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
             >
-              Join Waitlist Now
-            </button>
+              Order Now
+            </a>
           </div>
         </div>
 

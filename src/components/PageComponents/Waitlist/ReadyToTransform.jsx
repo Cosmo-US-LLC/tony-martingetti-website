@@ -1,4 +1,5 @@
 import { useWaitlistForm } from "@/hooks/useWaitlistForm";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 function ReadyToTransform() {
   const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
@@ -26,56 +27,69 @@ function ReadyToTransform() {
           className="max-w-[580px] text-center paragraph_one text-white opacity-95"
           data-name="Subheading"
         >
-          Join the waitlist now and get instant access to your FREE toolkit
+          The book is live now. Order your copy and start transforming your
+          fundraising today.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex w-full max-w-[576px] flex-col gap-4 pt-4 sm:flex-row sm:items-stretch"
-          data-name="Form"
+        <a
+          href={AMAZON_BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="secondary_btn inline-flex! shrink-0 cursor-pointer flex-row! py-[16px]! sm:w-auto"
+          data-name="Button"
         >
-          <label className="sr-only" htmlFor="waitlist-email">
-            Email address
-          </label>
-          <input
-            id="waitlist-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email address"
-            required
-            disabled={isLoading}
-            className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-[16px] font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#059669] disabled:opacity-60"
-            data-name="Input"
-          />
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="secondary_btn inline-flex! shrink-0 cursor-pointer flex-row! py-[16px]! disabled:cursor-not-allowed sm:w-auto"
-            data-name="Button"
+          Order Now
+        </a>
+
+        <div className="hidden">
+          <form
+            onSubmit={handleSubmit}
+            className="flex w-full max-w-[576px] flex-col gap-4 pt-4 sm:flex-row sm:items-stretch"
+            data-name="Form"
           >
-            {isLoading ? "Joining…" : "Join Waitlist"}
-          </button>
-        </form>
+            <label className="sr-only" htmlFor="waitlist-email">
+              Email address
+            </label>
+            <input
+              id="waitlist-email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+              required
+              disabled={isLoading}
+              className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-[16px] font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#059669] disabled:opacity-60"
+              data-name="Input"
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="secondary_btn inline-flex! shrink-0 cursor-pointer flex-row! py-[16px]! disabled:cursor-not-allowed sm:w-auto"
+              data-name="Button"
+            >
+              {isLoading ? "Joining…" : "Join Waitlist"}
+            </button>
+          </form>
 
-        {status === "success" && (
-          <p className="text-center font-sans text-lg font-medium text-white">
-            Thanks! You&apos;re on the list.
-          </p>
-        )}
+          {status === "success" && (
+            <p className="text-center font-sans text-lg font-medium text-white">
+              Thanks! You&apos;re on the list.
+            </p>
+          )}
 
-        {status === "error" && (
-          <p className="text-center font-sans text-base font-medium text-red-100">
-            {errorMessage}
-          </p>
-        )}
+          {status === "error" && (
+            <p className="text-center font-sans text-base font-medium text-red-100">
+              {errorMessage}
+            </p>
+          )}
+        </div>
 
-        <p
+        {/* <p
           className="text-center font-sans text-[12px] md:text-[16px] font-normal leading-5 text-white opacity-80"
           data-name="Privacy"
         >
           🔒 Your information is safe. We respect your privacy.
-        </p>
+        </p> */}
       </div>
     </section>
   );

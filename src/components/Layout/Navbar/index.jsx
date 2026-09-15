@@ -1,11 +1,8 @@
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
-import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
-import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
-import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 const NAV_LINKS = [
   { to: "/", label: "Home", end: true },
@@ -27,29 +24,6 @@ function getNavLinkClass(isActive, mobile = false) {
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleJoinClick = (closeMobile = false) => {
-    if (location.pathname === "/about") {
-      scrollToAboutJoin();
-    } else if (location.pathname === "/success-stories") {
-      scrollToSuccessStoriesJoin();
-    } else if (location.pathname === "/principles") {
-      scrollToPrinciplesJoin();
-    } else if (location.pathname === "/my-book") {
-      navigate("/#join");
-    } else if (
-      location.pathname === "/waitlist" ||
-      location.pathname === "/"
-    ) {
-      scrollToWaitlistJoin();
-    } else {
-      navigate("/waitlist#join");
-    }
-
-    if (closeMobile) setMobileOpen(false);
-  };
 
   return (
     <header
@@ -83,13 +57,15 @@ export default function Navbar() {
               </NavLink>
             ))}
 
-            {/* Join Waitlist CTA */}
-            <button
-              onClick={() => handleJoinClick()}
+            {/* Order Now CTA */}
+            <a
+              href={AMAZON_BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="primary_btn shrink-0 cursor-pointer"
             >
-              Join Waitlist
-            </button>
+              Order Now
+            </a>
           </div>
 
           <button
@@ -117,12 +93,15 @@ export default function Navbar() {
             ))}
 
             {/* Mobile CTA */}
-            <button
-              onClick={() => handleJoinClick(true)}
+            <a
+              href={AMAZON_BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
               className="primary_btn w-fit cursor-pointer"
             >
-              Join Waitlist
-            </button>
+              Order Now
+            </a>
 
           </div>
         )}
