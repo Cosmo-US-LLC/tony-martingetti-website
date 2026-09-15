@@ -1,4 +1,4 @@
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 const BENEFITS = [
   {
@@ -31,10 +31,6 @@ function CheckIcon() {
 }
 
 export default function WhatYouGet() {
-  const handleJoinClick = () => {
-    scrollToWaitlistJoin();
-  };
-
   return (
     <section
       className="w-full bg-[#f8fafc] px-6 py-16 md:px-12 md:py-20"
@@ -69,14 +65,15 @@ export default function WhatYouGet() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={handleJoinClick}
+        <a
+          href={AMAZON_BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="primary_btn shrink-0 cursor-pointer"
           data-name="Button"
         >
-          Join the Waitlist Now
-        </button>
+          Order Now
+        </a>
       </div>
     </section>
   );

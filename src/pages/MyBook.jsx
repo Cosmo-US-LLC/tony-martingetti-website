@@ -10,7 +10,7 @@ import BookFooter from "@/components/PageComponents/MyBook/BookFooter";
 function MyBook() {
   usePageMeta(
     "Planned Giving Accelerated | Tony Martignetti's Book",
-    "Tony Martignetti's no-nonsense guide to launching a Planned Giving program in one week with bequests. Coming soon — get notified at launch.",
+    "Tony Martignetti's no-nonsense guide to launching a Planned Giving program in one week with bequests. Available now — order your copy on Amazon.",
   );
 
   return (

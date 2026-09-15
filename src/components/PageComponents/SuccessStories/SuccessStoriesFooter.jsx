@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useWaitlistForm } from "@/hooks/useWaitlistForm";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 export default function SuccessStoriesFooter() {
   const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
@@ -23,48 +24,59 @@ export default function SuccessStoriesFooter() {
                 Ready to Write Your Own Success Story?
               </h2>
               <p className="card_body text-[#f7f7f7]">
-                Join 500+ nonprofits on the waitlist for Planned Giving
-                Accelerated. Limited spots available.
+                Join 500+ nonprofits using Planned Giving Accelerated. Order
+                your copy today.
               </p>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="flex w-full max-w-[576px] flex-col gap-4 pt-2.5 sm:flex-row sm:items-stretch"
+            <a
+              href={AMAZON_BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary_btn_two mt-2.5 cursor-pointer px-8 py-[18px] text-base"
             >
-              <label className="sr-only" htmlFor="success-stories-email">
-                Email address
-              </label>
-              <input
-                id="success-stories-email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                required
-                disabled={isLoading}
-                className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-4 font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#059669] disabled:opacity-60"
-              />
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="primary_btn_two shrink-0 cursor-pointer px-8 py-[18px] text-base disabled:cursor-not-allowed sm:w-auto"
+              Order Now
+            </a>
+
+            <div className="hidden">
+              <form
+                onSubmit={handleSubmit}
+                className="flex w-full max-w-[576px] flex-col gap-4 pt-2.5 sm:flex-row sm:items-stretch"
               >
-                {isLoading ? "Joining…" : "Join Waitlist Now"}
-              </button>
-            </form>
+                <label className="sr-only" htmlFor="success-stories-email">
+                  Email address
+                </label>
+                <input
+                  id="success-stories-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  required
+                  disabled={isLoading}
+                  className="min-h-[56px] flex-1 rounded-lg border-0 bg-white px-6 py-4 font-sans text-lg text-[#0f172a] placeholder:text-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#059669] disabled:opacity-60"
+                />
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="primary_btn_two shrink-0 cursor-pointer px-8 py-[18px] text-base disabled:cursor-not-allowed sm:w-auto"
+                >
+                  {isLoading ? "Joining…" : "Join Waitlist Now"}
+                </button>
+              </form>
 
-            {status === "success" && (
-              <p className="font-sans text-base font-medium text-[#6ee7b7]">
-                Thanks! You&apos;re on the list.
-              </p>
-            )}
+              {status === "success" && (
+                <p className="font-sans text-base font-medium text-[#6ee7b7]">
+                  Thanks! You&apos;re on the list.
+                </p>
+              )}
 
-            {status === "error" && (
-              <p className="font-sans text-base font-medium text-red-300">
-                {errorMessage}
-              </p>
-            )}
+              {status === "error" && (
+                <p className="font-sans text-base font-medium text-red-300">
+                  {errorMessage}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 

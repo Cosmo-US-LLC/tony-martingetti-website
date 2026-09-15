@@ -1,4 +1,4 @@
-import { scrollToMyBookNotify } from "@/utils/scrollToMyBookNotify";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 export default function BookFooter() {
   const currentYear = new Date().getFullYear();
@@ -19,16 +19,17 @@ export default function BookFooter() {
               Your mission deserves a longer runway.
             </h2>
             <p className="font-sans text-base leading-[26px] text-[#f7f7f7]">
-              Be the first to know when Planned Giving Accelerated is available
-              for pre-order.
+              Planned Giving Accelerated is available now. Order your copy
+              and start building your bequest-first program.
             </p>
-            <button
-              type="button"
-              onClick={() => scrollToMyBookNotify()}
+            <a
+              href={AMAZON_BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="primary_btn_two mt-2 cursor-pointer px-8 py-[18px] text-base uppercase tracking-[0.4px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
             >
-              Notify Me at Launch
-            </button>
+              Order Now
+            </a>
           </div>
         </div>
 

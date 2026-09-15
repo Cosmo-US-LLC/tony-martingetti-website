@@ -1,6 +1,6 @@
 import tonyQuoteImage from "@/assets/images/my_book/myths/tony_quote.webp";
 import { BOOK_MYTHS } from "@/constants/myBook";
-import { scrollToMyBookNotify } from "@/utils/scrollToMyBookNotify";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 function MythTag({ label, variant }) {
   const isPositive = variant === "positive";
@@ -55,13 +55,14 @@ export default function BookMyths() {
             ))}
           </div>
 
-          <button
-            type="button"
-            onClick={() => scrollToMyBookNotify()}
+          <a
+            href={AMAZON_BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="primary_btn_two mt-8 cursor-pointer px-8 py-[18px] text-base uppercase tracking-[0.4px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
           >
-            Notify Me at Launch
-          </button>
+            Order Now
+          </a>
         </div>
 
         <div className="relative h-[360px] w-full overflow-hidden rounded-2xl md:h-[470px] md:max-w-[567px] md:shrink-0">

@@ -2,7 +2,7 @@ import hero1 from "@/assets/images/success_stories/hero/hero_1.webp";
 import hero2 from "@/assets/images/success_stories/hero/hero_2.webp";
 import hero3 from "@/assets/images/success_stories/hero/hero_3.webp";
 import hero4 from "@/assets/images/success_stories/hero/hero_4.webp";
-import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 const HERO_IMAGES = [
   { src: hero1, alt: "Nonprofit leader testimonial portrait" },
@@ -38,13 +38,14 @@ export default function SuccessStoriesHero() {
               what happens when organizations commit to Planned Giving.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={scrollToSuccessStoriesJoin}
+          <a
+            href={AMAZON_BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="primary_btn_two w-fit cursor-pointer"
           >
-            Join the Waitlist Now
-          </button>
+            Order Now
+          </a>
         </div>
 
         <div className="grid w-full max-w-[558px] shrink-0 grid-cols-2 gap-3.5">

@@ -1,7 +1,7 @@
 import icon_1 from "@/assets/images/waitlist/be_first/icon_1.svg";
 import icon_2 from "@/assets/images/waitlist/be_first/icon_2.svg";
 import icon_3 from "@/assets/images/waitlist/be_first/icon_3.svg";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+import { AMAZON_BOOK_URL } from "@/constants";
 
 const BENEFITS = [
   {
@@ -27,10 +27,6 @@ const BENEFITS = [
 ];
 
 export default function BeFirstInLine() {
-  const handleJoinClick = () => {
-    scrollToWaitlistJoin();
-  };
-
   return (
     <section className="w-full bg-[#f8fafc] py-16 md:py-20" data-name="Section">
       <div
@@ -81,14 +77,15 @@ export default function BeFirstInLine() {
             </div>
           ))}
         </div>
-        <button
-          type="button"
-          onClick={handleJoinClick}
+        <a
+          href={AMAZON_BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="primary_btn shrink-0 cursor-pointer"
           data-name="Button"
         >
-          Join the Waitlist Now
-        </button>
+          Order Now
+        </a>
       </div>
     </section>
   );
