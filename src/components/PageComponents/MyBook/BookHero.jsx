@@ -42,13 +42,20 @@ export default function BookHero() {
 
           <div className="flex w-full max-w-[680px] flex-col gap-2.5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button
-                type="button"
-                className="w-full cursor-pointer rounded-lg bg-[#059669] px-6 py-4 text-base font-semibold leading-[22.4px] text-white sm:w-auto"
+              <a
+                href="https://tony.ma/Amazon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full cursor-pointer rounded-lg bg-[#059669] px-6 py-4 text-center text-base font-semibold leading-[22.4px] text-white sm:w-auto"
               >
                 Order Now
-              </button>
-              <div className="flex w-full items-center justify-center gap-3 rounded-lg bg-white/10 px-6 py-4 sm:w-fit sm:justify-start">
+              </a>
+              <a
+                href="https://tony.ma/Amazon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-3 rounded-lg bg-white/10 px-6 py-4 sm:w-fit sm:justify-start"
+              >
                 <img
                   src={AMAZON_BADGE}
                   alt="Amazon Kindle"
@@ -57,7 +64,7 @@ export default function BookHero() {
                 <p className="whitespace-nowrap text-sm leading-[19.6px] text-white/85">
                   Order on Amazon: Live Now
                 </p>
-              </div>
+              </a>
             </div>
             <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white">
               Free opening chapter, sent immediately. No purchase needed.

@@ -67,7 +67,9 @@ export default function MomentStatsSection() {
           </div>
           <p className="mx-auto max-w-[620px] text-center text-sm leading-[19.6px] text-[#323232]">
             Most small and mid-size nonprofits don't have a plan built to
-            capture any of it. Planned Giving Accelerated is your plan.
+            capture any of it.{" "}
+            <span className="font-bold">Planned Giving Accelerated</span> is
+            your plan.
           </p>
         </div>
       </div>

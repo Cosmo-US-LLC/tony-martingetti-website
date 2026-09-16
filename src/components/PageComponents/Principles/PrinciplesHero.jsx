@@ -7,7 +7,7 @@ export default function PrinciplesHero() {
       <img
         src={HERO_BG}
         alt="Tony Martignetti"
-        className="absolute inset-0 h-full w-full object-cover object-[75%_30%]"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_15%] md:object-[75%_30%]"
       />
       <div
         className="absolute inset-0 hidden md:block"
@@ -26,7 +26,7 @@ export default function PrinciplesHero() {
 
       <div className="relative flex min-h-[500px] w-full flex-col px-4 pt-[140px] pb-12 md:min-h-[770px] md:px-[60px] md:pt-[188px] md:pb-0">
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-7 md:gap-4">
-          <div className="flex max-w-[366px] flex-col gap-3 md:max-w-[616px]">
+          <div className="flex max-w-[366px] flex-col gap-3 md:pt-0 pt-25 md:max-w-[616px]">
             <p className="font-script text-2xl leading-[33.6px] text-[#2fac66] md:text-[32px] md:leading-[44.8px]">
               Our principles
             </p>

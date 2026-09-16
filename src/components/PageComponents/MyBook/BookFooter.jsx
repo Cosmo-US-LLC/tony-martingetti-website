@@ -18,13 +18,20 @@ export default function BookFooter() {
         </div>
 
         <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
-          <button
-            type="button"
-            className="cursor-pointer rounded-lg bg-[#079669] px-6 py-3 text-base font-bold leading-6 text-white"
+          <a
+            href="https://tony.ma/Amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer rounded-lg bg-[#079669] px-6 py-3 text-center text-base font-bold leading-6 text-white"
           >
             Order Now
-          </button>
-          <div className="flex items-center gap-3 rounded-lg bg-white/10 px-5 py-3">
+          </a>
+          <a
+            href="https://tony.ma/Amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 rounded-lg bg-white/10 px-5 py-3"
+          >
             <img
               src={AMAZON_BADGE}
               alt="Amazon Kindle"
@@ -33,7 +40,7 @@ export default function BookFooter() {
             <p className="whitespace-nowrap text-sm leading-5 text-white/85">
               Order on Amazon: Live Now
             </p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
