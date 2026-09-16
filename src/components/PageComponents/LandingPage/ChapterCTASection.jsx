@@ -30,16 +30,12 @@ export default function ChapterCTASection() {
     >
       <div className="mx-auto flex w-full max-w-[1320px] flex-col items-center gap-8 md:gap-12">
         <div className="flex max-w-[830px] flex-col items-center gap-2 text-center">
-          <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
-            Waitlist
-          </p>
           <div className="flex flex-col gap-4">
             <h2 className="text-[28px] font-bold leading-[39.2px] text-white md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
               Start With Chapter 1. Free
             </h2>
             <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white">
-              Planned Giving Accelerated isn't published yet. Joining the
-              waitlist costs nothing and gets you reading today.
+              Planned Giving Accelerated is live now. If chapter one does its job, you already know the rest.
             </p>
           </div>
         </div>

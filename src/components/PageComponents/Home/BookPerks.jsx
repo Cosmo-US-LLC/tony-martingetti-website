@@ -3,7 +3,6 @@ import PERK_BOOK from "@/assets/images/home/icons/perk-book.svg";
 import PERK_WEBINAR from "@/assets/images/home/icons/perk-webinar.svg";
 import PERK_SCRIPT from "@/assets/images/home/icons/perk-script.svg";
 import PERK_WORKSHEET from "@/assets/images/home/icons/perk-worksheet.svg";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const PERKS = [
   {
@@ -35,7 +34,7 @@ export default function BookPerks() {
         <div className="flex flex-col gap-6 px-4 pt-6 md:w-1/2 md:gap-6 md:py-20 md:pl-16 md:pr-0">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-bold leading-[28.8px] tracking-[-0.48px] text-[#151515] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
-              What you get when the book launches
+              What you get with the book
             </h2>
             <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
               Discover the exclusive benefits available at the book's launch.
@@ -58,12 +57,14 @@ export default function BookPerks() {
             ))}
           </div>
 
-          <button
-            onClick={() => scrollToWaitlistJoin()}
-            className="mb-6 w-full cursor-pointer rounded-lg bg-[#079669] px-6 py-4 text-base font-bold leading-6 text-white md:mb-0 md:w-fit"
+          <a
+            href="https://tony.ma/Amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-6 w-full cursor-pointer rounded-lg bg-[#079669] px-6 py-4 text-center text-base font-bold leading-6 text-white transition-colors hover:bg-[#057a56] md:mb-0 md:w-fit"
           >
-            Get my free chapter
-          </button>
+            Order Now
+          </a>
         </div>
 
         <div className="md:w-1/2">

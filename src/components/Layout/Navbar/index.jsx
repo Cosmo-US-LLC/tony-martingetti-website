@@ -1,14 +1,10 @@
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
 import SOCIAL_MAIL from "@/assets/images/home/icons/social-mail.svg";
 import SOCIAL_LINKEDIN from "@/assets/images/home/icons/social-linkedin.svg";
 import SOCIAL_X from "@/assets/images/home/icons/social-x.svg";
-import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
-import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
-import { scrollToPrinciplesJoin } from "@/utils/scrollToPrinciplesJoin";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const NAV_LINKS = [
   { to: "/", label: "Home", end: true },
@@ -21,7 +17,6 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
   const isLight = location.pathname === "/privacy-policy";
 
@@ -31,24 +26,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleJoinClick = (closeMobile = false) => {
-    if (location.pathname === "/about") {
-      scrollToAboutJoin();
-    } else if (location.pathname === "/success-stories") {
-      scrollToSuccessStoriesJoin();
-    } else if (location.pathname === "/principles") {
-      scrollToPrinciplesJoin();
-    } else if (location.pathname === "/my-book") {
-      navigate("/#join");
-    } else if (location.pathname === "/waitlist" || location.pathname === "/") {
-      scrollToWaitlistJoin();
-    } else {
-      navigate("/waitlist#join");
-    }
-
-    if (closeMobile) setMobileOpen(false);
-  };
 
   return (
     <>
@@ -101,20 +78,24 @@ export default function Navbar() {
             ))}
           </div>
 
-          <button
-            onClick={() => handleJoinClick()}
+          <a
+            href="https://tony.ma/Amazon"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden shrink-0 cursor-pointer rounded-lg bg-[#079669] px-4 py-3 text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#057a56] md:inline-flex"
           >
-            Get Free Chapter
-          </button>
+            Order Now
+          </a>
 
           <div className="flex items-center gap-2 md:hidden">
-            <button
-              onClick={() => handleJoinClick()}
-              className="cursor-pointer rounded-lg bg-[#059669] px-4 py-2.5 text-sm font-semibold leading-[17.5px] text-white"
+            <a
+              href="https://tony.ma/Amazon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer rounded-lg bg-[#059669] px-4 py-2.5 text-sm font-semibold leading-[17.5px] text-white transition-colors hover:bg-[#047a56]"
             >
-              Free Chapter
-            </button>
+              Order Now
+            </a>
             <button
               type="button"
               className={isLight ? "p-1 text-black" : "p-1 text-white"}
@@ -235,12 +216,15 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <button
-                onClick={() => handleJoinClick(true)}
-                className="w-full cursor-pointer rounded-lg bg-[#079669] px-8 py-3 text-base font-bold leading-6 tracking-[-0.1px] text-white"
+              <a
+                href="https://tony.ma/Amazon"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="w-full cursor-pointer rounded-lg bg-[#079669] px-8 py-3 text-center text-base font-bold leading-6 tracking-[-0.1px] text-white transition-colors hover:bg-[#057a56]"
               >
-                Free Chapter
-              </button>
+                Order Now
+              </a>
             </div>
           </div>,
           document.body

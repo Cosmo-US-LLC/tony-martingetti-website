@@ -29,9 +29,7 @@ export default function LiveSessionSection() {
               A Live Working Session With Tony
             </h2>
             <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
-              Not a webinar and not a sales pitch. The first 50 people on the
-              waitlist get a seat on a virtual session where Tony works
-              through the real bottlenecks in your programs.
+              Not a webinar and not a sales pitch. Just the exact steps to start legacy fundraising at your nonprofit in one week.
             </p>
           </div>
         </div>

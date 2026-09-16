@@ -41,28 +41,33 @@ export default function BookHero() {
           </div>
 
           <div className="flex w-full max-w-[680px] flex-col gap-2.5">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="flex w-full flex-col gap-2.5 sm:w-fit">
               <a
                 href="https://tony.ma/Amazon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full cursor-pointer rounded-lg bg-[#059669] px-6 py-4 text-center text-base font-semibold leading-[22.4px] text-white sm:w-auto"
-              >
-                Order Now
-              </a>
-              <a
-                href="https://tony.ma/Amazon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-3 rounded-lg bg-white/10 px-6 py-4 sm:w-fit sm:justify-start"
+                className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
               >
                 <img
                   src={AMAZON_BADGE}
                   alt="Amazon Kindle"
-                  className="h-6 w-auto object-contain"
+                  className="h-5 w-[81px] shrink-0 object-contain"
                 />
-                <p className="whitespace-nowrap text-sm leading-[19.6px] text-white/85">
-                  Order on Amazon: Live Now
+                <p className="whitespace-nowrap text-sm leading-5 text-white/85">
+                  Available Now on Amazon: Live Now
+                </p>
+              </a>
+              <a
+                href="https://tony.ma/BN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+              >
+                <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
+                  BARNES <span className="text-[#c9a86a]">&</span> NOBLE
+                </p>
+                <p className="whitespace-nowrap text-sm leading-5 text-white/85">
+                  Available Now on Barnes & Noble
                 </p>
               </a>
             </div>

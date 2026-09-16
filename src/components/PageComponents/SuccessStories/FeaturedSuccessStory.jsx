@@ -55,11 +55,11 @@ export default function FeaturedSuccessStory() {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <img
+                {/* <img
                   src={AVATAR}
                   alt={s.name}
                   className="hidden h-16 w-16 shrink-0 rounded-full object-cover md:block"
-                />
+                /> */}
                 <div className="flex flex-col gap-1">
                   <p className="text-base font-semibold leading-[22.4px] text-white md:text-xl md:leading-7 md:tracking-[-0.5px]">
                     {s.name}

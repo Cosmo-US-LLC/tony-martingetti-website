@@ -1,5 +1,4 @@
 import HERO_BG from "@/assets/images/principles/hero-bg.png";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 export default function PrinciplesHero() {
   return (
@@ -41,12 +40,14 @@ export default function PrinciplesHero() {
           </div>
 
           <div>
-            <button
-              onClick={() => scrollToWaitlistJoin()}
-              className="w-full cursor-pointer rounded-lg bg-[#951b81] px-3.5 py-3.5 text-base font-semibold leading-6 tracking-[-0.5px] text-white md:w-fit md:px-6 md:py-3"
+            <a
+              href="https://tony.ma/Amazon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full cursor-pointer rounded-lg bg-[#951b81] px-3.5 py-3.5 text-center text-base font-semibold leading-6 tracking-[-0.5px] text-white transition-colors hover:bg-[#7a1569] md:w-fit md:px-6 md:py-3"
             >
-              Get my free chapter
-            </button>
+              Order Now
+            </a>
           </div>
         </div>
       </div>

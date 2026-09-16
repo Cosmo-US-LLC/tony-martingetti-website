@@ -1,5 +1,4 @@
 import ILLUSTRATION from "@/assets/images/home/illustration.png";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const STATS = [
   { value: "75–90%", desc: "Of gifts come through wills" },
@@ -63,12 +62,14 @@ export default function StatsFeature() {
               </p>
             </div>
 
-            <button
-              onClick={() => scrollToWaitlistJoin()}
-              className="w-full cursor-pointer rounded-lg bg-[#079669] px-3.5 py-3.5 text-base font-semibold leading-[22.4px] tracking-[-0.16px] text-white md:w-fit md:px-6 md:py-3"
+            <a
+              href="https://tony.ma/Amazon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full cursor-pointer rounded-lg bg-[#079669] px-3.5 py-3.5 text-center text-base font-semibold leading-[22.4px] tracking-[-0.16px] text-white transition-colors hover:bg-[#057a56] md:w-fit md:px-6 md:py-3"
             >
-              Get my free chapter
-            </button>
+              Order Now
+            </a>
           </div>
 
           <div className="md:w-1/2">

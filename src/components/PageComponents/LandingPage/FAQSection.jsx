@@ -8,31 +8,31 @@ const FAQS = [
   },
   {
     q: "When do I get the free chapter?",
-    a: "Immediately. As soon as you join the waitlist, Chapter 1 is emailed to you.",
+    a: "Straight away. Enter your email and Chapter 1 is sent to your inbox. You don't wait for launch day and you don't pay anything.",
   },
   {
     q: "How does the first-50 working session work?",
-    a: "The first 50 people to join the waitlist get a seat on a live virtual session where Tony works through your program's real bottleneck. Seats go in signup order.",
+    a: "Everyone in the first 50 waitlist signups gets a seat. Tony hosts a virtual session where you bring the specific thing blocking your planned giving program, he works through it with you, and you leave knowing where to point your effort next. We email you the date and joining link once seats close.",
   },
   {
     q: "What if I'm not in the first 50?",
-    a: "You'll still get Chapter 1 free and the Founders Rate locked in. You just won't have a guaranteed seat on the live working session.",
+    a: "You still get Chapter 1 free and the Founders Rate. The working session is the only part capped at 50, and it's allocated in signup order. No draw, no lottery.",
   },
   {
     q: "What is the Founders Rate?",
-    a: "A discounted rate on the book reserved for waitlist members. It ends the day the book goes public on Amazon and retail.",
+    a: "A one-time price only available to people on the waitlist before public launch. Once the book is live on Amazon and retail, that pricing goes away for good.",
   },
   {
     q: "Do I need a fundraising background to use this?",
-    a: "No. The book is written in plain English for executive directors, fundraisers and board members alike, no fundraising background required.",
+    a: "No. The book is written for CEOs, Executive Directors, Development Directors, board members, and volunteers, not just career fundraisers. No prior planned giving experience required.",
   },
   {
     q: "Is this only for large nonprofits?",
-    a: "No. The bequest-first system is built specifically for small and mid-size nonprofits with limited staff and budget.",
+    a: "It's built for the opposite. The whole system assumes you don't have a major gifts department, a big budget, or a dedicated planned giving officer.",
   },
   {
     q: "I'm a consultant, not on staff at a nonprofit. Is this still for me?",
-    a: "Yes. Many consultants use the framework to guide their nonprofit clients through launching a Planned Giving program.",
+    a: "Yes. Many consultants use this same framework as the starting system they bring to every client engagement, regardless of the nonprofit's size.",
   },
 ];
 

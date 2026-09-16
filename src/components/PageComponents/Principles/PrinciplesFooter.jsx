@@ -20,28 +20,33 @@ export default function PrinciplesFooter() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
+        <div className="flex w-full flex-col gap-2.5 sm:w-fit">
           <a
             href="https://tony.ma/Amazon"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer rounded-lg bg-[#079669] px-6 py-3 text-center text-base font-bold leading-6 text-white"
-          >
-            Order Now
-          </a>
-          <a
-            href="https://tony.ma/Amazon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-lg bg-white/10 px-5 py-3"
+            className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
           >
             <img
               src={AMAZON_BADGE}
               alt="Amazon Kindle"
-              className="h-4 w-auto object-contain"
+              className="h-5 w-[81px] shrink-0 object-contain"
             />
             <p className="whitespace-nowrap text-sm leading-5 text-white/85">
-              Order on Amazon: Live Now
+              Available Now on Amazon: Live Now
+            </p>
+          </a>
+          <a
+            href="https://tony.ma/BN"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+          >
+            <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
+              BARNES <span className="text-[#c9a86a]">&</span> NOBLE
+            </p>
+            <p className="whitespace-nowrap text-sm leading-5 text-white/85">
+              Available Now on Barnes & Noble
             </p>
           </a>
         </div>
