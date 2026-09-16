@@ -1,5 +1,3 @@
-import { scrollToSuccessStoriesJoin } from "@/utils/scrollToSuccessStoriesJoin";
-
 const STATS = [
   { value: "$150M+", desc: "In bequests secured" },
   { value: "29+", desc: "Years in Planned Giving" },
@@ -40,12 +38,14 @@ export default function SuccessStats() {
           ))}
         </div>
 
-        <button
-          onClick={() => scrollToSuccessStoriesJoin()}
-          className="w-full cursor-pointer rounded-lg bg-[#079669] px-4 py-3 text-base font-semibold leading-[22.4px] text-white md:w-fit"
+        <a
+          href="https://tony.ma/Amazon"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full cursor-pointer rounded-lg bg-[#079669] px-4 py-3 text-center text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#057a56] md:w-fit"
         >
-          Get Free Chapter
-        </button>
+          Order Now
+        </a>
       </div>
     </section>
   );

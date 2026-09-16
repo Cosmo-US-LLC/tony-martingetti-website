@@ -10,27 +10,27 @@ const MYTHS = [
   {
     label: "Myth 2",
     title: "Planned Giving is too complicated.",
-    desc: "Planned Giving isn't too complicated for you.",
+    desc: "When you focus on gifts in wills, you can launch within a week. Everyone knows what a will is, how wills work, and that they need one. Your team doesn't need specialized training. Planned Giving doesn't have to be complicated to be wildly successful.",
   },
   {
     label: "Myth 3",
     title: "Planned Giving requires expertise.",
-    desc: "You don't need expertise for Planned Giving success.",
+    desc: "When you launch Planned Giving, you launch a relationship endeavor, not a legal one. Do you like people? Are you curious about people? Do you believe in your mission? Three yesses is all you need. You don't need a lawyer on your staff or a consultant.",
   },
   {
     label: "Myth 4",
     title: "Planned Giving means offering lots of gift options.",
-    desc: "You don't need to offer lots of gift options.",
+    desc: "Not at launch and perhaps never. At least 75% of all planned gifts are gifts in wills, so a singular focus on charitable bequests will serve your program well for years. You can expand in years three to five, if you want to. You never have to.",
   },
   {
     label: "Myth 5",
     title: "Planned Giving will hurt our other fundraising.",
-    desc: "Planned Giving will likely help your other fundraising.",
+    desc: "Research by Professor Russell James at Texas Tech University shows donors who include a gift by will to a nonprofit increase their other giving to that same nonprofit by 75 percent on average. They've elevated you to the level of a dear loved one, so they give more, not less.",
   },
   {
     label: "Myth 6",
     title: "Planned Giving means talking to donors about their death.",
-    desc: "Planned Giving is a conversation about life, the life and longevity of your nonprofit.",
+    desc: "Turn this myth on its head and you have the truth. Planned Giving is a conversation about life, the life and sustainability of your nonprofit. Mutual love of your mission bonds you to your loyal donors and transcends every other difference between you.",
   },
 ];
 

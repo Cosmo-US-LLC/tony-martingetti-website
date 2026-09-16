@@ -1,12 +1,11 @@
 import REASON_HEART from "@/assets/images/home/icons/reason-heart.svg";
 import REASON_CALL from "@/assets/images/home/icons/reason-call.svg";
 import REASON_WEBINAR from "@/assets/images/home/icons/reason-webinar.svg";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const REASONS = [
   {
     icon: REASON_HEART,
-    title: "Free chapter",
+    title: "The book",
     desc: "Read the opening chapter today. No purchase, no wait, no catch.",
   },
   {
@@ -31,10 +30,10 @@ export default function WhyChoose() {
           </p>
           <div className="flex flex-col gap-2 md:gap-2.5">
             <h2 className="text-[28px] font-bold leading-[39.2px] text-[#151515] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
-              Three reasons to get on the list today
+              What you get when you order
             </h2>
             <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
-              Two of these you get right now. The third arrives in September.
+              All three, the moment you order.
             </p>
           </div>
         </div>
@@ -64,16 +63,18 @@ export default function WhyChoose() {
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <button
-            onClick={() => scrollToWaitlistJoin()}
-            className="w-full cursor-pointer rounded-lg bg-[#079669] px-6 py-4 text-base font-bold leading-6 text-white md:w-fit"
+          <a
+            href="https://tony.ma/Amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full cursor-pointer rounded-lg bg-[#079669] px-6 py-4 text-center text-base font-bold leading-6 text-white transition-colors hover:bg-[#057a56] md:w-fit"
           >
-            Get my free chapter
-          </button>
-          <p className="text-center text-sm leading-[19.6px] text-[#494949]">
+            Order Now
+          </a>
+          {/* <p className="text-center text-sm leading-[19.6px] text-[#494949]">
             No purchase needed. First 50 on the list also get a group call
             with Tony.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>

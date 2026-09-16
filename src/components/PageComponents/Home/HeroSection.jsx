@@ -1,5 +1,4 @@
 import HERO_BG from "@/assets/images/home/hero-bg.png";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 export default function HeroSection() {
   return (
@@ -33,35 +32,32 @@ export default function HeroSection() {
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-7 md:gap-4">
           <div className="flex max-w-[358px] flex-col gap-1 md:max-w-[665px] md:gap-4">
             <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
-              Free webinar series with every book
+              Out now
             </p>
             <h1 className="font-landing text-[40px] font-bold leading-[48px] tracking-[-0.8px] text-white md:text-[48px] md:leading-[57.6px] md:tracking-[-0.96px]">
               <span className="md:hidden">
                 Join 500+ nonprofits launching Planned Giving programs
               </span>
               <span className="hidden md:inline">
-                Join 500+ nonprofits getting ready to launch their Planned
-                Giving programs
+                The book that gets your Planned Giving program off the ground next week
               </span>
             </h1>
             <p className="mt-3.5 text-base leading-[22.4px] tracking-[-0.16px] text-[#c6c6c6] md:mt-0 md:max-w-[616px] md:text-xl md:leading-7 md:tracking-[-0.5px] md:text-white">
-              Tony Martignetti's new book landed this September, and everyone
-              who orders gets his complete four-part Planned Giving webinar
-              series free. Join the list now and we'll send you a chapter
-              today.
+              Tony Martignetti's new book is live. Order it today and you get his complete four-part Planned Giving webinar series free, no extra cost.
             </p>
           </div>
 
           <div className="flex max-w-[358px] flex-col gap-3 md:max-w-[665px] md:gap-2">
-            <button
-              onClick={() => scrollToWaitlistJoin()}
-              className="w-full cursor-pointer rounded-lg bg-[#951b81] px-3.5 py-3.5 text-base font-semibold leading-[22.4px] text-white md:w-fit md:px-6 md:py-3"
+            <a
+              href="https://tony.ma/Amazon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full cursor-pointer rounded-lg bg-[#951b81] px-3.5 py-3.5 text-center text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#7a1569] md:w-fit md:px-6 md:py-3"
             >
-              Get my free chapter
-            </button>
+              Order Now
+            </a>
             <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#939393] md:max-w-[470px] md:text-sm md:leading-[19.6px] md:tracking-normal">
-              No purchase needed. First 50 on the list also get a group call
-              with Tony.
+              Available now on Amazon and Barnes & Noble.
             </p>
           </div>
         </div>

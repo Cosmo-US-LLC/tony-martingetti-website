@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AVATAR from "@/assets/images/home/avatar.png";
 import STAR from "@/assets/images/home/icons/star.svg";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const REVIEWS = [
   {
@@ -51,11 +50,11 @@ function ReviewCard({ review }) {
         </p>
       </div>
       <div className="flex items-center gap-4">
-        <img
+        {/* <img
           src={AVATAR}
           alt={review.name}
           className="hidden h-16 w-16 shrink-0 rounded-full object-cover md:block"
-        />
+        /> */}
         <div className="flex flex-col gap-1">
           <p className="text-base font-semibold leading-[22.4px] text-[#151515]">
             {review.name}
@@ -87,12 +86,14 @@ export default function Testimonials() {
               4.9 out of 5 based on 127 Google Reviews
             </p>
           </div>
-          <button
-            onClick={() => scrollToWaitlistJoin()}
-            className="mt-3 w-full cursor-pointer rounded-lg bg-[#079669] px-6 py-3 text-base font-semibold leading-[22.4px] text-white md:mt-6 md:w-fit"
+          <a
+            href="https://tony.ma/Amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 w-full cursor-pointer rounded-lg bg-[#079669] px-6 py-3 text-center text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#057a56] md:mt-6 md:w-fit"
           >
-            Get my free chapter
-          </button>
+            Order Now
+          </a>
         </div>
 
         <div className="hidden md:grid md:flex-1 md:grid-cols-2 md:items-center md:gap-4">

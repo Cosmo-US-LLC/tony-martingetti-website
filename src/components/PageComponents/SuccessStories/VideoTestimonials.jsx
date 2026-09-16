@@ -5,7 +5,8 @@ import LOGO_WSJ from "@/assets/images/about/icons/logo-wsj.svg";
 import LOGO_DOWJONES from "@/assets/images/about/icons/logo-dowjones.svg";
 import LOGO_GUIDESTAR from "@/assets/images/about/icons/logo-guidestar.svg";
 import LOGO_CHRONICLE from "@/assets/images/about/logo-chronicle.png";
-import LOGO_NPCM from "@/assets/images/about/logo-npcm-image.png";
+import LOGO_BLOOMBERG from "@/assets/images/about/icons/logo-bloomberg.svg";
+import LOGO_NPCM from "@/assets/images/about/icons/logo-npcm.svg";
 
 const LOGOS = [
   { src: LOGO_NYT, name: "The New York Times", isImg: false },
@@ -14,7 +15,7 @@ const LOGOS = [
   { src: LOGO_DOWJONES, name: "Dow Jones Newswires", isImg: false },
   { src: LOGO_CHRONICLE, name: "The Chronicle of Philanthropy", isImg: true },
   { src: LOGO_GUIDESTAR, name: "GuideStar", isImg: false },
-  { src: null, name: "Bloomberg Intelligence", isImg: false, textOnly: true },
+  { src: LOGO_BLOOMBERG, name: "Bloomberg Intelligence", isImg: false },
   { src: LOGO_NPCM, name: "Nonprofit Contract Management", isImg: true },
 ];
 

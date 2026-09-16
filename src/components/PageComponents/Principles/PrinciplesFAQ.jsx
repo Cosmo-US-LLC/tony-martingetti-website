@@ -5,41 +5,45 @@ const FAQS = [
     q: "What is the Martignetti 18 reasons why bequests are the place to launch your Planned Giving?",
     a: "These are Tony's 18 reasons why charitable bequests are the right place to start, like numbers 1-4: 1. Most popular planned gift, by far. 2. You don't need to educate your potential donors. 3. You don't need to educate your staff. 4. No lifetime cost.",
   },
-  {
-    q: "What is the Martignetti 3-Step, 1-Week Planned Giving Launch?",
-    a: "It's the signature framework above: identify your top prospects, launch with gifts in wills, and cultivate and solicit them the right way, all within a single week.",
-  },
+  // {
+  //   q: "What is the Martignetti 3-Step, 1-Week Planned Giving Launch?",
+  //   a: "It's the signature framework above: identify your top prospects, launch with gifts in wills, and cultivate and solicit them the right way, all within a single week.",
+  // },
   {
     q: "What is the Martignetti MEAL Plan?",
-    a: "A simple sequence for donor conversations: Meet, Explain, Ask, Listen, keeping every Planned Giving conversation relational rather than transactional.",
+    a: "Meals Expertly Allow Learning. The shared table, the understood cadence of meal service, the natural pauses with eating, and the timing, all create an environment ideal for learning a lot about your donor or potential donor.",
   },
   {
-    q: "What is the Planned Giving Multiplier?",
-    a: "It's the compounding effect of consistently asking loyal donors about bequests: a handful of conversations a year, sustained over time, multiplies into a meaningful pipeline of future gifts.",
+    q: "What is Planned Giving Multiplier?",
+    a: "The number of times greater a donor’s charitable bequest is, than their total lifetime giving.",
   },
   {
     q: "Is Planned Giving only for big nonprofits like universities and hospital systems?",
-    a: "No. Any nonprofit with loyal, long-term donors can launch a Planned Giving program, regardless of size or budget.",
+    a: "No. Tony wrote this book specifically for small- and mid-size nonprofits. The myths that it requires large budgets, dedicated officers, or complex gift vehicles are false. You can launch with bequests alone and build a wildly successful program.",
   },
   {
     q: "How do I identify my top prospects?",
-    a: "Look for loyal, committed donors ages 55 and older. Names often come to mind immediately when you think about who represents your nonprofit best.",
+    a: "Look for loyal, committed, long-term donors ages 55–60 and older with whom someone at your nonprofit has a strong enough relationship that the donor routinely takes your calls. When you describe these criteria in a room, names start coming to mind before you finish the sentence.",
   },
   {
     q: "What planned gift should I ask for first?",
-    a: "Start with bequests, gifts in wills. They're the most popular planned gift, cost the donor nothing today, and require no specialised training to ask for.",
+    a: "A gift by will, a charitable bequest. It is the most popular planned gift by far. Everyone knows what a will is, how wills work, and that they need one. You don't need to educate your donors on the mechanics.",
   },
   {
-    q: "Is a Planned Giving conversation about death?",
-    a: "No. It's a conversation about life, the life and longevity of your nonprofit's mission.",
+    q: "Is a Planned Giving conversation a conversation about death?",
+    a: "No. It is a conversation about life, the life and sustainability of your nonprofit's work. You and your donor share a love of your mission. Focus there, and the conversation becomes natural.",
   },
   {
     q: "Do donors leave bequests for the tax benefits?",
-    a: "Rarely. Most donors leave bequests because of loyalty and a desire to see their values live on, not for tax advantages.",
+    a: "Rarely. Fewer than one percent of estates face federal estate taxation. Donors leave bequests because they love your mission and want their values to keep working after they are gone. Tax advantages are only for the very wealthy.",
   },
   {
     q: "Will asking for planned gifts cause donors to reduce their annual giving?",
-    a: "No, in most cases Planned Giving conversations strengthen the relationship and often increase a donor's overall engagement and giving.",
+    a: "Research shows the opposite. Donors who include your nonprofit in their will increase their other giving by an average of 75 percent. They feel closer to your work and give you more.",
+  },
+  {
+    q: "How long does it take to start a Planned Giving program?",
+    a: "You can begin within a week. You will not close a bequest in a week, but you can identify your top prospects, understand why you are launching with gifts in wills, and have your first solicitation conversations underway, all in that time.",
   },
 ];
 

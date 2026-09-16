@@ -1,5 +1,4 @@
 import HERO_BG from "@/assets/images/about/hero-bg.png";
-import { scrollToAboutJoin } from "@/utils/scrollToAboutJoin";
 
 export default function AboutHero() {
   return (
@@ -41,12 +40,14 @@ export default function AboutHero() {
           </div>
 
           <div>
-            <button
-              onClick={() => scrollToAboutJoin()}
-              className="w-full cursor-pointer rounded-lg bg-[#951b81] px-3.5 py-3.5 text-base font-semibold leading-[22.4px] text-white md:w-fit md:px-6 md:py-3"
+            <a
+              href="https://tony.ma/Amazon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full cursor-pointer rounded-lg bg-[#951b81] px-3.5 py-3.5 text-center text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#7a1569] md:w-fit md:px-6 md:py-3"
             >
-              Get my free chapter
-            </button>
+              Order Now
+            </a>
           </div>
         </div>
       </div>

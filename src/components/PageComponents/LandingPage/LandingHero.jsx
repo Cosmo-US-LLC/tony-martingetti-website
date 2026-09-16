@@ -1,17 +1,7 @@
+import { Link } from "react-router-dom";
 import HERO_BG from "@/assets/images/landing/hero-bg.png";
-import CHECK from "@/assets/images/landing/icons/check.svg";
-import { useWaitlistForm } from "@/hooks/useWaitlistForm";
-
-const PERKS = [
-  "Chapter 1 of the book, free and emailed instantly",
-  "The Founders Rate on the book, locked in",
-  "First 50 only: a live Q/A session with Tony",
-];
 
 export default function LandingHero() {
-  const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
-    useWaitlistForm("landing", { form: "book-waitlist" });
-
   return (
     <section className="relative -mt-[100px] w-full overflow-hidden bg-[#00150b]">
       <img
@@ -27,7 +17,7 @@ export default function LandingHero() {
         }}
       />
 
-      <div className="relative flex w-full flex-col gap-6 px-4 pt-[140px] pb-12 md:px-[60px] md:pt-[146px] md:pb-16">
+      <div className="relative flex min-h-[560px] w-full flex-col gap-6 px-4 pt-[140px] pb-12 md:min-h-[770px] md:px-[60px] md:pt-[250px] md:pb-16">
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6">
           <div className="flex max-w-[400px] flex-col gap-2 md:max-w-[680px]">
             <p className="font-script text-2xl leading-[33.6px] text-[#2fac66] md:text-[32px] md:leading-[44.8px]">
@@ -43,65 +33,16 @@ export default function LandingHero() {
             </div>
             <p className="text-base leading-[25.2px] tracking-[-0.5px] text-white">
               Tony Martignetti spent 29 years building Planned Giving
-              programs from scratch. The book isn't out yet. Join the
-              waitlist and Chapter 1 lands in your inbox straight away, free,
-              before anyone else can buy the book.
+              programs from scratch. The book is out. This book is the
+              complete system, a practical, step-by-step guide to help
+              nonprofits start building stronger Planned Giving programs.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-5 rounded-2xl bg-white/10 p-5 backdrop-blur-[12px] md:max-w-[680px] md:p-5">
-            <p className="text-xl font-semibold leading-7 text-white">
-              Join the waitlist, and you get
-            </p>
-            <div className="flex flex-col gap-4">
-              {PERKS.map((p) => (
-                <div key={p} className="flex items-center gap-3">
-                  <img src={CHECK} alt="" className="h-6 w-6 shrink-0" />
-                  <p className="text-base font-semibold leading-[22.4px] tracking-[-0.16px] text-white">
-                    {p}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-              <div className="flex flex-col gap-4 md:flex-row">
-                <label className="sr-only" htmlFor="landing-hero-email">
-                  Email address
-                </label>
-                <input
-                  id="landing-hero-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  required
-                  disabled={isLoading}
-                  className="w-full flex-1 rounded-lg bg-white px-5 py-4 text-base leading-[22.4px] tracking-[-0.16px] text-[#00150b] focus:outline-none focus:ring-2 focus:ring-[#951b81] disabled:opacity-60"
-                />
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full shrink-0 cursor-pointer rounded-lg bg-[#951b81] px-6 py-4 text-base font-semibold leading-[22.4px] text-white disabled:cursor-not-allowed md:w-fit"
-                >
-                  {isLoading ? "Sending…" : "Get Chapter 1 Free"}
-                </button>
-              </div>
-              <p className="text-xs leading-[14.4px] text-[#fafafa]">
-                Free to join. Chapter 1 arrives immediately. Unsubscribe any
-                time. We only email about the book.
-              </p>
-              {status === "success" && (
-                <p className="text-sm font-medium text-white">
-                  Thanks! Check your inbox for Chapter 1.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-sm font-medium text-red-300">
-                  {errorMessage}
-                </p>
-              )}
-            </form>
+            <Link
+              to="/my-book"
+              className="mt-2 w-full cursor-pointer rounded-lg bg-[#951b81] px-6 py-4 text-center text-base font-semibold leading-[22.4px] text-white transition-colors hover:bg-[#7a1569] md:w-fit"
+            >
+              Get Your Copy Now
+            </Link>
           </div>
         </div>
       </div>
