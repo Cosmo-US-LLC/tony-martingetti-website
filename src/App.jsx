@@ -8,6 +8,7 @@ import Principles from "./pages/Principles";
 import MyBook from "./pages/MyBook";
 import Waitlist from "./pages/Waitlist";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import LandingPage from "./pages/LandingPage";
 import PageNotFound from "./pages/PageNotFound";
 import ScrollToHash from "./utils/ScrollToHash";
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* <Route path="/waitlist" element={<Waitlist />} /> */}
         </Route>
+        <Route path="/book-waitlist" element={<LandingPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>

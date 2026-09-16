@@ -1,126 +1,147 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail } from "lucide-react";
 import FOOTER_LOGO_URL from "@/assets/images/footer/tm_footer_logo.svg";
+import SIGNATURE_URL from "@/assets/images/footer/signature.svg";
+import SOCIAL_MAIL from "@/assets/images/home/icons/social-mail.svg";
+import SOCIAL_LINKEDIN from "@/assets/images/home/icons/social-linkedin.svg";
+import SOCIAL_X from "@/assets/images/home/icons/social-x.svg";
+import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer
-      className="w-full border-t border-[#1f2937] bg-[#0f172a] pb-8 pt-12 md:pb-8 md:pt-[65px]"
-      data-name="Footer"
-    >
-      <div
-        className="mx-auto max-w-[1280px] px-5 md:px-8 w-full"
-        data-name="Container"
-      >
-        <div className="flex w-full max-w-[inherit] flex-col gap-8 md:gap-[32px]">
-          <Link
-            to="/"
-            className="inline-block shrink-0"
-            aria-label="Planned Giving Accelerated – Home"
-          >
-            <img
-              src={FOOTER_LOGO_URL}
-              alt="Planned Giving Accelerated"
-              className="h-[80px] w-auto max-w-[137px] object-contain object-left"
-            />
-          </Link>
-
-          <div className="flex w-full flex-col gap-10 md:flex-row md:justify-between md:gap-12">
-            {/* About Tony Martignetti */}
-            <div className="flex max-w-[612px] flex-col gap-6 w-full">
-              <h3 className="font-heading text-2xl font-bold uppercase leading-8 tracking-[0.48px] text-[#10b981]">
-                About Tony Martignetti
-              </h3>
-              <p className="max-w-[508px] font-sans md:text-[16px] text-[14px] font-normal md:leading-[26px] leading-6 text-[#9ca3af]">
-                Tony Martignetti is a nationally recognized Planned Giving
-                expert who has helped hundreds of nonprofits launch and scale
-                their legacy giving programs. His practical, no-nonsense
-                approach cuts through the complexity and gets results, fast.
-              </p>
+    <footer className="font-landing w-full bg-white px-4 pb-12 pt-12 md:px-[60px] md:pb-12 md:pt-12">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 md:gap-8">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-12">
+          <div className="flex flex-1 flex-col gap-6">
+            <Link to="/" aria-label="Planned Giving Accelerated – Home" className="inline-block w-fit">
+              <img
+                src={FOOTER_LOGO_URL}
+                alt="Planned Giving Accelerated"
+                className="h-20 w-auto max-w-[137px] object-contain object-left"
+              />
+            </Link>
+            <p className="max-w-[448px] text-base leading-[22.4px] tracking-[-0.16px] text-[#151515]">
+              Tony Martignetti is a nationally recognized Planned Giving expert
+              who has helped hundreds of nonprofits launch and scale their
+              legacy giving programs. His practical, no-nonsense approach cuts
+              through the complexity and gets results, fast.
+            </p>
+            <div className="flex items-center gap-3">
+              <a
+                href="mailto:support@tonymartignetti.com"
+                aria-label="Email"
+                className="flex size-[50px] items-center justify-center rounded-full bg-[#fde8f8]"
+              >
+                <img src={SOCIAL_MAIL} alt="" className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tonymartignetti/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex size-[50px] items-center justify-center rounded-full bg-[#fde8f8]"
+              >
+                <img src={SOCIAL_LINKEDIN} alt="" className="h-4 w-4" />
+              </a>
+              <a
+                href="#"
+                aria-label="X"
+                className="flex size-[50px] items-center justify-center rounded-full bg-[#fde8f8]"
+              >
+                <img src={SOCIAL_X} alt="" className="h-4 w-4" />
+              </a>
             </div>
+          </div>
 
-            {/* Quick Links */}
-            <div className="flex w-full max-w-[252px] flex-col gap-6">
-              <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
+          <div className="flex flex-1 flex-col gap-8 sm:flex-row sm:gap-6">
+            <div className="flex flex-1 flex-col gap-4">
+              <h4 className="text-sm font-bold uppercase leading-[17.5px] tracking-[1px] text-[#151515]">
                 Quick Links
               </h4>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-4">
                 <li>
-                  <Link
-                    to="/about"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
+                  <button
+                    onClick={() => scrollToWaitlistJoin()}
+                    className="text-left text-sm leading-5 text-[#494949] hover:text-[#059669]"
                   >
+                    Join Waitlist
+                  </button>
+                </li>
+                <li>
+                  <Link to="/about" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
                     About the Program
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/success-stories"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
-                  >
+                  <Link to="/success-stories" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
                     Success Stories
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/principles"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
-                  >
-                    Principles
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/my-book"
-                    className="footer_link font-sans text-base leading-6 text-[#d1d5db]"
-                  >
-                    My Book
+                  <Link to="/contact" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
+                    Contact Us
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="flex w-full max-w-[272px] flex-col gap-6">
-              <h4 className="font-heading text-xl font-bold uppercase leading-5 tracking-[0.7px] text-white">
-                Social Links
+            <div className="flex flex-1 flex-col gap-3">
+              <h4 className="text-sm font-bold uppercase leading-[17.5px] tracking-[1px] text-[#151515]">
+                Others
               </h4>
-              <ul className="flex items-center gap-4">
+              <ul className="flex flex-col gap-3">
                 <li>
-                  <a
-                    href="mailto:support@tonymartignetti.com"
-                    className="footer_link inline-flex size-10 items-center justify-center rounded-full border border-[#374151] text-[#d1d5db] transition-colors hover:border-[#10b981] hover:text-[#10b981]"
-                    aria-label="Email support@tonymartignetti.com"
-                  >
-                    <Mail className="size-5" aria-hidden="true" />
-                  </a>
+                  <Link to="/contact" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
+                    Schedule a Call
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/tonymartignetti/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="footer_link inline-flex size-10 items-center justify-center rounded-full border border-[#374151] text-[#d1d5db] transition-colors hover:border-[#10b981] hover:text-[#10b981]"
-                    aria-label="Tony Martignetti on LinkedIn"
-                  >
-                    <Linkedin className="size-5" aria-hidden="true" />
-                  </a>
+                  <Link to="/#" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
+                    FAQ
+                  </Link>
                 </li>
               </ul>
             </div>
-          </div>
 
-          {/* Copyright */}
-          <div
-            className="border-t border-[#1f2937] pt-8"
-            data-name="HorizontalBorder"
-          >
-            <p className="text-center font-sans text-[14px] font-normal leading-5 text-[#6b7280]">
-              © {currentYear} Martignetti Planned Giving Advisors, LLC. Planned Giving made practical <span className="mx-1">·</span>
-              <Link to="/privacy-policy" className="underline hover:text-[#059669]">Privacy Policy</Link>
-            </p>
-            
+            <div className="flex flex-1 flex-col gap-4">
+              <h4 className="text-sm font-bold uppercase leading-[17.5px] tracking-[1px] text-[#151515]">
+                Contact
+              </h4>
+              <div className="flex flex-col gap-3">
+                <a href="mailto:support@tonymartignetti.com" className="text-sm leading-5 text-[#494949]">
+                  support@tonymartignetti.com
+                </a>
+                <a href="tel:+18004567890" className="text-sm leading-5 text-[#494949]">
+                  (800) 456-7890
+                </a>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div className="border-t border-[#aeaeae] pt-8">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between">
+            <p className="text-center text-sm leading-5 text-[#494949]">
+              © {currentYear} Martignetti Planned Giving Advisors, LLC. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link to="/privacy-policy" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
+                Term &amp; Conditions
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8">
+          <img
+            src={SIGNATURE_URL}
+            alt="Tony Martignetti signature"
+            className="h-auto w-full object-contain opacity-90"
+          />
         </div>
       </div>
     </footer>

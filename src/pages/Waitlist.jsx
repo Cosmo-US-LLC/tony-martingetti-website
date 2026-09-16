@@ -1,13 +1,11 @@
 import { usePageMeta } from "@/hooks/usePageMeta";
-import JoinWaitlistHero from "@/components/PageComponents/Waitlist/JoinWaitlistHero";
-import StatsCard from "@/components/PageComponents/Waitlist/StatsCard";
-import WhereDoYouStart from "@/components/PageComponents/Waitlist/WhereDoYouStart";
-import TonysMission from "@/components/PageComponents/Waitlist/TonysMission";
-import BeFirstInLine from "@/components/PageComponents/Waitlist/BeFirstInLine";
-import FreeToolkit from "@/components/PageComponents/Waitlist/FreeToolkit";
-import WhatYouGet from "@/components/PageComponents/Waitlist/WhatYouGet";
-import TestimonialCard from "@/components/PageComponents/Waitlist/TestimonialCard";
-import ReadyToTransform from "@/components/PageComponents/Waitlist/ReadyToTransform";
+import HeroSection from "@/components/PageComponents/Home/HeroSection";
+import StatsFeature from "@/components/PageComponents/Home/StatsFeature";
+import WebinarSeries from "@/components/PageComponents/Home/WebinarSeries";
+import WhyChoose from "@/components/PageComponents/Home/WhyChoose";
+import Testimonials from "@/components/PageComponents/Home/Testimonials";
+import BookPerks from "@/components/PageComponents/Home/BookPerks";
+import SignUp from "@/components/PageComponents/Home/SignUp";
 
 function Waitlist() {
   usePageMeta(
@@ -17,15 +15,13 @@ function Waitlist() {
 
   return (
     <div>
-      <JoinWaitlistHero />
-      <StatsCard />
-      <WhereDoYouStart />
-      <BeFirstInLine />
-      <FreeToolkit />
-      <TestimonialCard />
-      <WhatYouGet />
-      <TonysMission />
-      <ReadyToTransform />
+      <HeroSection />
+      <StatsFeature />
+      <WebinarSeries />
+      <WhyChoose />
+      <Testimonials />
+      <BookPerks />
+      <SignUp />
     </div>
   );
 }
