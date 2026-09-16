@@ -302,23 +302,3 @@
     width: 100%;
   }
 }
-
-@keyframes retailer-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 0 9px rgba(52, 211, 153, 0.12);
-  }
-}
-
-.retailer-highlight {
-  animation: retailer-pulse 0.7s ease-in-out 2;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .retailer-highlight {
-    animation: none;
-  }
-}

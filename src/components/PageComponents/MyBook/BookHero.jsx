@@ -1,49 +1,15 @@
-import { useEffect, useRef, useState } from "react";
 import bookCoverImage from "@/assets/images/my_book/hero/book_cover.webp";
 import amazonKindleLogo from "@/assets/images/my_book/hero/amazon_kindle_src.webp";
 import barnesNobleLogo from "@/assets/images/my_book/hero/LogoBarnes&noble.svg";
 import { useWaitlistForm } from "@/hooks/useWaitlistForm";
 import { AMAZON_BOOK_URL, BARNES_NOBLE_BOOK_URL } from "@/constants";
 
+const retailerLinkClass =
+  "flex w-full max-w-[590px] flex-col items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/[0.08] px-4 py-2 transition-colors hover:bg-white/[0.14] sm:flex-row sm:gap-3 sm:px-6 sm:py-[14px]";
+
 export default function BookHero() {
   const { email, setEmail, status, errorMessage, handleSubmit, isLoading } =
     useWaitlistForm("my-book", { form: "my-book" });
-
-  const [highlightRetailers, setHighlightRetailers] = useState(false);
-  const highlightTimeoutRef = useRef(null);
-  const retailersRef = useRef(null);
-
-  useEffect(() => {
-    return () => {
-      if (highlightTimeoutRef.current) {
-        clearTimeout(highlightTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  const handleAvailableNowClick = () => {
-    retailersRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-    });
-
-    setHighlightRetailers(false);
-    // restart the animation even if it's already running
-    requestAnimationFrame(() => setHighlightRetailers(true));
-
-    if (highlightTimeoutRef.current) clearTimeout(highlightTimeoutRef.current);
-    highlightTimeoutRef.current = setTimeout(
-      () => setHighlightRetailers(false),
-      2200,
-    );
-  };
-
-  const retailerLinkClass = [
-    "flex w-full max-w-[590px] flex-col items-center justify-center gap-2 rounded-lg border px-4 py-2 transition-all duration-300 sm:flex-row sm:gap-3 sm:px-6 sm:py-[14px]",
-    highlightRetailers
-      ? "retailer-highlight scale-[1.03] border-[#34d399] bg-white/[0.14]"
-      : "border-white/25 bg-white/[0.08] hover:bg-white/[0.14]",
-  ].join(" ");
 
   return (
     <section
@@ -118,15 +84,11 @@ export default function BookHero() {
             )}
           </div>
 
-          <button
-            type="button"
-            onClick={handleAvailableNowClick}
-            className="primary_btn_two w-fit cursor-pointer"
-          >
-            Available Now
-          </button>
+          <p className="font-sans text-sm font-semibold uppercase tracking-[0.5px] text-white/70">
+            Available now on
+          </p>
 
-          <div ref={retailersRef} className="flex w-full max-w-[590px] flex-col gap-3">
+          <div className="flex w-full max-w-[590px] flex-col gap-3">
             <a
               href={AMAZON_BOOK_URL}
               target="_blank"
