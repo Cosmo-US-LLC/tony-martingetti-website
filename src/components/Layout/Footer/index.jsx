@@ -4,7 +4,6 @@ import SIGNATURE_URL from "@/assets/images/footer/signature.svg";
 import SOCIAL_MAIL from "@/assets/images/home/icons/social-mail.svg";
 import SOCIAL_LINKEDIN from "@/assets/images/home/icons/social-linkedin.svg";
 import SOCIAL_X from "@/assets/images/home/icons/social-x.svg";
-import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -61,12 +60,14 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-4">
                 <li>
-                  <button
-                    onClick={() => scrollToWaitlistJoin()}
-                    className="text-left text-sm leading-5 text-[#494949] hover:text-[#059669]"
+                  <a
+                    href="https://tony.ma/Amazon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm leading-5 text-[#494949] hover:text-[#059669]"
                   >
-                    Join Waitlist
-                  </button>
+                    Order Now
+                  </a>
                 </li>
                 <li>
                   <Link to="/about" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
