@@ -37,11 +37,16 @@ export default function BookHero() {
               The Cut Through the Sh!t, No Nonsense, Practical, Step-by-Step
               Guide to Start Legacy Giving Fundraising at Your Small to
               Mid-Size Nonprofit Simply In One Week With Bequests.
+              <br />
+              (The title may be longer than the book. Did you need a nap?)
+            </p>
+            <p className="font-landing text-lg leading-[25.2px] text-[#2fac66] md:text-xl md:leading-7">
+              By Tony Martignetti, Esq.
             </p>
           </div>
 
           <div className="flex w-full max-w-[680px] flex-col gap-3">
-            <p className="text-xs font-bold uppercase leading-[15px] tracking-[1px] text-white/60">
+            <p className="text-xs font-bold uppercase leading-[15px] tracking-[1px] text-white">
               Available Now On
             </p>
             <div className="flex w-full flex-col gap-2.5 sm:w-fit">
@@ -49,7 +54,7 @@ export default function BookHero() {
                 href="https://tony.ma/Amazon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-3.5 transition-colors hover:bg-white/20"
               >
                 <img
                   src={AMAZON_BADGE}
@@ -64,7 +69,7 @@ export default function BookHero() {
                 href="https://tony.ma/BN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-3.5 transition-colors hover:bg-white/20"
               >
                 <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
                   BARNES &amp; NOBLE

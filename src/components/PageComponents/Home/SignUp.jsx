@@ -15,14 +15,14 @@ export default function SignUp() {
             <h2 className="text-[28px] font-bold leading-[39.2px] text-white md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
               Ready to start your Planned Giving program?
             </h2>
-            <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#c6c6c6]">
+            {/* <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#c6c6c6]">
               Join the list, get your free chapter today, and be first in
               line when the book launches this September.
-            </p>
+            </p> */}
           </div>
 
           <div className="flex w-full flex-col gap-3 sm:w-fit">
-            <p className="text-xs font-bold uppercase leading-[15px] tracking-[1px] text-white/60">
+            <p className="text-xs font-bold uppercase leading-[15px] tracking-[1px] text-white">
               Available Now On
             </p>
             <div className="flex w-full flex-col gap-2.5 sm:w-fit">
@@ -30,7 +30,7 @@ export default function SignUp() {
                 href="https://tony.ma/Amazon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
               >
                 <img
                   src={AMAZON_BADGE}
@@ -45,7 +45,7 @@ export default function SignUp() {
                 href="https://tony.ma/BN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
               >
                 <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
                   BARNES &amp; NOBLE
