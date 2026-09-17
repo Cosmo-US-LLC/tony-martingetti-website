@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import FOOTER_LOGO_URL from "@/assets/images/footer/tm_footer_logo.svg";
 import SIGNATURE_URL from "@/assets/images/footer/signature.svg";
-import SOCIAL_MAIL from "@/assets/images/home/icons/social-mail.svg";
 import SOCIAL_LINKEDIN from "@/assets/images/home/icons/social-linkedin.svg";
 import SOCIAL_X from "@/assets/images/home/icons/social-x.svg";
 
@@ -27,13 +26,21 @@ export default function Footer() {
               through the complexity and gets results, fast.
             </p>
             <div className="flex items-center gap-3">
-              {/* <a
-                href="mailto:support@tonymartignetti.com"
-                aria-label="Email"
-                className="flex size-[50px] items-center justify-center rounded-full bg-[#fde8f8]"
+              <a
+                href="mailto:tony@tonymartignetti.com"
+                className="flex items-center gap-2 rounded-full bg-[#fde8f8] py-3 pl-5 pr-4 text-sm font-medium leading-5 text-[#951b81]"
               >
-                <img src={SOCIAL_MAIL} alt="" className="h-4 w-4" />
-              </a> */}
+                tony@tonymartignetti.com
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M3.5 10.5L10.5 3.5M10.5 3.5H4.9M10.5 3.5V9.1"
+                    stroke="#951b81"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
               <a
                 href="https://www.linkedin.com/in/tonymartignetti/"
                 target="_blank"
