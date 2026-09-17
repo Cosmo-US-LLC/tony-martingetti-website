@@ -1,5 +1,5 @@
-import BG_DESKTOP from "@/assets/images/about/featured-bg-desktop.png";
-import BG_MOBILE from "@/assets/images/about/featured-bg-mobile.png";
+import BG_DESKTOP from "@/assets/images/success-stories/featured-bg-desktop.png";
+import BG_MOBILE from "@/assets/images/success-stories/featured-bg-mobile.png"
 import LOGO_NYT from "@/assets/images/about/icons/logo-nyt.svg";
 import LOGO_YAHOO from "@/assets/images/about/icons/logo-yahoo.svg";
 import LOGO_WSJ from "@/assets/images/about/icons/logo-wsj.svg";
@@ -45,12 +45,12 @@ export default function FeaturedIn() {
       <img
         src={BG_DESKTOP}
         alt=""
-        className="absolute inset-0 hidden h-full w-full -scale-x-100 object-cover object-[right_10%] md:block"
+        className="absolute inset-0 hidden h-[800px] w-full object-top md:block"
       />
       <img
         src={BG_MOBILE}
         alt=""
-        className="absolute inset-0 block h-full w-full -scale-x-100 object-cover object-[45%_center] md:hidden"
+        className="absolute inset-0 block h-full w-full object-cover md:hidden"
       />
       <div
         className="absolute inset-0 hidden md:block"
@@ -60,8 +60,8 @@ export default function FeaturedIn() {
         }}
       />
 
-      <div className="relative flex min-h-[560px] w-full flex-col justify-between gap-10 px-4 py-10 md:h-[700px] md:min-h-0 md:px-[60px] md:py-12">
-        <div className="flex max-w-[517px] flex-col gap-4">
+      <div className="relative mx-auto flex min-h-[560px] w-full max-w-[1440px] flex-col justify-between gap-10 px-4 py-10 md:h-[700px] md:min-h-0 md:justify-between md:px-[60px] md:py-12">
+        <div className="font-landing flex max-w-[517px] flex-col gap-4">
           <h2 className="text-[28px] font-bold leading-[39.2px] text-white md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             Featured in &amp; quoted by
           </h2>
