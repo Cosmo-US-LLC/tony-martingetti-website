@@ -20,35 +20,40 @@ export default function PrivacyFooter() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col gap-2.5 sm:w-fit">
-          <a
-            href="https://tony.ma/Amazon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
-          >
-            <img
-              src={AMAZON_BADGE}
-              alt="Amazon Kindle"
-              className="h-5 w-[81px] shrink-0 object-contain"
-            />
-            <p className="whitespace-nowrap text-sm leading-5 text-white/85">
-              Available Now on Amazon: Live Now
-            </p>
-          </a>
-          <a
-            href="https://tony.ma/BN"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
-          >
-            <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
-              BARNES <span className="text-[#c9a86a]">&</span> NOBLE
-            </p>
-            <p className="whitespace-nowrap text-sm leading-5 text-white/85">
-              Available Now on Barnes & Noble
-            </p>
-          </a>
+        <div className="flex w-full flex-col gap-3 sm:w-fit">
+          <p className="text-xs font-bold uppercase leading-[15px] tracking-[1px] text-white/60">
+            Available Now On
+          </p>
+          <div className="flex w-full flex-col gap-2.5 sm:w-fit">
+            <a
+              href="https://tony.ma/Amazon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+            >
+              <img
+                src={AMAZON_BADGE}
+                alt="Amazon Kindle"
+                className="h-5 w-[81px] shrink-0 object-contain"
+              />
+              <p className="whitespace-nowrap text-sm leading-5 text-white/85">
+                Order Now for paper back and Kindle
+              </p>
+            </a>
+            <a
+              href="https://tony.ma/BN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
+            >
+              <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
+                BARNES &amp; NOBLE
+              </p>
+              <p className="whitespace-nowrap text-sm leading-5 text-white/85">
+                Order Now for hard back
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </section>

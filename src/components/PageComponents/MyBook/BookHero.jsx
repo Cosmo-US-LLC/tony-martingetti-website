@@ -3,11 +3,11 @@ import AMAZON_BADGE from "@/assets/images/mybook/amazon-badge-cropped.png";
 
 export default function BookHero() {
   return (
-    <section className="relative -mt-[100px] w-full overflow-hidden bg-[#151515]">
+    <section className="relative -mt-[100px] w-full overflow-hidden bg-black">
       <img
         src={HERO_BG}
         alt="Planned Giving Accelerated book"
-        className="absolute inset-0 h-full w-full object-cover object-[75%_50%]"
+        className="absolute inset-0 h-full w-full object-cover object-[75%_0%] md:object-contain md:object-[80%_0%]"
       />
       <div
         className="absolute inset-0 hidden md:block"
@@ -40,7 +40,10 @@ export default function BookHero() {
             </p>
           </div>
 
-          <div className="flex w-full max-w-[680px] flex-col gap-2.5">
+          <div className="flex w-full max-w-[680px] flex-col gap-3">
+            <p className="text-xs font-bold uppercase leading-[15px] tracking-[1px] text-white/60">
+              Available Now On
+            </p>
             <div className="flex w-full flex-col gap-2.5 sm:w-fit">
               <a
                 href="https://tony.ma/Amazon"
@@ -54,7 +57,7 @@ export default function BookHero() {
                   className="h-5 w-[81px] shrink-0 object-contain"
                 />
                 <p className="whitespace-nowrap text-sm leading-5 text-white/85">
-                  Available Now on Amazon: Live Now
+                  Order Now for paper back and Kindle
                 </p>
               </a>
               <a
@@ -64,16 +67,16 @@ export default function BookHero() {
                 className="flex w-full items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 transition-colors hover:bg-white/20"
               >
                 <p className="shrink-0 whitespace-nowrap text-sm font-bold tracking-wide text-white/85">
-                  BARNES <span className="text-[#c9a86a]">&</span> NOBLE
+                  BARNES &amp; NOBLE
                 </p>
                 <p className="whitespace-nowrap text-sm leading-5 text-white/85">
-                  Available Now on Barnes & Noble
+                  Order Now for hard back
                 </p>
               </a>
             </div>
-            <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white">
+            {/* <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white">
               Free opening chapter, sent immediately. No purchase needed.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
