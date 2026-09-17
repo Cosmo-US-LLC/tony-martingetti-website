@@ -3,24 +3,20 @@ import FAQ_IMAGE from "@/assets/images/landing/faq-image.png";
 
 const FAQS = [
   {
-    q: "What exactly am I joining the waitlist for?",
-    a: "Planned Giving Accelerated, a book by Tony Martignetti on building a bequest-first Planned Giving program. It isn't published yet. The waitlist is how you get Chapter 1 now and the Founders Rate at launch. If you're in the first 50, you also get a seat on a live working session with Tony.",
+    q: "What is Planned Giving Accelerated?",
+    a: "A book by Tony Martignetti on building a bequest-first Planned Giving program. It's live now on Amazon and Barnes & Noble.",
   },
   {
-    q: "When do I get the free chapter?",
-    a: "Straight away. Enter your email and Chapter 1 is sent to your inbox. You don't wait for launch day and you don't pay anything.",
+    q: "How fast can I actually use it?",
+    a: "The book gives you a practical, step by step path to your first ask. No consultant, no new hire, no year of planning to plan.",
   },
   {
-    q: "How does the first-50 working session work?",
-    a: "Everyone in the first 50 waitlist signups gets a seat. Tony hosts a virtual session where you bring the specific thing blocking your planned giving program, he works through it with you, and you leave knowing where to point your effort next. We email you the date and joining link once seats close.",
+    q: "What formats is the book available in?",
+    a: "Paperback, Kindle, and hardback, available now on Amazon and Barnes & Noble.",
   },
   {
-    q: "What if I'm not in the first 50?",
-    a: "You still get Chapter 1 free and the Founders Rate. The working session is the only part capped at 50, and it's allocated in signup order. No draw, no lottery.",
-  },
-  {
-    q: "What is the Founders Rate?",
-    a: "A one-time price only available to people on the waitlist before public launch. Once the book is live on Amazon and retail, that pricing goes away for good.",
+    q: "Do I need a wealthy donor base for this to work?",
+    a: "No. Loyalty predicts a bequest far better than gift size does. Tony's seen donors who gave modestly for years leave six-figure gifts in their wills. Your most loyal donors are your best prospects, not your biggest ones.",
   },
   {
     q: "Do I need a fundraising background to use this?",
@@ -58,7 +54,7 @@ export default function FAQSection() {
             Questions
           </p>
           <h2 className="text-[28px] font-bold leading-[39.2px] text-[#00150b] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
-            Before You Join
+            Before You Order
           </h2>
         </div>
 
@@ -92,11 +88,11 @@ export default function FAQSection() {
             })}
           </div>
 
-          <div className="hidden md:block md:w-1/2">
+          <div className=" md:block md:w-1/2">
             <img
               src={FAQ_IMAGE}
               alt=""
-              className="h-full w-full rounded-2xl object-cover"
+              className="md:h-[750px] h-[300px] w-full rounded-2xl object-cover md:object-top"
             />
           </div>
         </div>

@@ -6,17 +6,17 @@ const REASONS = [
   {
     icon: REASON_HEART,
     title: "The book",
-    desc: "Read the opening chapter today. No purchase, no wait, no catch.",
+    desc: "Get the full playbook, not just a preview.",
   },
-  {
-    icon: REASON_CALL,
-    title: "A Group call with Tony",
-    desc: "Twenty minutes, one on one, on your organisation's Planned Giving program. Limited to the first 50 people on the list.",
-  },
+  // {
+  //   icon: REASON_CALL,
+  //   title: "A Group call with Tony",
+  //   desc: "Twenty minutes, one on one, on your organisation's Planned Giving program. Limited to the first 50 people on the list.",
+  // },
   {
     icon: REASON_WEBINAR,
     title: "The webinar series, free",
-    desc: "Order the book at launch and Tony's complete four-part webinar series is yours at no extra cost.",
+    desc: "Order the book and Tony's complete four-part webinar series is yours at no extra cost.",
   },
 ];
 
@@ -32,9 +32,9 @@ export default function WhyChoose() {
             <h2 className="text-[28px] font-bold leading-[39.2px] text-[#151515] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
               What you get when you order
             </h2>
-            <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
+            {/* <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
               All three, the moment you order.
-            </p>
+            </p> */}
           </div>
         </div>
 
