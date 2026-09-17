@@ -23,7 +23,7 @@ export default function AboutHero() {
         }}
       />
 
-      <div className="relative flex min-h-[660px] w-full flex-col px-4 pt-[280px] pb-5 md:min-h-[770px] md:px-[60px] md:pt-[202px] md:pb-0">
+      <div className="relative flex min-h-[660px] w-full flex-col px-4 pt-[250px] pb-5 md:min-h-[770px] md:px-[60px] md:pt-[202px] md:pb-0">
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-7 md:gap-4">
           <div className="flex max-w-[358px] flex-col gap-1 md:max-w-[616px] md:gap-3">
             <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
