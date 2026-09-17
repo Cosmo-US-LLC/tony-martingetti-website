@@ -27,13 +27,13 @@ export default function Footer() {
               through the complexity and gets results, fast.
             </p>
             <div className="flex items-center gap-3">
-              <a
+              {/* <a
                 href="mailto:support@tonymartignetti.com"
                 aria-label="Email"
                 className="flex size-[50px] items-center justify-center rounded-full bg-[#fde8f8]"
               >
                 <img src={SOCIAL_MAIL} alt="" className="h-4 w-4" />
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/in/tonymartignetti/"
                 target="_blank"
@@ -111,11 +111,11 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-3">
                 <a href="mailto:support@tonymartignetti.com" className="text-sm leading-5 text-[#494949]">
-                  support@tonymartignetti.com
+                  tony@tonymartignetti.com
                 </a>
-                <a href="tel:+18004567890" className="text-sm leading-5 text-[#494949]">
+                {/* <a href="tel:+18004567890" className="text-sm leading-5 text-[#494949]">
                   (800) 456-7890
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
