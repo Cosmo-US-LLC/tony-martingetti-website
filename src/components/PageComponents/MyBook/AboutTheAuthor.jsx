@@ -1,4 +1,4 @@
-import AUTHOR_IMAGE from "@/assets/images/mybook/author-image.png";
+import AUTHOR_IMAGE from "@/assets/images/mybook/author-image.webp";
 
 export default function AboutTheAuthor() {
   return (

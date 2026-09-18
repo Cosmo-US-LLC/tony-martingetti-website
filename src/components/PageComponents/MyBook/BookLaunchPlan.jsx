@@ -1,4 +1,4 @@
-import BG from "@/assets/images/mybook/features-overlay.png";
+import BG from "@/assets/images/mybook/features-overlay.webp";
 
 const STEPS = [
   {

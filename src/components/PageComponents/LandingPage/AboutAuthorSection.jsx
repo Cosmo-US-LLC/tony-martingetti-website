@@ -1,4 +1,4 @@
-import AUTHOR_IMAGE from "@/assets/images/landing/author-image.png";
+import AUTHOR_IMAGE from "@/assets/images/landing/author-image.webp";
 
 const PILLS = [
   "Since 1997 in Planned Giving",

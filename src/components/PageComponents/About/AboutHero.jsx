@@ -1,4 +1,4 @@
-import HERO_BG from "@/assets/images/about/hero-bg.png";
+import HERO_BG from "@/assets/images/about/hero-bg.webp";
 
 export default function AboutHero() {
   return (

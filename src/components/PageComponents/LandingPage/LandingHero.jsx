@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HERO_BG from "@/assets/images/landing/hero-bg.png";
+import HERO_BG from "@/assets/images/landing/hero-bg.webp";
 
 export default function LandingHero() {
   return (

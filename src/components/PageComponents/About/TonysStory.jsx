@@ -1,7 +1,7 @@
-import STORY_1997 from "@/assets/images/about/story-1997.png";
-import STORY_DECADES from "@/assets/images/about/story-decades.png";
-import STORY_TODAY from "@/assets/images/about/story-today-overlay.png";
-import STORY_BEYOND from "@/assets/images/about/story-beyond.png";
+import STORY_1997 from "@/assets/images/about/story-1997.webp";
+import STORY_DECADES from "@/assets/images/about/story-decades.webp";
+import STORY_TODAY from "@/assets/images/about/story-today-overlay.webp";
+import STORY_BEYOND from "@/assets/images/about/story-beyond.webp";
 
 const CHAPTERS = [
   {

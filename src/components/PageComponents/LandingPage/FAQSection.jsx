@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FAQ_IMAGE from "@/assets/images/landing/faq-image.png";
+import FAQ_IMAGE from "@/assets/images/landing/faq-image.webp";
 
 const FAQS = [
   {

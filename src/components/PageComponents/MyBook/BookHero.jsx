@@ -1,5 +1,5 @@
-import HERO_BG from "@/assets/images/mybook/hero-bg.png";
-import AMAZON_BADGE from "@/assets/images/mybook/amazon-badge-cropped.png";
+import HERO_BG from "@/assets/images/mybook/hero-bg.webp";
+import AMAZON_BADGE from "@/assets/images/mybook/amazon-badge-cropped.webp";
 
 export default function BookHero() {
   return (

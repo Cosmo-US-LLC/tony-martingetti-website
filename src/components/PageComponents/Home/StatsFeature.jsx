@@ -1,4 +1,4 @@
-import ILLUSTRATION from "@/assets/images/home/illustration.png";
+import ILLUSTRATION from "@/assets/images/home/illustration.webp";
 
 const STATS = [
   { value: "75–90%", desc: "Of gifts come through wills" },

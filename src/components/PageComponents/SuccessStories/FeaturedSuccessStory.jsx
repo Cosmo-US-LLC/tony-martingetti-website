@@ -1,4 +1,4 @@
-import AVATAR from "@/assets/images/home/avatar.png";
+import AVATAR from "@/assets/images/home/avatar.webp";
 import STAR from "@/assets/images/home/icons/star.svg";
 
 const STORIES = [
