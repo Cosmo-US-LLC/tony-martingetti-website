@@ -1,11 +1,11 @@
-import BG_DESKTOP from "@/assets/images/success-stories/featured-bg-desktop.png";
-import BG_MOBILE from "@/assets/images/success-stories/featured-bg-mobile.png";
+import BG_DESKTOP from "@/assets/images/success-stories/featured-bg-desktop.webp";
+import BG_MOBILE from "@/assets/images/success-stories/featured-bg-mobile.webp";
 import LOGO_NYT from "@/assets/images/about/icons/logo-nyt.svg";
 import LOGO_YAHOO from "@/assets/images/about/icons/logo-yahoo.svg";
 import LOGO_WSJ from "@/assets/images/about/icons/logo-wsj.svg";
 import LOGO_DOWJONES from "@/assets/images/about/icons/logo-dowjones.svg";
 import LOGO_GUIDESTAR from "@/assets/images/about/icons/logo-guidestar.svg";
-import LOGO_CHRONICLE from "@/assets/images/about/logo-chronicle.png";
+import LOGO_CHRONICLE from "@/assets/images/about/logo-chronicle.webp";
 import LOGO_BLOOMBERG from "@/assets/images/about/icons/logo-bloomberg.svg";
 import LOGO_NPCM from "@/assets/images/about/icons/logo-npcm.svg";
 

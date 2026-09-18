@@ -1,4 +1,4 @@
-import WEBINAR_IMAGE from "@/assets/images/mybook/webinar-image.png";
+import WEBINAR_IMAGE from "@/assets/images/mybook/webinar-image.webp";
 
 const SESSIONS = [
   {

@@ -1,4 +1,4 @@
-import STAT_IMAGE from "@/assets/images/mybook/stat-image.png";
+import STAT_IMAGE from "@/assets/images/mybook/stat-image.webp";
 
 export default function AboutTheBook() {
   return (

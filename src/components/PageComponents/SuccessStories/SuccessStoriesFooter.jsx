@@ -1,4 +1,4 @@
-import AMAZON_BADGE from "@/assets/images/mybook/amazon-badge-cropped.png";
+import AMAZON_BADGE from "@/assets/images/mybook/amazon-badge-cropped.webp";
 
 export default function SuccessStoriesFooter() {
   return (

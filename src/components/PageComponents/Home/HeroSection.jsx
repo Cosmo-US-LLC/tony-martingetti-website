@@ -1,4 +1,4 @@
-import HERO_BG from "@/assets/images/home/hero-bg.png";
+import HERO_BG from "@/assets/images/home/hero-bg.webp";
 
 export default function HeroSection() {
   return (

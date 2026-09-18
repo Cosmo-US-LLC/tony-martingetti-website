@@ -1,5 +1,5 @@
 import { useState } from "react";
-import REASONS_IMAGE from "@/assets/images/mybook/reasons-image.png";
+import REASONS_IMAGE from "@/assets/images/mybook/reasons-image.webp";
 import REASON_ICON from "@/assets/images/mybook/icons/reason-icon.svg";
 
 const REASONS = [

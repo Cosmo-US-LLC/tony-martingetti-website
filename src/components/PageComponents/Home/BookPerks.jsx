@@ -1,4 +1,4 @@
-import AUTHOR from "@/assets/images/home/author.png";
+import AUTHOR from "@/assets/images/home/author.webp";
 import PERK_BOOK from "@/assets/images/home/icons/perk-book.svg";
 import PERK_WEBINAR from "@/assets/images/home/icons/perk-webinar.svg";
 import PERK_SCRIPT from "@/assets/images/home/icons/perk-script.svg";

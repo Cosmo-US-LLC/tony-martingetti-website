@@ -1,4 +1,4 @@
-import TESTIMONIAL_IMAGE from "@/assets/images/mybook/testimonial-image.png";
+import TESTIMONIAL_IMAGE from "@/assets/images/mybook/testimonial-image.webp";
 import { scrollToWaitlistJoin } from "@/utils/scrollToWaitlistJoin";
 
 const MYTHS = [
