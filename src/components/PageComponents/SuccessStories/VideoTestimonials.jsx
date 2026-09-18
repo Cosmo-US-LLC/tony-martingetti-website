@@ -45,20 +45,20 @@ export default function VideoTestimonials() {
       <img
         src={BG_DESKTOP}
         alt=""
-        className="absolute inset-0 hidden h-[800px] w-full object-top md:block"
+        className="absolute inset-0 hidden h-[800px] w-full object-cover object-top md:block"
       />
       <img
         src={BG_MOBILE}
         alt=""
         className="absolute inset-0 block h-full w-full object-cover md:hidden"
       />
-      <div
+      {/* <div
         className="absolute inset-0 hidden md:block"
         style={{
           backgroundImage:
             "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%)",
         }}
-      />
+      /> */}
       <div
         className="absolute inset-0 md:hidden"
         style={{
