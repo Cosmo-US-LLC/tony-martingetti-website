@@ -45,20 +45,20 @@ export default function FeaturedIn() {
       <img
         src={BG_DESKTOP}
         alt=""
-        className="absolute inset-0 hidden h-full w-full object-top md:block"
+        className="absolute inset-0 hidden h-full w-full object-cover object-top md:block"
       />
       <img
         src={BG_MOBILE}
         alt=""
         className="absolute inset-0 block h-full w-full object-cover md:hidden"
       />
-      <div
+      {/* <div
         className="absolute inset-0 hidden md:block"
         style={{
           backgroundImage:
             "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%)",
         }}
-      />
+      /> */}
 
       <div className="relative flex min-h-[560px] w-full flex-col justify-between gap-10 py-10 md:h-full md:min-h-0 md:justify-between md:py-12">
         <div className="font-landing mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-4 md:px-[60px]">
