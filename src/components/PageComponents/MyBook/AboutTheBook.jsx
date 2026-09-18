@@ -1,52 +1,76 @@
-import { BOOK_STATS } from "@/constants/myBook";
-
-function StatRow({ label, value }) {
-  return (
-    <div className="rounded-xl border border-[#dedede] bg-white md:py-8 py-6 md:px-6 px-4">
-      <div className="flex items-center justify-between gap-4">
-        <p className="font-sans text-lg leading-[22.75px] text-[#0f172a]">
-          {label}
-        </p>
-        <p className="font-heading text-[40px] font-bold uppercase leading-7 tracking-[0.36px] text-[#059669]">
-          {value}
-        </p>
-      </div>
-    </div>
-  );
-}
+import STAT_IMAGE from "@/assets/images/mybook/stat-image.webp";
 
 export default function AboutTheBook() {
   return (
-    <section
-      className="w-full bg-[#f6f8fa] py-12 md:py-[60px]"
-      data-name="About The Book"
-    >
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 md:px-8 lg:flex-row lg:items-center lg:gap-[60px]">
-        <div className="flex-1">
-          <h2 className="heading_two text-[#0f172a]">About The Book</h2>
-          <p className="font-heading text-[20px] font-bold uppercase leading-[40px] tracking-[0.72px] text-[#059669]">
-            Forget someday, start Monday.
-          </p>
-          <div className="mt-4 space-y-0 font-sans text-lg leading-7 text-[#4b5563]">
-            <p>
-              If your nonprofit doesn&apos;t have an active Planned Giving
-              program, you can launch one next week. Tony Martignetti has spent
-              decades helping small and mid-size nonprofits build lasting
-              endowments not with complicated gift vehicles or expensive
-              consultants, but with a simple, repeatable process starting with
-              bequests. This book cuts through the myths that keep nonprofits stuck, and
-              gives you a clear 3-step, 1-week launch plan you can start on
-              Monday. Written for executive directors, fundraisers, and board
-              members who are tired of &quot;someday&quot; and ready to build
-              something that lasts.
-            </p>
+    <section className="w-full bg-white px-4 py-12 md:px-[60px] md:py-20">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-12 md:flex-row md:gap-20">
+        <div className="flex flex-col gap-4 md:w-1/2 md:flex-row md:gap-6">
+          <div className="relative overflow-hidden rounded-lg">
+            <img
+              src={STAT_IMAGE}
+              alt=""
+              className="h-[280px] w-full object-cover md:h-[450px] md:w-[302px]"
+            />
+            <div
+              className="absolute inset-0"
+              // style={{
+              //   backgroundImage:
+              //     "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%)",
+              // }}
+            />
+            <div className="absolute bottom-6 left-6 flex flex-col gap-1">
+              <p className="text-4xl font-bold leading-[48px] text-white md:text-[48px] md:leading-[60px]">
+                29+
+              </p>
+              <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white">
+                Years of proven results
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 md:justify-between">
+            <div className="flex flex-1 flex-col justify-center gap-1 rounded-lg bg-[#0a1730] p-6">
+              <p className="text-4xl font-bold leading-[48px] text-white md:text-[48px] md:leading-[60px]">
+                29+
+              </p>
+              <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#c6c6c6]">
+                Years of proven results
+              </p>
+            </div>
+            <div className="flex flex-1 flex-col justify-center gap-1 rounded-lg bg-[#0a1730] p-6">
+              <p className="text-4xl font-bold leading-[48px] text-white md:text-[48px] md:leading-[60px]">
+                $150M+
+              </p>
+              <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#c6c6c6]">
+                In bequests secured for clients
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="flex w-full max-w-[577px] flex-col gap-6">
-          {BOOK_STATS.map((stat) => (
-            <StatRow key={stat.label} {...stat} />
-          ))}
+        <div className="flex flex-col gap-4 md:w-1/2 md:gap-4">
+          <div className="flex flex-col gap-2">
+            <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
+              Forget someday, start Monday.
+            </p>
+            <h2 className="text-[28px] font-bold leading-[39.2px] text-[#151515] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
+              About the book
+            </h2>
+          </div>
+          <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
+            If your nonprofit doesn't have an active Planned Giving program,
+            you can launch one next week. Tony Martignetti has spent decades
+            helping small and mid-size nonprofits build lasting endowments,
+            not with complicated gift vehicles or expensive consultants, but
+            with a simple, repeatable process starting with bequests.
+            <br />
+            <br />
+            This book cuts through the myths that keep nonprofits stuck, and
+            gives you a clear 3-step, 1-week launch plan you can start on
+            Monday. Written for executive directors, fundraisers and board
+            members who are tired of "someday" and ready to build something
+            that lasts.
+          </p>
         </div>
       </div>
     </section>

@@ -3,9 +3,16 @@
   "outputDirectory": "dist",
   "framework": null,
   "redirects": [
-    { "source": "/book-waitlist", "destination": "/my-book", "permanent": true }
+    {
+      "source": "/book-waitlist",
+      "destination": "/my-book",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

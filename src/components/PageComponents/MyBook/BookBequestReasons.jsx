@@ -1,119 +1,84 @@
-import { useCallback, useEffect, useState } from "react";
-import bequestReasonsImage from "@/assets/images/my_book/bequest_reasons/bequest_reasons.webp";
-import { BOOK_BEQUEST_REASONS } from "@/constants/myBook";
+import { useState } from "react";
+import REASONS_IMAGE from "@/assets/images/mybook/reasons-image.webp";
+import REASON_ICON from "@/assets/images/mybook/icons/reason-icon.svg";
 
-const STEP_DURATION_MS = 5000;
-const REASON_COUNT = BOOK_BEQUEST_REASONS.length;
-
-function ReasonProgressBar({ stepIndex, onComplete }) {
-  const handleAnimationEnd = useCallback(
-    (event) => {
-      if (event.animationName === "bequest-reason-progress") {
-        onComplete();
-      }
-    },
-    [onComplete],
-  );
-
-  return (
-    <div className="relative h-0.5 w-full overflow-hidden rounded-[10px] bg-[#e3e3e3]">
-      <div
-        key={stepIndex}
-        className="bequest-reason-progress-bar absolute inset-y-0 left-0 rounded-[10px] bg-[#059669]"
-        onAnimationEnd={handleAnimationEnd}
-      />
-    </div>
-  );
-}
-
-function ReasonDivider() {
-  return (
-    <div className="h-0.5 w-full rounded-[10px] bg-[#e3e3e3]" aria-hidden="true" />
-  );
-}
+const REASONS = [
+  {
+    title: "No education required",
+    desc: "Every American adult already understands what a will is. You're activating a concept your donors already know, not teaching a new one.",
+  },
+  {
+    title: "No lifetime cost",
+    desc: "A bequest costs your donor nothing today, which opens the door to gifts many times larger than anything they've given while alive.",
+  },
+  {
+    title: "The most popular planned gift, by far",
+    desc: "Expect 75-90% of your planned gifts to be simple gifts in wills.",
+  },
+  {
+    title: "You'll grow your endowment",
+    desc: "Most bequests arrive as unrestricted cash, the fastest way to build the fund that protects your mission for decades.",
+  },
+  {
+    title: "No tax issues",
+    desc: "Fewer than 1% of estates owe federal estate tax, so there's nothing complicated to navigate.",
+  },
+  {
+    title: "Everyone needs a will",
+    desc: "Your prospect pool is already sitting in your donor database.",
+  },
+];
 
 export default function BookBequestReasons() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const goToNextStep = useCallback(() => {
-    setActiveIndex((current) => (current + 1) % REASON_COUNT);
-  }, []);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!mediaQuery.matches) return;
-
-    const timer = window.setTimeout(goToNextStep, STEP_DURATION_MS);
-    return () => window.clearTimeout(timer);
-  }, [activeIndex, goToNextStep]);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section
-      className="w-full bg-white py-12 md:py-[60px]"
-      data-name="Bequest Reasons"
-    >
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-10 px-4 md:gap-12 md:px-8">
-        <div className="flex max-w-[800px] flex-col items-center gap-4 text-center">
-          <h2 className="font-heading text-[28px] font-bold uppercase leading-10 tracking-[0.7px] text-[#0f172a] md:text-[34px]">
-            <span className="block">THE MARTIGNETTI 18 REASONS WHY BEQUESTS ARE THE PLACE TO LAUNCH YOUR PLANNED GIVING</span>
-            {/* <span className="block">Not Where You Settle</span> */}
+    <section className="w-full bg-[#0a1730] px-4 py-12 md:px-[60px] md:py-20">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-8 md:gap-12">
+        <div className="flex flex-col gap-4 md:flex-row md:gap-20">
+          <h2 className="text-[28px] font-bold leading-[39.2px] text-white md:w-1/2 md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
+            The Martignetti 18 reasons why bequests are the place to launch
+            your Planned Giving
           </h2>
-          <p className="font-sans text-lg font-normal leading-7 text-[#4b5563]">
-            You don&apos;t need a complicated gift menu to launch Planned Giving.
-            You need one gift type, and eighteen rock-solid reasons why it&apos;s
-            the right one. Here are 6 to get you started.
+          <p className="text-base leading-[22.4px] tracking-[-0.16px] text-white md:w-1/2">
+            You don't need a complicated gift menu to launch Planned Giving.
+            You need one gift type, and eighteen rock-solid reasons why it's
+            the right one. Here are six to get you started.
           </p>
         </div>
 
-        <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-20 xl:gap-[80px]">
-          <div className="h-[320px] w-full max-w-[567px] shrink-0 overflow-hidden rounded-2xl md:h-[580px]">
-            <img
-              src={bequestReasonsImage}
-              alt="Professional reviewing planned giving materials on a laptop"
-              className="size-full object-cover"
-            />
-          </div>
-
-          <div className="flex w-full min-w-0 flex-1 flex-col gap-6">
-            {BOOK_BEQUEST_REASONS.map((reason, index) => {
-              const isActive = activeIndex === index;
-
+        <div className="flex flex-col gap-4 md:flex-row md:gap-20">
+          <img
+            src={REASONS_IMAGE}
+            alt=""
+            className="h-[320px] w-full rounded-2xl object-cover  object-[70%_center] md:h-[700px] md:w-[600px]"
+            style={{ objectPosition: "70% center" }}
+          />
+          <div className="flex flex-col gap-4 md:w-1/2">
+            {REASONS.map((r, i) => {
+              const isOpen = openIndex === i;
               return (
-                <div key={reason.id} className="flex flex-col gap-3">
+                <div
+                  key={r.title}
+                  className="flex flex-col rounded-lg border border-white/0 bg-white/[0.02]"
+                >
                   <button
                     type="button"
-                    onClick={() => setActiveIndex(index)}
-                    className="flex w-full cursor-pointer flex-col items-start gap-3 text-left"
-                    aria-expanded={isActive}
+                    onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                    className="flex w-full cursor-pointer items-center gap-4 p-6 text-left"
                   >
-                    <span
-                      className={`font-heading text-[22px] font-bold uppercase leading-8 transition-colors duration-300 md:text-2xl ${
-                        isActive ? "text-[#059669]" : "text-[#040a16]"
-                      }`}
-                    >
-                      {reason.title}
+                    <img src={REASON_ICON} alt="" className="h-9 w-9 shrink-0" />
+                    <h3 className="flex-1 text-2xl font-bold leading-9 tracking-[-0.56px] text-white">
+                      {r.title}
+                    </h3>
+                    <span className="shrink-0 text-2xl font-light leading-none text-white">
+                      {isOpen ? "−" : "+"}
                     </span>
-                    <div
-                      className={`grid transition-all duration-300 ease-out ${
-                        isActive
-                          ? "grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0"
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <p className="font-sans text-lg font-normal leading-[26px] text-[#020120]">
-                          {reason.description}
-                        </p>
-                      </div>
-                    </div>
                   </button>
-                  {isActive ? (
-                    <ReasonProgressBar
-                      stepIndex={activeIndex}
-                      onComplete={goToNextStep}
-                    />
-                  ) : (
-                    <ReasonDivider />
+                  {isOpen && (
+                    <p className="px-6 pb-6 pl-[76px] text-base leading-6 tracking-[-0.16px] text-white">
+                      {r.desc}
+                    </p>
                   )}
                 </div>
               );

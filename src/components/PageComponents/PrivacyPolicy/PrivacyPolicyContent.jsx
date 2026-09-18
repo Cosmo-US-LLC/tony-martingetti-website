@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 import { PRIVACY_POLICY_CONFIG as config } from "@/constants/privacyPolicy";
 
-function PolicySection({ title, children }) {
+function PolicySection({ id, title, children }) {
   return (
-    <section className="flex flex-col gap-4 border-t border-[#e5e7eb] pt-8">
-      <h2 className="font-heading text-[22px] font-bold uppercase leading-7 tracking-[0.4px] text-[#0f172a] md:text-2xl md:leading-8">
+    <section id={id} className="scroll-mt-24 flex flex-col gap-4">
+      <h2 className="font-landing text-xl font-semibold leading-7 text-black">
         {title}
       </h2>
-      <div className="policy_prose flex flex-col gap-4">{children}</div>
+      <div className="policy_prose flex flex-col gap-3.5">{children}</div>
     </section>
   );
 }
 
 function PolicyParagraph({ children }) {
   return (
-    <p className="font-sans text-base font-normal leading-[26px] text-[#1f2937]">
+    <p className="font-landing text-base font-normal leading-[22.4px] tracking-[-0.16px] text-black">
       {children}
     </p>
   );
@@ -22,7 +22,7 @@ function PolicyParagraph({ children }) {
 
 function PolicyList({ items }) {
   return (
-    <ul className="flex flex-col gap-2 pl-5 font-sans text-base leading-[26px] text-[#1f2937]">
+    <ul className="flex flex-col gap-2 pl-5 font-landing text-base leading-[22.4px] tracking-[-0.16px] text-black">
       {items.map((item) => (
         <li key={item} className="list-disc">
           {item}
@@ -34,25 +34,36 @@ function PolicyList({ items }) {
 
 function PolicyLabel({ children }) {
   return (
-    <p className="font-sans text-base font-semibold leading-[26px] text-[#0f172a]">
+    <p className="font-landing text-base font-semibold leading-[22.4px] tracking-[-0.16px] text-black">
       {children}
     </p>
   );
 }
 
+export const PRIVACY_SECTIONS = [
+  { id: "information-we-collect", title: "Information We Collect" },
+  { id: "how-we-use-your-information", title: "How We Use Your Information" },
+  { id: "how-we-share-your-information", title: "How We Share Your Information" },
+  { id: "cookies-and-tracking-technologies", title: "Cookies and Tracking Technologies" },
+  { id: "email-communications", title: "Email Communications" },
+  { id: "data-retention", title: "Data Retention" },
+  { id: "your-rights-and-choices", title: "Your Rights and Choices" },
+  { id: "childrens-privacy", title: "Children's Privacy" },
+  { id: "data-security", title: "Data Security" },
+  { id: "changes-to-this-policy", title: "Changes to This Policy" },
+  { id: "contact-us", title: "Contact Us" },
+];
+
 export default function PrivacyPolicyContent() {
   const mailto = `mailto:${config.contactEmail}`;
 
   return (
-    <article className="mx-auto flex w-full max-w-[800px] flex-col gap-8">
-      <header className="flex flex-col gap-4">
-        <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#059669]">
-          Legal
-        </p>
-        <h1 className="font-heading text-[32px] font-bold uppercase leading-tight tracking-[0.7px] text-[#0f172a] md:text-[40px] md:leading-[44px]">
+    <article className="flex w-full flex-col gap-8 rounded-xl bg-white p-6 md:p-10">
+      <header className="flex flex-col gap-3.5">
+        <h1 className="font-landing text-2xl font-bold leading-[28.8px] tracking-[-0.48px] text-black">
           Privacy Policy
         </h1>
-        <p className="font-sans text-base font-semibold leading-[26px] text-[#0f172a]">
+        <p className="font-landing text-xl font-semibold leading-7 text-black">
           Effective Date: {config.effectiveDate}
         </p>
         <PolicyParagraph>
@@ -68,7 +79,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </header>
 
-      <PolicySection title="1. Information We Collect">
+      <PolicySection id="information-we-collect" title="1. Information We Collect">
         <PolicyParagraph>
           We collect information in the following ways:
         </PolicyParagraph>
@@ -101,7 +112,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="2. How We Use Your Information">
+      <PolicySection id="how-we-use-your-information" title="2. How We Use Your Information">
         <PolicyParagraph>
           We use the information we collect to:
         </PolicyParagraph>
@@ -121,7 +132,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="3. How We Share Your Information">
+      <PolicySection id="how-we-share-your-information" title="3. How We Share Your Information">
         <PolicyParagraph>
           We do not sell, rent, or trade your personal information. We may share
           information with:
@@ -135,7 +146,7 @@ export default function PrivacyPolicyContent() {
         />
       </PolicySection>
 
-      <PolicySection title="4. Cookies and Tracking Technologies">
+      <PolicySection id="cookies-and-tracking-technologies" title="4. Cookies and Tracking Technologies">
         <PolicyParagraph>
           The Site uses cookies and similar technologies to:
         </PolicyParagraph>
@@ -156,7 +167,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="5. Email Communications">
+      <PolicySection id="email-communications" title="5. Email Communications">
         <PolicyParagraph>
           If you sign up for our newsletter or opt in to receive updates, we
           will send you emails related to Planned Giving Accelerated, including
@@ -170,7 +181,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="6. Data Retention">
+      <PolicySection id="data-retention" title="6. Data Retention">
         <PolicyParagraph>
           We retain personal information for as long as necessary to fulfill the
           purposes outlined in this policy, unless a longer retention period is
@@ -179,7 +190,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="7. Your Rights and Choices">
+      <PolicySection id="your-rights-and-choices" title="7. Your Rights and Choices">
         <PolicyParagraph>
           Depending on your location, you may have the right to:
         </PolicyParagraph>
@@ -201,7 +212,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="8. Children's Privacy">
+      <PolicySection id="childrens-privacy" title="8. Children's Privacy">
         <PolicyParagraph>
           The Site is not directed at children under the age of 16, and we do
           not knowingly collect personal information from children. If you
@@ -210,7 +221,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="9. Data Security">
+      <PolicySection id="data-security" title="9. Data Security">
         <PolicyParagraph>
           We use reasonable administrative, technical, and physical safeguards
           to protect your information. However, no method of transmission or
@@ -218,7 +229,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="10. Changes to This Policy">
+      <PolicySection id="changes-to-this-policy" title="10. Changes to This Policy">
         <PolicyParagraph>
           We may update this Privacy Policy from time to time. Any changes will
           be posted on this page with an updated &quot;Effective Date.&quot; We
@@ -226,7 +237,7 @@ export default function PrivacyPolicyContent() {
         </PolicyParagraph>
       </PolicySection>
 
-      <PolicySection title="11. Contact Us">
+      <PolicySection id="contact-us" title="11. Contact Us">
         <PolicyParagraph>
           If you have questions about this Privacy Policy or how your information
           is handled, please contact us:

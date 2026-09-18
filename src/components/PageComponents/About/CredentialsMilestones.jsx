@@ -1,131 +1,100 @@
-import lawIcon from "@/assets/images/about/icons/law.svg";
-import radioIcon from "@/assets/images/about/icons/radio.svg";
-import airForceBg from "@/assets/images/about/icons/air_force_bg.svg";
-import airForceIcon from "@/assets/images/about/icons/air_force.svg";
-import bequestsIcon from "@/assets/images/about/icons/bequests.svg";
-import universityIcon from "@/assets/images/about/icons/university.svg";
-import founderIcon from "@/assets/images/about/icons/founder.svg";
-import speakerIcon from "@/assets/images/about/icons/speaker.svg";
-import authorIcon from "@/assets/images/about/icons/author.svg";
+import ICON_SCALE from "@/assets/images/about/icons/icon-scale.svg";
+import ICON_MIC from "@/assets/images/about/icons/icon-mic.svg";
+import ICON_SHIELD from "@/assets/images/about/icons/icon-shield-star.svg";
+import ICON_DOLLAR from "@/assets/images/about/icons/icon-dollar.svg";
+import ICON_GRAD from "@/assets/images/about/icons/icon-graduation.svg";
+import ICON_HANDSHAKE from "@/assets/images/about/icons/icon-handshake.svg";
+import ICON_PRESENTATION from "@/assets/images/about/icons/icon-presentation.svg";
+import ICON_BOOK from "@/assets/images/about/icons/icon-book-open.svg";
 
-const CREDENTIALS = [
+const MILESTONES = [
   {
-    icon: lawIcon,
+    icon: ICON_SCALE,
     title: "Temple University School of Law",
-    description:
-      "Juris Doctor, foundation in ethical counsel including study of wills and trusts.",
+    desc: "Juris Doctor, foundation in ethical counsel including study of wills and trusts.",
   },
   {
-    icon: radioIcon,
-    title: "Host: Tony Martignetti Nonprofit Radio",
-    description:
-      "Picking the brains of other experts for small- and mid-size nonprofits.",
+    icon: ICON_MIC,
+    title: "Tony Martignetti Nonprofit Radio",
+    desc: "Picking the brains of other experts for small and mid-size nonprofits.",
   },
   {
-    icon: "air-force",
-    title: "U.S. Air Force Veteran",
-    description: "Captain, Missile Combat Crew Commander.",
+    icon: ICON_SHIELD,
+    title: "U.S. Air Force veteran",
+    desc: "Captain, Missile Combat Crew Commander.",
   },
   {
-    icon: bequestsIcon,
-    title: "$150M+ Bequests Secured",
-    description: "Privileged to work with nonprofits nationwide.",
+    icon: ICON_DOLLAR,
+    title: "$150M+ bequests secured",
+    desc: "Privileged to work with nonprofits nationwide.",
   },
   {
-    icon: universityIcon,
+    icon: ICON_GRAD,
     title: "Carnegie Mellon University",
-    description: "B.S., Information Systems & Managerial Economics",
+    desc: "B.S., Information Systems & Managerial Economics.",
   },
   {
-    icon: founderIcon,
-    title: "Founder, Planned Giving Accelerated",
-    description: "The course, helping you launch Planned Giving.",
+    icon: ICON_HANDSHAKE,
+    title: "Founder, Martignetti Planned Giving Advisors",
+    desc: "Counselling nonprofits on legacy giving since 2003.",
   },
   {
-    icon: speakerIcon,
-    title: "Keynote Speaker & Trainer",
-    description:
-      "Engaging audiences, teaching Planned Giving fundraising.",
+    icon: ICON_PRESENTATION,
+    title: "Keynote speaker & trainer",
+    desc: "Engaging audiences, teaching Planned Giving fundraising.",
   },
   {
-    icon: authorIcon,
+    icon: ICON_BOOK,
     title: "Author, Planned Giving Accelerated",
-    description: "The book, helping you launch Planned Giving.",
+    desc: "The book, helping you launch Planned Giving.",
   },
 ];
 
-function CredentialIcon({ icon }) {
-  if (icon === "air-force") {
-    return (
-      <div className="relative size-[60px] shrink-0">
-        <img src={airForceBg} alt="" className="absolute inset-0 size-full" aria-hidden="true" />
-        <img
-          src={airForceIcon}
-          alt=""
-          className="absolute left-1/2 top-1/2 size-[30px] -translate-x-1/2 -translate-y-1/2"
-          aria-hidden="true"
-        />
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={icon}
-      alt=""
-      className="size-[60px] shrink-0"
-      aria-hidden="true"
-    />
-  );
-}
-
-function CredentialCard({ icon, title, description }) {
-  return (
-    <div className="flex gap-2.5 rounded-xl border border-[#eaeaea] bg-[#f8fafc] px-4 py-[18px]">
-      <CredentialIcon icon={icon} />
-      <div className="flex min-w-0 flex-col gap-2">
-        <h3 className="heading_three text-[#0f172a]">{title}</h3>
-        <p className="font-sans text-sm leading-6 text-[#707377]">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default function CredentialsMilestones() {
   return (
-    <section
-      className="w-full bg-[#f8fafc] py-12 md:py-[60px]"
-      data-name="Credentials & Milestones"
-    >
-      <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center gap-10 px-4 md:px-8">
-        <div className="flex max-w-[508px] flex-col items-center gap-4 text-center">
-          <div className="flex flex-col items-center gap-1">
-            <p className="font-sans text-base font-semibold leading-[22px] text-[#059669]">
-              Tony&apos;s Background
+    <section className="w-full bg-[#0a1730] px-4 py-12 md:px-[60px] md:py-20">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-8 md:gap-12">
+        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between md:gap-12">
+          <div className="flex flex-col gap-2">
+            <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
+              Tony's background
             </p>
-            <h2 className="heading_two text-[#0f172a]">
-              Credentials & Milestones
+            <h2 className="text-[28px] font-bold leading-[39.2px] text-white md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
+              Credentials &amp; milestones
             </h2>
           </div>
-          <p className="font-sans text-lg leading-7 text-[#4b5563] md:text-xl">
-            Academic excellence, service, authorship, and impact shaping a
+          <p className="max-w-[636px] text-base leading-[22.4px] text-[#c6c6c6] md:pb-1">
+            Academic excellence, service, authorship and impact shaping a
             generation of Planned Giving leaders.
           </p>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-          {CREDENTIALS.map((item) => (
-            <CredentialCard key={item.title} {...item} />
-          ))}
+        <div className="flex flex-col gap-3 md:gap-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+            {MILESTONES.map((m) => (
+              <div
+                key={m.title}
+                className="flex flex-col gap-3 rounded-2xl bg-white/[0.02] p-4 md:gap-8 md:p-5"
+              >
+                <img src={m.icon} alt="" className="h-7 w-7 md:h-12 md:w-12" />
+                <div className="flex flex-col gap-1.5 md:gap-2">
+                  <h3 className="text-sm font-semibold leading-[19.6px] text-white md:text-2xl md:font-bold md:leading-[28.8px] md:tracking-[-0.48px]">
+                    {m.title}
+                  </h3>
+                  <p className="text-xs leading-[14.4px] text-[#c6c6c6] md:text-base md:leading-[22.4px] md:tracking-[-0.16px]">
+                    {m.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mx-auto max-w-[800px] text-center text-sm leading-[22px] text-[#c6c6c6] md:text-sm">
+            For more than two decades, Tony has combined practical
+            fundraising expertise, strategic planning and nonprofit
+            leadership experience to help organisations build programs that
+            create lasting impact.
+          </p>
         </div>
-
-        <p className="max-w-[750px] text-center font-sans text-xs leading-5 text-[#4b5563]">
-          For more than two decades, Tony has combined practical fundraising
-          expertise, strategic planning, and nonprofit leadership experience to
-          help organizations build programs that create lasting impact.
-        </p>
       </div>
     </section>
   );

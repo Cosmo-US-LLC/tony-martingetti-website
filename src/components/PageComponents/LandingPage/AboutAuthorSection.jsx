@@ -1,44 +1,55 @@
-import tonyAuthorImage from "@/assets/images/my_book/author/tony_author.webp";
-import { AUTHOR_BIO_PARAGRAPHS, AUTHOR_TAGS } from "@/constants/landingPage";
+import AUTHOR_IMAGE from "@/assets/images/landing/author-image.webp";
+
+const PILLS = [
+  "Since 1997 in Planned Giving",
+  "Lawyer by training",
+  "Host, Nonprofit Radio",
+];
 
 export default function AboutAuthorSection() {
   return (
-    <section className="w-full bg-white py-14 md:py-[60px]" data-name="About The Author">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-4 md:px-8 lg:flex-row lg:items-center lg:gap-20">
-        <div className="flex w-full flex-1 flex-col gap-5">
-          <span className="font-script text-[20px] leading-[28px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
-            About The Author
-          </span>
-          <h2 className="text-[24px] font-bold leading-[28.8px] tracking-[-0.48px] text-[#00150B] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
-            Twenty-Nine Years In The Room With Donors
-          </h2>
-          <div className="flex flex-col gap-4">
-            {AUTHOR_BIO_PARAGRAPHS.map((paragraph) => (
-              <p
-                key={paragraph.slice(0, 20)}
-                className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]"
-              >
-                {paragraph}
-              </p>
-            ))}
+    <section className="w-full bg-white px-4 py-12 md:px-[60px] md:py-20">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-8 md:flex-row md:gap-20">
+        <div className="flex flex-col gap-6 md:w-1/2">
+          <div className="flex flex-col gap-2">
+            <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
+              About The Author
+            </p>
+            <h2 className="text-[28px] font-bold leading-[39.2px] text-[#00150b] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
+              Twenty-Nine Years In The Room With Donors
+            </h2>
           </div>
-          <div className="flex flex-wrap gap-2.5">
-            {AUTHOR_TAGS.map((tag) => (
+
+          <p className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]">
+            Tony Martignetti has worked in Planned Giving since 1997, first
+            as director of Planned Giving at Iona College and St. John's
+            University, where he built both programs from scratch, then as a
+            consultant to nonprofits nationwide. He's helped his clients
+            raise more than $150 million in bequests.
+            <br />
+            <br />
+            He's a lawyer by training, a fundraiser by trade, and the host of
+            Tony Martignetti Nonprofit Radio, where he's spent two decades
+            explaining fundraising in plain English, not legalese.
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {PILLS.map((p) => (
               <span
-                key={tag}
-                className="inline-flex items-center rounded-full bg-[#FFF7FD] px-3.5 py-1.5 text-sm font-medium text-[#951B81]"
+                key={p}
+                className="rounded-full bg-[#fff7fd] px-4 py-2.5 text-sm font-medium leading-5 text-[#951b81]"
               >
-                {tag}
+                {p}
               </span>
             ))}
           </div>
         </div>
 
-        <div className="w-full flex-1 shrink-0 overflow-hidden rounded-xl md:rounded-2xl">
+        <div className="md:w-1/2">
           <img
-            src={tonyAuthorImage}
+            src={AUTHOR_IMAGE}
             alt="Tony Martignetti"
-            className="h-auto w-full object-cover aspect-[1514/1581]"
+            className="h-[320px] w-full rounded-2xl object-cover md:h-[540px]"
           />
         </div>
       </div>
