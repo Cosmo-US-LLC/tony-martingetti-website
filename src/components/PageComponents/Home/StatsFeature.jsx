@@ -1,9 +1,22 @@
 import ILLUSTRATION from "@/assets/images/home/illustration.webp";
+import AnimatedStat from "@/components/common/AnimatedStat";
 
 const STATS = [
-  { value: "75–90%", desc: "Of gifts come through wills" },
-  { value: "$2.2M", desc: "Raised by one nonprofit" },
-  { value: "1,000+", desc: "Programs to launch" },
+  {
+    targets: [75, 90],
+    format: ([a, b]) => `${Math.round(a)}–${Math.round(b)}%`,
+    desc: "Of gifts come through wills",
+  },
+  {
+    targets: [2.2],
+    format: ([v]) => `$${v.toFixed(1)}M`,
+    desc: "Raised by one nonprofit",
+  },
+  {
+    targets: [1000],
+    format: ([v]) => `${Math.round(v).toLocaleString()}+`,
+    desc: "Programs to launch",
+  },
 ];
 
 export default function StatsFeature() {
@@ -16,9 +29,11 @@ export default function StatsFeature() {
               key={s.desc}
               className="flex flex-col items-center gap-3 text-center md:items-start md:gap-6 md:text-left"
             >
-              <p className="font-script text-[64px] leading-[89.6px] text-[#079669]">
-                {s.value}
-              </p>
+              <AnimatedStat
+                targets={s.targets}
+                format={s.format}
+                className="font-script text-[64px] leading-[89.6px] text-[#079669]"
+              />
               <p className="text-xl leading-7 tracking-[-0.5px] text-[#151515] md:text-[28px] md:leading-[39.2px] md:tracking-normal">
                 {s.desc}
               </p>

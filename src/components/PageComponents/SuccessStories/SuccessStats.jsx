@@ -1,7 +1,21 @@
+import AnimatedStat from "@/components/common/AnimatedStat";
+
 const STATS = [
-  { value: "$150M+", desc: "In bequests secured" },
-  { value: "29+", desc: "Years in Planned Giving" },
-  { value: "$2.2M", desc: "Raised by one Non-Profit" },
+  {
+    targets: [150],
+    format: ([v]) => `$${Math.round(v)}M+`,
+    desc: "In bequests secured",
+  },
+  {
+    targets: [29],
+    format: ([v]) => `${Math.round(v)}+`,
+    desc: "Years in Planned Giving",
+  },
+  {
+    targets: [2.2],
+    format: ([v]) => `$${v.toFixed(1)}M`,
+    desc: "Raised by one Non-Profit",
+  },
 ];
 
 export default function SuccessStats() {
@@ -28,9 +42,11 @@ export default function SuccessStats() {
                   "linear-gradient(180deg, rgba(238,238,238,0.7) 0%, rgba(136,136,136,0.08) 100%)",
               }}
             >
-              <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[64px] md:leading-[89.6px]">
-                {s.value}
-              </p>
+              <AnimatedStat
+                targets={s.targets}
+                format={s.format}
+                className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[64px] md:leading-[89.6px]"
+              />
               <p className="text-sm font-semibold leading-[17.5px] text-[#151515] md:text-xl md:font-medium md:leading-7 md:tracking-[-0.5px]">
                 {s.desc}
               </p>

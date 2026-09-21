@@ -42,7 +42,7 @@ export default function WhyChoose() {
           {REASONS.map((r) => (
             <div
               key={r.title}
-              className="flex flex-col gap-4 p-5 md:flex-1 md:gap-[84px] md:p-6"
+              className="flex flex-col items-center gap-4 p-5 text-center md:flex-1 md:items-start md:gap-[84px] md:p-6 md:text-left"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(47, 172, 102, 0.16) 0%, rgba(47, 172, 102, 0.00) 100%)",
@@ -50,7 +50,7 @@ export default function WhyChoose() {
               }}
             >
               <img src={r.icon} alt="" className="h-8 w-8 md:h-[54px] md:w-[54px]" />
-              <div className="flex flex-col gap-2 md:gap-3">
+              <div className="flex flex-col items-center gap-2 md:items-start md:gap-3">
                 <h3 className="text-xl font-semibold leading-7 text-[#151515] md:text-2xl md:font-bold md:leading-[28.8px] md:tracking-[-0.48px]">
                   {r.title}
                 </h3>

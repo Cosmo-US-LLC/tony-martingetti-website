@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import STAR from "@/assets/images/home/icons/star.svg";
 
 const TABS = [
@@ -43,6 +43,13 @@ export default function TestimonialLibrary() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
   const [active, setActive] = useState(0);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActive((a) => (a + 1) % TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="w-full bg-white px-4 py-12 md:px-[60px] md:py-20">
       <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-8 md:gap-[30px]">
@@ -59,7 +66,7 @@ export default function TestimonialLibrary() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 md:gap-2">
+        <div className="flex flex-wrap justify-center gap-2 md:justify-center md:gap-2">
           {TABS.map((tab) => (
             <button
               key={tab}
@@ -77,67 +84,38 @@ export default function TestimonialLibrary() {
 
         <div className="hidden md:block">
           <div className="grid md:grid-cols-3 md:gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.name}
-                className="flex flex-col justify-between gap-9 rounded-2xl bg-[#fafafa] p-4"
-              >
-                <div className="flex flex-col gap-6">
-                  <Stars />
-                  <p className="text-base font-medium leading-[22.4px] tracking-[-0.16px] text-[#151515]">
-                    {t.text}
-                  </p>
+            {TESTIMONIALS.map((_, i) => {
+              const t = TESTIMONIALS[(active + i) % TESTIMONIALS.length];
+              return (
+                <div
+                  key={`${active}-${i}`}
+                  className="animate-testimonial-fade flex flex-col justify-between gap-9 rounded-2xl bg-[#fafafa] p-4"
+                >
+                  <div className="flex flex-col gap-6">
+                    <Stars />
+                    <p className="text-base font-medium leading-[22.4px] tracking-[-0.16px] text-[#151515]">
+                      {t.text}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-base font-semibold leading-[22.4px] text-[#151515]">
+                      {t.name}
+                    </p>
+                    <p className="text-sm leading-[19.6px] text-[#151515]">
+                      {t.role}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <p className="text-base font-semibold leading-[22.4px] text-[#151515]">
-                    {t.name}
-                  </p>
-                  <p className="text-sm leading-[19.6px] text-[#151515]">
-                    {t.role}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <button
-              aria-label="Previous"
-              onClick={() =>
-                setActive((a) => (a - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
-              }
-              className="flex h-8 w-12 items-center justify-center rounded-full"
-            >
-              <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
-                <path d="M15 7H1M1 7L7 1M1 7L7 13" stroke="#002316" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <div className="flex items-center gap-3.5">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                  onClick={() => setActive(i)}
-                  className={`h-3.5 w-3.5 rounded-full transition-colors ${
-                    i === active ? "bg-[#079669]" : "bg-[#e2e2e2]"
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              aria-label="Next"
-              onClick={() => setActive((a) => (a + 1) % TESTIMONIALS.length)}
-              className="flex h-8 w-12 items-center justify-center rounded-full"
-            >
-              <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
-                <path d="M1 7H15M15 7L9 1M15 7L9 13" stroke="#002316" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+              );
+            })}
           </div>
         </div>
 
         <div className="md:hidden">
-          <div className="flex flex-col gap-6 rounded-2xl bg-[#fafafa] p-5">
+          <div
+            key={active}
+            className="animate-testimonial-fade flex flex-col gap-6 rounded-2xl bg-[#fafafa] p-5"
+          >
             <Stars />
             <p className="text-sm leading-[19.6px] text-[#151515]">
               {TESTIMONIALS[active].text}
@@ -150,40 +128,6 @@ export default function TestimonialLibrary() {
                 {TESTIMONIALS[active].role}
               </p>
             </div>
-          </div>
-          <div className="mt-5 flex items-center justify-center gap-4">
-            <button
-              aria-label="Previous"
-              onClick={() =>
-                setActive((a) => (a - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
-              }
-              className="flex h-8 w-12 items-center justify-center rounded-full"
-            >
-              <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
-                <path d="M15 7H1M1 7L7 1M1 7L7 13" stroke="#002316" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <div className="flex items-center gap-3.5">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                  onClick={() => setActive(i)}
-                  className={`h-3.5 w-3.5 rounded-full transition-colors ${
-                    i === active ? "bg-[#079669]" : "bg-[#e2e2e2]"
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              aria-label="Next"
-              onClick={() => setActive((a) => (a + 1) % TESTIMONIALS.length)}
-              className="flex h-8 w-12 items-center justify-center rounded-full"
-            >
-              <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
-                <path d="M1 7H15M15 7L9 1M15 7L9 13" stroke="#002316" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>

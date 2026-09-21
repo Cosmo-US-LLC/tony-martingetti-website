@@ -40,6 +40,31 @@ function Stars() {
   );
 }
 
+function MarqueeColumn({ reviews, duration, direction = "up" }) {
+  return (
+    <div
+      className="h-full overflow-hidden"
+      style={{
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
+      }}
+    >
+      <div
+        className={`flex flex-col gap-4 hover:[animation-play-state:paused] ${
+          direction === "up" ? "animate-marquee-up" : "animate-marquee-down"
+        }`}
+        style={{ animationDuration: `${duration}s` }}
+      >
+        {[...reviews, ...reviews].map((r, i) => (
+          <ReviewCard key={`${r.name}-${i}`} review={r} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ReviewCard({ review }) {
   return (
     <div className="flex flex-col gap-9 rounded-2xl bg-[#fafafa] p-4 md:p-4">
@@ -96,17 +121,17 @@ export default function Testimonials() {
           </a>
         </div>
 
-        <div className="hidden md:grid md:flex-1 md:grid-cols-2 md:items-center md:gap-4">
-          <div className="flex flex-col gap-4">
-            {REVIEWS.slice(0, 2).map((r) => (
-              <ReviewCard key={r.name} review={r} />
-            ))}
-          </div>
-          <div className="flex flex-col gap-4">
-            {REVIEWS.slice(2, 5).map((r) => (
-              <ReviewCard key={r.name} review={r} />
-            ))}
-          </div>
+        <div className="hidden h-[700px] md:grid md:flex-1 md:grid-cols-2 md:gap-4">
+          <MarqueeColumn
+            reviews={REVIEWS.slice(0, 2)}
+            duration={22}
+            direction="up"
+          />
+          <MarqueeColumn
+            reviews={REVIEWS.slice(2, 5)}
+            duration={28}
+            direction="down"
+          />
         </div>
 
         <div className="md:hidden">

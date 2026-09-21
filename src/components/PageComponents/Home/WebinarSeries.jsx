@@ -48,7 +48,7 @@ export default function WebinarSeries() {
           {CARDS.map((c) => (
             <div
               key={c.num}
-              className="flex flex-col gap-5 rounded-2xl bg-white/[0.02] p-5 md:flex-1 md:gap-8 md:px-6 md:pb-12 md:pt-12"
+              className="flex flex-col items-center gap-5 rounded-2xl bg-white/[0.02] p-5 text-center md:flex-1 md:items-start md:gap-8 md:px-6 md:pb-12 md:pt-12 md:text-left"
             >
               <p
                 className="font-script inline-block w-fit bg-clip-text text-[32px] leading-[44.8px] text-transparent"
@@ -59,7 +59,7 @@ export default function WebinarSeries() {
                 {c.num}
               </p>
               <img src={c.icon} alt="" className="h-[180px] w-[180px]" />
-              <div className="flex flex-col gap-2 md:gap-4">
+              <div className="flex flex-col items-center gap-2 md:items-start md:gap-4">
                 <h3 className="text-xl font-semibold leading-7 text-white md:text-[28px] md:font-bold md:leading-9 md:tracking-[-0.56px]">
                   {c.title}
                 </h3>

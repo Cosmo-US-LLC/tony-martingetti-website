@@ -41,7 +41,7 @@ function LogoPill({ logo }) {
 
 export default function FeaturedIn() {
   return (
-    <section className="relative w-full overflow-hidden md:h-[100dvh]">
+    <section className="relative w-full overflow-hidden md:h-[calc(100dvh-100px)]">
       <img
         src={BG_DESKTOP}
         alt=""
@@ -85,6 +85,9 @@ export default function FeaturedIn() {
       <style>{`
         .logo-marquee-track {
           animation: featured-logo-marquee 30s linear infinite;
+        }
+        .logo-marquee-track:hover {
+          animation-play-state: paused;
         }
         @keyframes featured-logo-marquee {
           from { transform: translateX(0); }

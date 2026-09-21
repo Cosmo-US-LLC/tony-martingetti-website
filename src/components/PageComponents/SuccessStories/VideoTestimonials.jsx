@@ -41,11 +41,11 @@ function LogoPill({ logo }) {
 
 export default function VideoTestimonials() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden md:h-[calc(100dvh-100px)]">
       <img
         src={BG_DESKTOP}
         alt=""
-        className="absolute inset-0 hidden h-[800px] w-full object-cover object-top md:block"
+        className="absolute inset-0 hidden h-full w-full object-cover object-top md:block"
       />
       <img
         src={BG_MOBILE}
@@ -67,7 +67,7 @@ export default function VideoTestimonials() {
         }}
       />
 
-      <div className="relative flex min-h-[560px] w-full flex-col justify-between gap-10 py-10 md:h-[700px] md:min-h-0 md:justify-between md:py-12">
+      <div className="relative flex min-h-[560px] w-full flex-col justify-between gap-10 py-10 md:h-[calc(100dvh-100px)] md:min-h-0 md:justify-between md:py-12">
         <div className="font-landing mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-4 md:px-[60px]">
           <div className="flex max-w-[517px] flex-col gap-4">
             <h2 className="text-[28px] font-bold leading-[39.2px] text-white md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
@@ -92,6 +92,9 @@ export default function VideoTestimonials() {
       <style>{`
         .logo-marquee-track {
           animation: featured-logo-marquee 30s linear infinite;
+        }
+        .logo-marquee-track:hover {
+          animation-play-state: paused;
         }
         @keyframes featured-logo-marquee {
           from { transform: translateX(0); }

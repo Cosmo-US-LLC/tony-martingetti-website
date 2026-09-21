@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
+import LOGO_URL from "@/assets/images/navbar/tm_logo-white.svg";
 import { scrollToLandingJoin } from "@/utils/scrollToLandingJoin";
 
 export default function LandingNav() {
