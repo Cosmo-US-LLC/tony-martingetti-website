@@ -20,11 +20,11 @@ export default function BookHero() {
         className="absolute inset-0 md:hidden"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(21,21,21,1) 0%, rgba(21,21,21,0.33) 50%, rgba(21,21,21,1) 100%)",
+            "linear-gradient(to bottom, rgba(21,21,21,0.9) 0%, rgba(21,21,21,0.78) 50%, rgba(21,21,21,0.95) 100%)",
         }}
       />
 
-      <div className="relative flex min-h-[560px] w-full flex-col px-4 pt-[140px] pb-12 md:min-h-[770px] md:px-[60px] md:pt-[190px] md:pb-0">
+      <div className="relative flex min-h-[560px] w-full flex-col px-4 pt-[140px] pb-12 md:min-h-[100vh] md:px-[60px] md:pt-[190px] md:pb-0">
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 md:gap-6">
           <div className="flex max-w-[400px] flex-col gap-3 md:max-w-[680px] md:gap-4">
             <p className="font-script text-2xl leading-[33.6px] text-[#2fac66] md:text-[32px] md:leading-[44.8px]">

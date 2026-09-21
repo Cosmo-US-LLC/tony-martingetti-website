@@ -1,8 +1,26 @@
+import AnimatedStat from "@/components/common/AnimatedStat";
+
 const STATS = [
-  { value: "$150M+", desc: "In bequests secured" },
-  { value: "29+", desc: "Years in Planned Giving" },
-  { value: "1,000+", desc: "Programs to launch" },
-  { value: "800+", desc: "Podcast episodes" },
+  {
+    targets: [150],
+    format: ([v]) => `$${Math.round(v)}M+`,
+    desc: "In bequests secured",
+  },
+  {
+    targets: [29],
+    format: ([v]) => `${Math.round(v)}+`,
+    desc: "Years in Planned Giving",
+  },
+  {
+    targets: [1000],
+    format: ([v]) => `${Math.round(v).toLocaleString()}+`,
+    desc: "Programs to launch",
+  },
+  {
+    targets: [800],
+    format: ([v]) => `${Math.round(v)}+`,
+    desc: "Podcast episodes",
+  },
 ];
 
 export default function ExpertStats() {
@@ -29,9 +47,11 @@ export default function ExpertStats() {
                   "linear-gradient(180deg, rgba(238,238,238,0.7) 0%, rgba(136,136,136,0.08) 100%)",
               }}
             >
-              <p className="font-script text-2xl leading-[28.8px] text-[#079669] md:text-[48px] md:leading-[56px]">
-                {s.value}
-              </p>
+              <AnimatedStat
+                targets={s.targets}
+                format={s.format}
+                className="font-script text-2xl leading-[28.8px] text-[#079669] md:text-[48px] md:leading-[56px]"
+              />
               <p className="text-base leading-[22.4px] text-[#21021b] md:text-lg md:leading-[26px]">
                 {s.desc}
               </p>

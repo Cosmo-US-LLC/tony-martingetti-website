@@ -2,7 +2,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import LOGO_URL from "@/assets/images/navbar/tm_logo.svg";
-import SOCIAL_MAIL from "@/assets/images/home/icons/social-mail.svg";
+import LOGO_URL_WHITE from "@/assets/images/navbar/tm_logo-white.svg";
 import SOCIAL_LINKEDIN from "@/assets/images/home/icons/social-linkedin.svg";
 import SOCIAL_X from "@/assets/images/home/icons/social-x.svg";
 
@@ -47,7 +47,7 @@ export default function Navbar() {
             aria-label="Planned Giving Accelerated – Home"
           >
             <img
-              src={LOGO_URL}
+              src={isLight ? LOGO_URL : LOGO_URL_WHITE}
               alt="Planned Giving Accelerated"
               className="h-[68px] w-auto max-w-[116px] object-contain"
             />
@@ -170,45 +170,41 @@ export default function Navbar() {
                   </p>
                   <div className="flex flex-col gap-3">
                     <a
-                      href="tel:+18004567890"
-                      className="flex items-center gap-3 text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]"
+                      href="mailto:tony@tonymartignetti.com"
+                      className="text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]"
                     >
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
-                        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.16 21 3 13.84 3 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z" />
-                      </svg>
-                      (800) 456-7890
-                    </a>
-                    <a
-                      href="mailto:support@tonymartignetti.com"
-                      className="flex items-center gap-3 text-base leading-[22.4px] tracking-[-0.16px] text-[#494949]"
-                    >
-                      <svg width="20" height="15" viewBox="0 0 24 18" fill="currentColor" className="shrink-0">
-                        <path d="M2 0h20a2 2 0 012 2v14a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2zm1.8 2L12 8.5 20.2 2H3.8zM2 15h20V4.4l-8 6.35-8-6.35V15z" />
-                      </svg>
-                      support@tonymartignetti.com
+                      tony@tonymartignetti.com
                     </a>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <a
-                      href="mailto:support@tonymartignetti.com"
-                      aria-label="Email"
-                      className="flex size-[42px] items-center justify-center rounded-full bg-[#fde8f8]"
+                      href="mailto:tony@tonymartignetti.com"
+                      className="flex items-center gap-2 rounded-full bg-[#fde8f8] py-3 pl-5 pr-4 text-sm font-medium leading-5 text-[#951b81]"
                     >
-                      <img src={SOCIAL_MAIL} alt="" className="h-4 w-4" />
+                      tony@tonymartignetti.com
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path
+                          d="M3.5 10.5L10.5 3.5M10.5 3.5H4.9M10.5 3.5V9.1"
+                          stroke="#951b81"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </a>
                     <a
                       href="https://www.linkedin.com/in/tonymartignetti/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="flex size-[42px] items-center justify-center rounded-full bg-[#fde8f8]"
+                      className="flex size-[42px] shrink-0 items-center justify-center rounded-full bg-[#fde8f8]"
                     >
                       <img src={SOCIAL_LINKEDIN} alt="" className="h-4 w-4" />
                     </a>
                     <a
                       href="#"
                       aria-label="X"
-                      className="flex size-[42px] items-center justify-center rounded-full bg-[#fde8f8]"
+                      className="flex size-[42px] shrink-0 items-center justify-center rounded-full bg-[#fde8f8]"
                     >
                       <img src={SOCIAL_X} alt="" className="h-4 w-4" />
                     </a>

@@ -23,7 +23,7 @@ export default function SuccessStoriesHero() {
         }}
       />
 
-      <div className="relative flex min-h-[394px] w-full flex-col px-4 pt-[140px] pb-12 md:min-h-[770px] md:px-[60px] md:pt-[232px] md:pb-0">
+      <div className="relative flex min-h-[400px] w-full flex-col px-4 pt-[140px] pb-12 md:min-h-[100vh] md:px-[60px] md:pt-[232px] md:pb-0">
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-7 md:gap-4">
           <div className="flex max-w-[366px] flex-col gap-3 md:max-w-[616px]">
             <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">
