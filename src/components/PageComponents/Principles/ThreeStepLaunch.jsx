@@ -55,7 +55,7 @@ export default function ThreeStepLaunch() {
               {STEPS.map((s) => (
                 <div
                   key={s.num}
-                  className="flex flex-1 flex-col gap-5 rounded-2xl border border-[#e2e2e2] p-6 md:gap-12 md:border-0 md:p-9"
+                  className="flex flex-1 flex-col items-center gap-5 rounded-2xl border border-[#e2e2e2] p-6 text-center md:items-start md:gap-12 md:border-0 md:p-9 md:text-left"
                   style={{
                     backgroundImage:
                       "linear-gradient(180deg, rgba(238,238,238,0.5) 0%, rgba(136,136,136,0) 100%)",
@@ -64,7 +64,7 @@ export default function ThreeStepLaunch() {
                   <p className="font-script text-[40px] leading-[56px] text-[#079669]">
                     {s.num}
                   </p>
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col items-center gap-4 md:items-start">
                     <h3 className="text-xl font-semibold leading-7 text-[#00150b]">
                       {s.title}
                     </h3>

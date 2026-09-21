@@ -74,7 +74,7 @@ export default function CredentialsMilestones() {
             {MILESTONES.map((m) => (
               <div
                 key={m.title}
-                className="flex flex-col gap-3 rounded-2xl bg-white/[0.02] p-4 md:gap-8 md:p-5"
+                className="flex flex-col gap-3 rounded-2xl bg-white/[0.02] p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:bg-white/[0.05] hover:shadow-[0_0_30px_rgba(7,150,105,0.25)] md:gap-8 md:p-5"
               >
                 <img src={m.icon} alt="" className="h-7 w-7 md:h-12 md:w-12" />
                 <div className="flex flex-col gap-1.5 md:gap-2">
