@@ -12,13 +12,19 @@ const NAV_LINKS = [
   { to: "/success-stories", label: "Success Stories" },
   { to: "/principles", label: "Principles" },
   { to: "/my-book", label: "My Book" },
+  { to: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isLight = location.pathname === "/privacy-policy";
+  // Blog pages (list + post detail) render on a plain white background all
+  // the way to the top, unlike the dark hero pages this navbar was built
+  // for - the transparent/white-text style left nav links invisible
+  // (white-on-white) until the page was scrolled.
+  const isLight =
+    location.pathname === "/privacy-policy" || location.pathname.startsWith("/blog");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
