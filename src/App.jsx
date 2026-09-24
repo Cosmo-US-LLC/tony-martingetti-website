@@ -10,6 +10,8 @@ import Waitlist from "./pages/Waitlist";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LandingPage from "./pages/LandingPage";
 import PageNotFound from "./pages/PageNotFound";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import ScrollToHash from "./utils/ScrollToHash";
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/principles" element={<Principles />} />
           <Route path="/my-book" element={<MyBook />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* <Route path="/waitlist" element={<Waitlist />} /> */}
         </Route>
