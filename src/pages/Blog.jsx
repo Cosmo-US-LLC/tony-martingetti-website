@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getCategories, getPublishedPosts, getTags } from "@/services/blog";
 import HERO_BG from "@/assets/images/blog/hero-bg.webp";
+import HERO_BG_MOBILE from "@/assets/images/blog/hero-bg-mobile.webp";
 import BlogCard from "@/components/PageComponents/Blog/BlogCard";
 
 const PAGE_SIZE = 9;
@@ -61,12 +62,15 @@ function Blog() {
 
   return (
     <>
-      <section className="relative -mt-[100px] w-full overflow-hidden bg-black">
-        <img
-          src={HERO_BG}
-          alt="Tony Martignetti"
-          className="absolute inset-0 h-full w-full object-cover object-[70%_20%] md:object-[75%_30%]"
-        />
+      <section className="relative -mt-[100px] h-dvh w-full overflow-hidden bg-black">
+        <picture>
+          <source media="(min-width: 768px)" srcSet={HERO_BG} />
+          <img
+            src={HERO_BG_MOBILE}
+            alt="Tony Martignetti"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         <div
           className="absolute inset-0 hidden md:block"
           style={{
@@ -74,15 +78,15 @@ function Blog() {
               "linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 55%)",
           }}
         />
-        <div
+        {/* <div
           className="absolute inset-0 md:hidden"
           style={{
             backgroundImage:
               "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%)",
           }}
-        />
+        /> */}
 
-        <div className="relative flex min-h-[500px] w-full flex-col justify-center px-4 pt-[140px] pb-12 md:min-h-[100vh] md:px-[60px] md:pt-[100px] md:pb-0">
+        <div className="relative flex min-h-[100dvh] w-full flex-col justify-end px-4 pt-[140px] pb-20 md:min-h-[100vh] md:justify-center md:px-[60px] md:pt-[100px] md:pb-0">
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3">
             <p className="font-script text-2xl leading-[33.6px] text-[#2fac66] md:text-[32px] md:leading-[44.8px]">
               More Insights
