@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getCategories, getPublishedPosts, getTags } from "@/services/blog";
+import HERO_BG from "@/assets/images/blog/hero-bg.webp";
 import BlogCard from "@/components/PageComponents/Blog/BlogCard";
 
 const PAGE_SIZE = 9;
@@ -59,37 +60,65 @@ function Blog() {
   }
 
   return (
-    <div className="mx-auto max-w-[1200px] px-4 py-10 md:px-[60px]">
-      <div className="mb-8 flex flex-col gap-4 border-b border-[#e2e2e2] pb-6 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-[#151515] md:text-4xl">Blog</h1>
-          <p className="mt-1 text-[#494949]">
-            Insights on planned giving, legacy fundraising, and nonprofit growth.
-          </p>
-        </div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            updateParams({ q: searchInput || undefined });
+    <>
+      <section className="relative -mt-[100px] w-full overflow-hidden bg-black">
+        <img
+          src={HERO_BG}
+          alt="Tony Martignetti"
+          className="absolute inset-0 h-full w-full object-cover object-[70%_20%] md:object-[75%_30%]"
+        />
+        <div
+          className="absolute inset-0 hidden md:block"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 55%)",
           }}
-          className="flex w-full items-center gap-2 md:w-auto"
-        >
-          <input
-            type="search"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Search posts..."
-            className="w-full rounded-lg border border-[#e2e2e2] px-3 py-2 text-sm focus:border-[#079669] focus:outline-none md:w-64"
-          />
-          <button
-            type="submit"
-            className="shrink-0 rounded-lg bg-[#079669] px-4 py-2 text-sm font-semibold text-white hover:bg-[#057a56]"
-          >
-            Search
-          </button>
-        </form>
-      </div>
+        />
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%)",
+          }}
+        />
 
+        <div className="relative flex min-h-[500px] w-full flex-col justify-center px-4 pt-[140px] pb-12 md:min-h-[100vh] md:px-[60px] md:pt-[100px] md:pb-0">
+          <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3">
+            <p className="font-script text-2xl leading-[33.6px] text-[#2fac66] md:text-[32px] md:leading-[44.8px]">
+              More Insights
+            </p>
+            <h1 className="font-landing text-[40px] font-bold leading-[48px] tracking-[-0.8px] text-white md:text-[48px] md:leading-[57.6px] md:tracking-[-0.96px]">
+              Blog
+            </h1>
+            <p className="max-w-[616px] text-base leading-[22.4px] tracking-[-0.16px] text-[#c6c6c6] md:text-xl md:leading-7 md:tracking-[-0.5px]">
+              Insights on planned giving, legacy fundraising, and nonprofit growth.
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                updateParams({ q: searchInput || undefined });
+              }}
+              className="mt-2 flex w-full max-w-[420px] items-center gap-2"
+            >
+              <input
+                type="search"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Search Posts"
+                className="w-full rounded-lg border border-white bg-white px-3 py-3 text-sm text-[#151515] focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="shrink-0 cursor-pointer rounded-lg bg-[#951b81] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#7a1569]"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    <div className="mx-auto max-w-[1200px] px-4 py-10 md:px-[60px]">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_260px]">
         <div>
           {loading ? (
@@ -182,6 +211,7 @@ function Blog() {
         </aside>
       </div>
     </div>
+    </>
   );
 }
 
