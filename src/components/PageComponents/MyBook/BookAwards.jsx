@@ -13,7 +13,7 @@ export default function BookAwards() {
           </h2>
         </div>
 
-        <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-8 md:flex-row md:gap-10">
+        <div className="flex w-full flex-col gap-8 md:flex-row md:gap-10">
           {BOOK_AWARDS.map((award) => (
             <figure key={award.title} className="flex flex-1 flex-col gap-3">
               <a

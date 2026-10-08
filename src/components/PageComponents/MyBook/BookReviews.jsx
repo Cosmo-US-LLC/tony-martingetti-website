@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import AMAZON_BADGE from "@/assets/images/mybook/amazon-badge-cropped.webp";
 import { BOOK_REVIEWS, BOOK_REVIEWS_SUMMARY } from "@/constants/myBook";
 
 const AMAZON_REVIEWS_URL =
@@ -57,12 +58,26 @@ export default function BookReviews() {
   const trackRef = useRef(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
+  const [active, setActive] = useState(0);
+  const [stops, setStops] = useState(BOOK_REVIEWS.length);
+
+  const cardStep = () => {
+    const el = trackRef.current;
+    if (!el || !el.firstElementChild) return 0;
+    return el.firstElementChild.getBoundingClientRect().width + 20;
+  };
 
   const updateEdges = useCallback(() => {
     const el = trackRef.current;
     if (!el) return;
     setAtStart(el.scrollLeft <= 4);
     setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4);
+    const step = cardStep();
+    if (!step) return;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    const count = Math.round(maxScroll / step) + 1;
+    setStops(count);
+    setActive(Math.min(count - 1, Math.round(el.scrollLeft / step)));
   }, []);
 
   useEffect(() => {
@@ -147,40 +162,66 @@ export default function BookReviews() {
               onClick={() => scrollByCard(-1)}
               disabled={atStart}
               aria-label="Previous reviews"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d5dde3] text-[#0a1730] transition-opacity disabled:opacity-30"
+              className="text-xl text-[#0a1730] transition-opacity disabled:opacity-30"
             >
               ←
             </button>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: stops }, (_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to review ${i + 1}`}
+                  aria-current={i === active}
+                  onClick={() =>
+                    trackRef.current?.scrollTo({
+                      left: i * cardStep(),
+                      behavior: "smooth",
+                    })
+                  }
+                  className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                    i === active ? "bg-[#079669]" : "bg-[#d5dde3]"
+                  }`}
+                />
+              ))}
+            </div>
             <button
               type="button"
               onClick={() => scrollByCard(1)}
               disabled={atEnd}
               aria-label="Next reviews"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#079669] bg-[#079669] text-white transition-opacity disabled:opacity-30"
+              className="text-xl text-[#0a1730] transition-opacity disabled:opacity-30"
             >
               →
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 rounded-xl bg-[#0a1730] px-6 py-6 text-white md:flex-row md:items-center md:justify-between md:px-7">
-          <p className="text-lg font-bold">
+        <div className="flex flex-col gap-6 rounded-2xl bg-[#0a1730] px-6 py-8 text-white md:flex-row md:items-center md:justify-between md:gap-10 md:px-14 md:py-12">
+          <h3 className="max-w-[560px] text-[28px] font-bold leading-[36px] tracking-[-0.56px] md:text-[40px] md:leading-[48px] md:tracking-[-0.8px]">
             Read it? Your review helps the next nonprofit find the book.
-          </p>
-          <div className="flex flex-wrap gap-3">
+          </h3>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href={AMAZON_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md bg-[#079669] px-5 py-3 text-sm font-bold text-white"
+              className="flex items-center justify-center gap-2 rounded-lg bg-[#079669] px-5 py-3.5 transition-colors hover:bg-[#068458]"
             >
-              Leave a review on Amazon
+              <img
+                src={AMAZON_BADGE}
+                alt="Amazon Kindle"
+                className="h-5 w-[81px] shrink-0 object-contain"
+              />
+              <span className="whitespace-nowrap text-sm leading-5 text-white/90">
+                Leave a review on Amazon
+              </span>
             </a>
             <a
               href={GOODREADS_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md border border-[#8890a0] px-5 py-3 text-sm text-white"
+              className="flex items-center justify-center rounded-lg bg-white/10 px-5 py-3.5 text-sm leading-5 text-white/90 transition-colors hover:bg-white/20"
             >
               Goodreads
             </a>
