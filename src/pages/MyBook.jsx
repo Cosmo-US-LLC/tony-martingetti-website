@@ -1,7 +1,9 @@
 import { usePageMeta } from "@/hooks/usePageMeta";
 import BookHero from "@/components/PageComponents/MyBook/BookHero";
+import BookAwards from "@/components/PageComponents/MyBook/BookAwards";
 import AboutTheBook from "@/components/PageComponents/MyBook/AboutTheBook";
 import BookLaunchPlan from "@/components/PageComponents/MyBook/BookLaunchPlan";
+import BookReviews from "@/components/PageComponents/MyBook/BookReviews";
 import ClaimAccess from "@/components/PageComponents/MyBook/ClaimAccess";
 import BookMyths from "@/components/PageComponents/MyBook/BookMyths";
 import BookBequestReasons from "@/components/PageComponents/MyBook/BookBequestReasons";
@@ -17,10 +19,12 @@ function MyBook() {
   return (
     <div>
       <BookHero />
+      <BookAwards />
       <AboutTheBook />
       <BookLaunchPlan />
       <ClaimAccess />
       <BookMyths />
+      <BookReviews />
       <BookBequestReasons />
       <AboutTheAuthor />
       <BookFooter />
