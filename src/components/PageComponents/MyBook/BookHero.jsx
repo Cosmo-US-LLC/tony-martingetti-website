@@ -43,6 +43,9 @@ export default function BookHero() {
             <p className="font-landing text-lg leading-[25.2px] text-[#2fac66] md:text-xl md:leading-7">
               By Tony Martignetti, Esq.
             </p>
+            <p className="w-fit rounded-full border-2 border-dashed border-[#2fac66] bg-white/10 px-5 py-2.5 text-sm font-medium leading-5 text-white/90 md:text-base md:leading-6">
+              #1 New Release On Amazon In 2 Categories
+            </p>
           </div>
 
           <div className="flex w-full max-w-[680px] flex-col gap-3">
