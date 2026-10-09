@@ -44,7 +44,7 @@ export default function BookHero() {
               By Tony Martignetti, Esq.
             </p>
             <p className="w-fit rounded-full border-2 border-dashed border-[#2fac66] bg-white/10 px-5 py-2.5 text-sm font-medium leading-5 text-white/90 md:text-base md:leading-6">
-              NEW : #1 New Release On Amazon In 2 Categories
+              #1 New Release On Amazon In 2 Categories
             </p>
           </div>
 

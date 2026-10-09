@@ -22,7 +22,7 @@ function ReviewCard({ review }) {
   const isLong = review.quote.length > 320;
 
   return (
-    <figure className="flex w-full shrink-0 snap-start flex-col gap-3.5 rounded-xl border border-[#d5dde3] p-6 md:w-[calc((100%-40px)/3)]">
+    <figure className="flex w-full shrink-0 snap-start flex-col gap-3.5 rounded-xl bg-[#f9f9f9] p-6 md:w-[calc((100%-40px)/3)]">
       {STARS}
       {review.title && (
         <p className="text-base font-bold text-[#0a1730]">{review.title}</p>
@@ -127,13 +127,13 @@ export default function BookReviews() {
               Reviews
             </h2>
           </div>
-          <div className="flex items-center gap-3 self-start rounded-lg bg-[#f4f8f6] px-5 py-3.5">
-            <span className="text-4xl font-bold text-[#0a1730]">
+          <div className="flex items-center gap-3 self-start rounded-lg bg-[#0a1730] px-5 py-3.5">
+            <span className="text-4xl font-bold text-white">
               {BOOK_REVIEWS_SUMMARY.rating}
             </span>
             <div className="flex flex-col">
               <span className="text-lg">{STARS}</span>
-              <span className="text-sm text-[#494949]">
+              <span className="text-sm text-white/80">
                 {BOOK_REVIEWS_SUMMARY.note}
               </span>
             </div>

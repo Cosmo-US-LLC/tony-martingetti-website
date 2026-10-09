@@ -112,14 +112,14 @@ export const BOOK_FOREWORD_ATTRIBUTION =
 export const BOOK_AWARDS = [
   {
     title: "#1 New Release in Nonprofit Fundraising and Grants",
-    caption: "Amazon New Releases list, Sept 18",
+    // caption: "Amazon New Releases list, Sept 18",
     placeholder: "Screenshot 1: Amazon New Releases list, book at #1",
     image: AWARD_FUNDRAISING,
     href: "https://tony.ma/Amazon",
   },
   {
     title: "#1 New Release in Nonprofit Marketing and Communications",
-    caption: "Amazon product page, Sept 23",
+    // caption: "Amazon product page, Sept 23",
     placeholder: "Screenshot 2: Amazon product page with #1 New Release tag",
     image: AWARD_MARKETING,
     href: "https://tony.ma/Amazon",
@@ -128,7 +128,7 @@ export const BOOK_AWARDS = [
 
 export const BOOK_REVIEWS_SUMMARY = {
   rating: "5.0",
-  note: "6 five-star reviews on Amazon and Goodreads",
+  note: "five-star reviews on Amazon and Goodreads",
 };
 
 export const BOOK_REVIEWS = [
