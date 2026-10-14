@@ -7,7 +7,7 @@ import { scrollToMyBookNotify } from "./scrollToMyBookNotify";
 import { scrollToWaitlistJoin } from "./scrollToWaitlistJoin";
 
 export default function ScrollToHash() {
-  const { hash } = useLocation();
+  const { hash, key } = useLocation();
 
   useEffect(() => {
     if (!hash) return;
@@ -46,7 +46,7 @@ export default function ScrollToHash() {
 
       window.scrollTo({ top: y, behavior: "smooth" });
     }
-  }, [hash]);
+  }, [hash, key]);
 
   return null;
 }

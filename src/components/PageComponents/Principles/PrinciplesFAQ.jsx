@@ -9,10 +9,10 @@ const FAQS = [
   //   q: "What is the Martignetti 3-Step, 1-Week Planned Giving Launch?",
   //   a: "It's the signature framework above: identify your top prospects, launch with gifts in wills, and cultivate and solicit them the right way, all within a single week.",
   // },
-  {
-    q: "What is the Martignetti MEAL Plan?",
-    a: "Meals Expertly Allow Learning. The shared table, the understood cadence of meal service, the natural pauses with eating, and the timing, all create an environment ideal for learning a lot about your donor or potential donor.",
-  },
+  // {
+  //   q: "What is the Martignetti MEAL Plan?",
+  //   a: "Meals Expertly Allow Learning. The shared table, the understood cadence of meal service, the natural pauses with eating, and the timing, all create an environment ideal for learning a lot about your donor or potential donor.",
+  // },
   {
     q: "What is Planned Giving Multiplier?",
     a: "The number of times greater a donor’s charitable bequest is, than their total lifetime giving.",
@@ -67,7 +67,7 @@ export default function PrinciplesFAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full bg-[#fafafa] px-4 py-12 md:px-[60px] md:py-20">
+    <section id="faq" className="w-full bg-[#fafafa] px-4 py-12 md:px-[60px] md:py-20">
       <div className="mx-auto flex w-full max-w-[1084px] flex-col gap-8 md:gap-[50px]">
         <div className="mx-auto flex max-w-[519px] flex-col gap-3.5 text-center md:gap-[18px]">
           <p className="font-script text-2xl leading-[33.6px] text-[#079669] md:text-[32px] md:leading-[44.8px]">

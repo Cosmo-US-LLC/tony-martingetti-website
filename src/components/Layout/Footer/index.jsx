@@ -86,11 +86,6 @@ export default function Footer() {
                     Success Stories
                   </Link>
                 </li>
-                <li>
-                  <Link to="/contact" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
-                    Contact Us
-                  </Link>
-                </li>
               </ul>
             </div>
 
@@ -100,12 +95,7 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <Link to="/contact" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
-                    Schedule a Call
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/#" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
+                  <Link to="/principles#faq" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
                     FAQ
                   </Link>
                 </li>
@@ -136,9 +126,6 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <Link to="/privacy-policy" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
                 Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-sm leading-5 text-[#494949] hover:text-[#059669]">
-                Term &amp; Conditions
               </Link>
             </div>
           </div>
